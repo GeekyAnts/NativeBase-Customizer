@@ -1,8 +1,8 @@
 {
-  "name": "native-base-kitchen-sink-web",
-  "version": "0.1.0",
+  "name": "native-base-customizer",
+  "version": "1.0.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://github.com/GeekyAnts/NativeBase-Customizer",
   "resolutions": {
     "react-native-keyboard-aware-scroll-view": "0.4.1"
   },
