@@ -92,11 +92,11 @@ import Segment from "./components/segment";
 import BasicSegment from "./components/segment/SegmentHeader";
 import AdvSegment from "./components/segment/segmentTab";
 import Toast from "./components/toast";
-import statusBarColor from "./themes/variables";
+import statusBarColor from "../native-base-theme/variables";
 
 class AppNavigator extends Component {
   render() {
-    return ;
+    return;
   }
 }
 
