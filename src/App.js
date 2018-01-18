@@ -1,11 +1,12 @@
 import React from "react";
-import { AppRegistry, View } from "react-native";
+import { AppRegistry } from "react-native";
 import App from "./js/App";
+// import SplitPane from "react-split-pane";
 
 class Init extends React.Component {
   render() {
     return (
-      <div style={{ flexDirection: "row", flex: 1 }}>
+      <div style={{ flexDirection: "row", flex: 1, display: "flex" }}>
         <div id="mobile-frame">
           <div class="top-bar" />
           <div class="sleep" />
@@ -19,7 +20,7 @@ class Init extends React.Component {
           <div class="home" />
           <div class="bottom-bar" />
         </div>
-        <div>Tests</div>
+        <div style={{ height: 200, width: 200 }}>Tests</div>
       </div>
     );
   }
