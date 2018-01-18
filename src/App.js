@@ -8,17 +8,9 @@ class Init extends React.Component {
     return (
       <div style={{ flexDirection: "row", flex: 1, display: "flex" }}>
         <div id="mobile-frame">
-          <div class="top-bar" />
-          <div class="sleep" />
-          <div class="volume" />
-          <div class="camera" />
-          <div class="sensor" />
-          <div class="speaker" />
           <div class="screen" style={{ display: "flex", flex: 1, zIndex: 999 }}>
             <App />
           </div>
-          <div class="home" />
-          <div class="bottom-bar" />
         </div>
         <div style={{ height: 200, width: 200 }}>Tests</div>
       </div>
