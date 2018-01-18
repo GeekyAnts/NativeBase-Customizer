@@ -1,9 +1,31 @@
-import React from 'react'
-import { render } from 'react-dom'
-import { AppRegistry } from 'react-native';
-import App from './js/App';
-// render(<App />, document.getElementById('root'))
-AppRegistry.registerComponent('NativebaseKitchenSink', () => App);
-AppRegistry.runApplication('NativebaseKitchenSink', {
-  rootTag: document.getElementById('root')
+import React from "react";
+import { AppRegistry, View } from "react-native";
+import App from "./js/App";
+
+class Init extends React.Component {
+  render() {
+    return (
+      <div style={{ flexDirection: "row", flex: 1 }}>
+        <div id="mobile-frame">
+          <div class="top-bar" />
+          <div class="sleep" />
+          <div class="volume" />
+          <div class="camera" />
+          <div class="sensor" />
+          <div class="speaker" />
+          <div class="screen" style={{ display: "flex", flex: 1, zIndex: 999 }}>
+            <App />
+          </div>
+          <div class="home" />
+          <div class="bottom-bar" />
+        </div>
+        <div>Tests</div>
+      </div>
+    );
+  }
+}
+
+AppRegistry.registerComponent("Init", () => Init);
+AppRegistry.runApplication("Init", {
+  rootTag: document.getElementById("root")
 });

@@ -1,10 +1,10 @@
 import React from "react";
-import { StyleSheet, View, AppRegistry } from 'react-native-web';
-import './font.css'
+import { StyleSheet, View, AppRegistry } from "react-native-web";
+import "./font.css";
 
-const ReactNative = require('react-native')
-const Modal = require('./Modal')
+const ReactNative = require("react-native");
+const Modal = require("./Modal");
 
-ReactNative.Modal = Modal
+ReactNative.Modal = Modal;
 
-require('./App')
+require("./App");
