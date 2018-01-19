@@ -34,10 +34,17 @@
       z-index: 3;
     }
 
+    html {
+      overflow: hidden;
+      height: 100%;
+    }
+
     body {
-      background-color: black;
+      /* background-color: black; */
       padding: 40px;
-      color: #FFF
+      /* color: #FFF */
+      height: 100%;
+      overflow: auto;
     }
 
     div {
@@ -93,7 +100,7 @@
       if (checkMobile() !== isMobile) {
         isMobile = checkMobile()
         if (isMobile) {
-          document.getElementById('mobile-frame').className = ""
+          document.getElementById('mobile-frame').className = "test"
           document.getElementById('info').style.display = 'none'
         } else {
           document.getElementById('mobile-frame').className = "phone-screen black"
