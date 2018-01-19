@@ -3,7 +3,11 @@ import { AppRegistry } from "react-native";
 import { Provider } from "react-redux";
 
 import configureStore from "./configureStore";
-import NativeApp from "./ReactNativeApp/boot/setup";
+import WorkSpace from "./Window/WorkSpace";
+import Header from "./Window/Header";
+import LeftPanel from "./Window/LeftPanel";
+import RightPanel from "./Window/RightPanel";
+// import NativeApp from "./ReactNativeApp/boot/setup";
 import SplitPane from "./StyledComponents/SplitPane";
 
 class App extends React.Component {
@@ -19,6 +23,7 @@ class App extends React.Component {
     };
   }
   render() {
+    console.log(this.state.store, "store");
     return (
       <Provider store={this.state.store}>
         <SplitPane
@@ -28,7 +33,7 @@ class App extends React.Component {
           defaultSize={80}
           className="primary"
         >
-          <div />
+          <Header />
           <SplitPane
             split="vertical"
             minSize={120}
@@ -36,7 +41,7 @@ class App extends React.Component {
             defaultSize={150}
             className="primary"
           >
-            <div />
+            <LeftPanel />
             <SplitPane
               split="vertical"
               minSize={500}
@@ -53,16 +58,9 @@ class App extends React.Component {
                   justifyContent: "center"
                 }}
               >
-                <div id="mobile-frame">
-                  <div
-                    class="screen"
-                    style={{ display: "flex", flex: 1, zIndex: 999 }}
-                  >
-                    <NativeApp />
-                  </div>
-                </div>
+                <WorkSpace />
               </div>
-              <div />
+              <RightPanel />
             </SplitPane>
           </SplitPane>
         </SplitPane>
