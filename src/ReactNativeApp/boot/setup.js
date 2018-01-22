@@ -3,7 +3,7 @@ import { StyleProvider } from "native-base";
 import { connect } from "react-redux";
 import { appliedTheme } from "../../Actions/theme";
 
-import App from "../App";
+import AppNavigator from "../AppNavigator";
 import getTheme from "../theme/components";
 import variables from "../theme/variables/commonColor";
 
@@ -14,7 +14,7 @@ class Setup extends Component {
   render() {
     return (
       <StyleProvider style={getTheme(variables)}>
-        <App />
+        <AppNavigator />
       </StyleProvider>
     );
   }

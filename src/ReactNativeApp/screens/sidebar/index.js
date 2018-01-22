@@ -196,7 +196,7 @@ class SideBar extends Component {
 
           <List
             dataArray={datas}
-            renderRow={data =>
+            renderRow={data => (
               <ListItem
                 button
                 noBorder
@@ -208,11 +208,9 @@ class SideBar extends Component {
                     name={data.icon}
                     style={{ color: "#777", fontSize: 26, width: 30 }}
                   />
-                  <Text style={styles.text}>
-                    {data.name}
-                  </Text>
+                  <Text style={styles.text}>{data.name}</Text>
                 </Left>
-                {data.types &&
+                {data.types && (
                   <Right style={{ flex: 1 }}>
                     <Badge
                       style={{
@@ -222,12 +220,14 @@ class SideBar extends Component {
                         backgroundColor: data.bg
                       }}
                     >
-                      <Text
-                        style={styles.badgeText}
-                      >{`${data.types} Types`}</Text>
+                      <Text style={styles.badgeText}>{`${
+                        data.types
+                      } Types`}</Text>
                     </Badge>
-                  </Right>}
-              </ListItem>}
+                  </Right>
+                )}
+              </ListItem>
+            )}
           />
         </Content>
       </Container>

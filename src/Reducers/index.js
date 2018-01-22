@@ -3,6 +3,7 @@ import { combineReducers } from "redux";
 
 import navigation from "./navigation";
 import theme from "./theme";
+import navReducer from "./navReducer";
 
 // const navigation = (state, action) => {
 //   const newState = App.router.getStateForAction(action, state);
@@ -12,5 +13,6 @@ import theme from "./theme";
 export default combineReducers({
   // navigation,
   navigation,
-  theme
+  theme,
+  nav: navReducer
 });

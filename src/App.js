@@ -36,19 +36,20 @@ class App extends React.Component {
           <Header />
           <SplitPane
             split="vertical"
-            minSize={120}
-            maxSize={150}
-            defaultSize={150}
+            minSize={150}
+            maxSize={200}
+            defaultSize={200}
             className="primary"
             paneStyle={{ display: "flex" }}
           >
             <LeftPanel />
             <SplitPane
               split="vertical"
-              minSize={500}
-              maxSize={1000}
-              defaultSize={900}
+              minSize={300}
+              maxSize={380}
+              defaultSize={350}
               className="primary"
+              primary="second"
               pane2Style={{ display: "flex" }}
               paneStyle={{ overflow: "scroll" }}
             >
