@@ -2,7 +2,11 @@ import React, { Component } from "react";
 
 class LeftPanel extends Component {
   render() {
-    return <div>LeftPanel</div>;
+    return (
+      <div style={{ background: "#252143", flex: 1, display: "flex" }}>
+        LeftPanel
+      </div>
+    );
   }
 }
 

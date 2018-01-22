@@ -47,6 +47,7 @@
     "react-split-pane": "^0.1.74",
     "redux": "^3.7.2",
     "redux-persist": "^5.4.0",
+    "redux-thunk": "^2.2.0",
     "static-container": "1.2.0",
     "style-loader": "0.19.1",
     "styled-components": "^2.4.0",

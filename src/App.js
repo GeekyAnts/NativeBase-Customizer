@@ -40,6 +40,7 @@ class App extends React.Component {
             maxSize={150}
             defaultSize={150}
             className="primary"
+            paneStyle={{ display: "flex" }}
           >
             <LeftPanel />
             <SplitPane
@@ -48,18 +49,10 @@ class App extends React.Component {
               maxSize={1000}
               defaultSize={900}
               className="primary"
+              pane2Style={{ display: "flex" }}
               paneStyle={{ overflow: "scroll" }}
             >
-              <div
-                style={{
-                  paddingTop: 30,
-                  paddingBottom: 30,
-                  display: "flex",
-                  justifyContent: "center"
-                }}
-              >
-                <WorkSpace />
-              </div>
+              <WorkSpace />
               <RightPanel />
             </SplitPane>
           </SplitPane>
