@@ -1,11 +1,16 @@
 import React, { Component } from "react";
 import { StyleProvider } from "native-base";
+import { connect } from "react-redux";
+import { appliedTheme } from "../../Actions/theme";
 
 import App from "../App";
 import getTheme from "../theme/components";
 import variables from "../theme/variables/commonColor";
 
-export default class Setup extends Component {
+class Setup extends Component {
+  componentWillMount() {
+    this.props.appliedTheme(variables);
+  }
   render() {
     return (
       <StyleProvider style={getTheme(variables)}>
@@ -14,3 +19,15 @@ export default class Setup extends Component {
     );
   }
 }
+
+function bindAction(dispatch) {
+  return {
+    appliedTheme: variables => dispatch(appliedTheme(variables))
+  };
+}
+
+const mapStateToProps = state => ({
+  variables: state.theme.variables
+});
+
+export default connect(mapStateToProps, bindAction)(Setup);

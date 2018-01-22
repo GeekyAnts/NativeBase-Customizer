@@ -8,7 +8,7 @@ class WorkSpace extends Component {
     this.props.newPage("Anatomy");
   }
   render() {
-    console.log(this, "state");
+    console.log(this.props.page, "state");
     return (
       <div
         style={{
@@ -20,9 +20,9 @@ class WorkSpace extends Component {
           padding: 30
         }}
       >
-        <button style={{ height: 40 }}>Prev</button>
+        {/* <button style={{ height: 40 }}>Prev</button> */}
         <Artboard />
-        <button style={{ height: 40 }}>Next</button>
+        {/* <button style={{ height: 40 }}>Next</button> */}
       </div>
     );
   }
@@ -35,7 +35,7 @@ function bindAction(dispatch) {
 }
 
 const mapStateToProps = state => ({
-  page: state.navigation.page
+  page: state
 });
 
 export default connect(mapStateToProps, bindAction)(WorkSpace);
