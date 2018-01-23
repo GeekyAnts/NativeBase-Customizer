@@ -1,14 +1,11 @@
-const initialState = {
-  page: "Home",
-  pageList: ["Anatomy", "Header", "Footer"]
-};
-
-export default function(state: any = initialState, action: Function) {
-  if (action.type === "SELECT_PAGE") {
-    return {
-      ...state,
-      page: action.page
-    };
+export default function(state = 0, action) {
+  switch (action.type) {
+    case "INCREMENT":
+      return state + 1;
+    case "DECREMENT":
+      if (!(state <= 0)) return state - 1;
+      else return 0;
+    default:
+      return state;
   }
-  return state;
 }

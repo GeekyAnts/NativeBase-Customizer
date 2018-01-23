@@ -1,13 +1,23 @@
-import { NavigationActions } from "react-navigation";
-export function selectPage(page) {
+export function increment(count) {
   return {
-    type: "SELECT_PAGE",
-    page
+    type: "INCREMENT",
+    count
   };
 }
-export function newPage(page) {
+export function decrement(count) {
+  return {
+    type: "DECREMENT",
+    count
+  };
+}
+
+export function nextPage(count) {
   return dispatch => {
-    dispatch(selectPage(page));
-    dispatch(NavigationActions.navigate({ routeName: page }));
+    dispatch(increment(count));
+  };
+}
+export function prevPage(count) {
+  return dispatch => {
+    dispatch(decrement(count));
   };
 }

@@ -4,14 +4,10 @@ import { connect } from "react-redux";
 import Ionicon from "react-ionicons";
 
 import Button from "../../StyledComponents/Button";
-import { newPage } from "../../Actions/navigation";
+import { nextPage, prevPage } from "../../Actions/navigation";
 
 class WorkSpace extends Component {
-  componentWillMount() {
-    this.props.newPage("Anatomy");
-  }
   render() {
-    console.log(this.props.page, "state");
     return (
       <div
         style={{
@@ -59,15 +55,17 @@ class WorkSpace extends Component {
               color="#FFF"
               fontSize="46px"
               style={{ opacity: 0.4 }}
+              onClick={() => this.props.prevPage()}
             />
           </Button>
-          <Artboard />
+          <Artboard screen={this.props.page} route={this.props.route} />
           <Button style={{ background: "transparent", marginLeft: 56 }}>
             <Ionicon
               icon="ios-arrow-forward"
               color="#FFF"
               fontSize="46px"
               style={{ opacity: 0.4 }}
+              onClick={() => this.props.nextPage()}
             />
           </Button>
         </div>
@@ -97,12 +95,14 @@ class WorkSpace extends Component {
 
 function bindAction(dispatch) {
   return {
-    newPage: page => dispatch(newPage(page))
+    nextPage: () => dispatch(nextPage()),
+    prevPage: () => dispatch(prevPage())
   };
 }
 
 const mapStateToProps = state => ({
-  page: state
+  page: state.navigation,
+  route: state.selectPage.page
 });
 
 export default connect(mapStateToProps, bindAction)(WorkSpace);

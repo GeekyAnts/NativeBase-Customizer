@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Ionicon from "react-ionicons";
+import { connect } from "react-redux";
 import Bar from "../../StyledComponents/Bar";
+import { newPage } from "../../Actions/selectPage";
 
 const datas = [
   {
@@ -163,11 +165,11 @@ const datas = [
 ];
 class LeftPanel extends Component {
   render() {
-    console.log(datas, "datss");
+    const that = this;
     const renObjData = datas.map(function(data, idx) {
       const icon = "ios-" + data.icon;
       return (
-        <Bar key={idx}>
+        <Bar key={idx} onClick={() => that.props.newPage(data.route)}>
           <Ionicon
             icon={icon}
             color="#FFF"
@@ -186,4 +188,14 @@ class LeftPanel extends Component {
   }
 }
 
-export default LeftPanel;
+function bindAction(dispatch) {
+  return {
+    newPage: page => dispatch(newPage(page))
+  };
+}
+
+const mapStateToProps = state => ({
+  page: state
+});
+
+export default connect(mapStateToProps, bindAction)(LeftPanel);
