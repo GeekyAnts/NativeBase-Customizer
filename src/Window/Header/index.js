@@ -1,40 +1,33 @@
 import React, { Component } from "react";
 import Ionicon from "react-ionicons";
 import Pane from "../../StyledComponents/Pane";
+import Icon from "../../StyledComponents/Icon";
+import Col from "../../StyledComponents/Col";
+import Row from "../../StyledComponents/Row";
 import Button from "../../StyledComponents/Button";
+import Text from "../../StyledComponents/Text";
 import logo from "../../assets/logo.png";
 
 class Header extends Component {
   render() {
     return (
-      <Pane style={{ background: "#252143", flex: 1 }}>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            height: "100%",
-            paddingLeft: 35,
-            paddingRight: 35
-          }}
-        >
-          <div style={{ alignItems: "center", display: "flex" }}>
+      <Pane uiBackground="300">
+        <Row>
+          <Col>
             <img src={logo} alt="Smiley face" height="57" width="49" />
-            <h2 style={{ fontWeight: "100", paddingLeft: 15 }}>NativeBase</h2>
-          </div>
-          <div>
-            <Button style={{ width: 47 }}>
-              <Ionicon
-                icon="ios-download-outline"
-                color="#FFF"
-                fontSize="22px"
+            <Text uiSize="xl" style={{ paddingLeft: 15 }}>NativeBase</Text>
+          </Col>
+          <Col contentRight>
+            <Button>
+              <Icon
+                name="ios-download-outline"
               />
             </Button>
-            <Button style={{ marginLeft: 8, width: 47 }}>
-              <Ionicon icon="ios-share-outline" color="#FFF" fontSize="22px" />
+            <Button style={{ marginLeft: 8 }}>
+              <Icon name="ios-share-outline" />
             </Button>
-          </div>
-        </div>
+          </Col>
+        </Row>
       </Pane>
     );
   }

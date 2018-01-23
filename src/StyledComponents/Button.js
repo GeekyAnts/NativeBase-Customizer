@@ -12,8 +12,8 @@ export default button`
       return "none";
     }
   }};
-  height: 35px;
-  // width: 47px;
+  height: ${(props: PropType) => (props.height ? props.height : "35px")};
+  width: ${(props: PropType) => (props.width ? props.width : "47px")};
   background: #3f3b5a;
   color: #FFF;
   border-radius: 3px

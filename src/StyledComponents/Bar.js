@@ -14,7 +14,6 @@ export default div`
       return "left";
     }
   }};
-  padding-left: 35px;
   color: #FFF;
   opacity: 0.6;
   display: flex;

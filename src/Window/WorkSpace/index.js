@@ -4,11 +4,13 @@ import { connect } from "react-redux";
 import Ionicon from "react-ionicons";
 
 import Button from "../../StyledComponents/Button";
+import Text from "../../StyledComponents/Text";
 import { nextPage, prevPage } from "../../Actions/navigation";
 
 class WorkSpace extends Component {
   render() {
-    console.log(this.props.page.selected, "test");
+    const totalPages = this.props.page.pageList.length;
+    const currentPageNum = this.props.page.selected + 1;
     return (
       <div
         style={{
@@ -28,7 +30,9 @@ class WorkSpace extends Component {
             fontSize="20px"
             style={{ opacity: 0.4 }}
           />
-          <span>1/10</span>
+          <span>
+            {currentPageNum}/{totalPages}
+          </span>
           <Ionicon
             icon="ios-arrow-forward"
             color="#FFF"
@@ -37,8 +41,8 @@ class WorkSpace extends Component {
           />
         </div>
         <div style={{ justifyContent: "center", display: "flex" }}>
-          <Button style={{ paddingLeft: 30, paddingRight: 30 }}>Design</Button>
-          <Button style={{ paddingLeft: 30, paddingRight: 30 }}>Code</Button>
+          <Button width="100px">Design</Button>
+          <Button width="100px">Code</Button>
         </div>
         {/* <button style={{ height: 40 }}>Prev</button> */}
         <div

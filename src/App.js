@@ -1,4 +1,5 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import { AppRegistry } from "react-native";
 import { Provider } from "react-redux";
 
