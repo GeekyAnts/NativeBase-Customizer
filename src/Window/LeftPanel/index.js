@@ -33,67 +33,67 @@ const datas = [
   },
   {
     name: "Badge",
-    route: "NHBadge",
+    route: "Badge",
     icon: "notifications",
     bg: "#4DCAE0"
   },
   {
     name: "Button",
-    route: "NHButton",
+    route: "Button",
     icon: "radio-button-off",
     bg: "#1EBC7C",
     types: "9"
   },
   {
     name: "Card",
-    route: "NHCard",
+    route: "Card",
     icon: "keypad",
     bg: "#B89EF5",
     types: "5"
   },
   {
     name: "Check Box",
-    route: "NHCheckbox",
+    route: "Checkbox",
     icon: "checkmark-circle",
     bg: "#EB6B23"
   },
   {
     name: "Deck Swiper",
-    route: "NHDeckSwiper",
+    route: "DeckSwiper",
     icon: "swap",
     bg: "#3591FA",
     types: "2"
   },
   {
     name: "Fab",
-    route: "NHFab",
+    route: "Fab",
     icon: "help-buoy",
     bg: "#EF6092",
     types: "2"
   },
   {
     name: "Form & Inputs",
-    route: "NHForm",
+    route: "Form",
     icon: "call",
     bg: "#EFB406",
     types: "12"
   },
   {
     name: "Icon",
-    route: "NHIcon",
+    route: "Icon",
     icon: "information-circle",
     bg: "#EF6092"
   },
   {
     name: "Layout",
-    route: "NHLayout",
+    route: "Layout",
     icon: "grid",
     bg: "#9F897C",
     types: "5"
   },
   {
     name: "List",
-    route: "NHList",
+    route: "List",
     icon: "lock",
     bg: "#5DCEE2",
     types: "7"
@@ -107,19 +107,19 @@ const datas = [
   },
   {
     name: "Picker",
-    route: "NHPicker",
+    route: "Picker",
     icon: "arrow-dropdown",
     bg: "#F50C75"
   },
   {
     name: "Radio",
-    route: "NHRadio",
+    route: "Radio",
     icon: "radio-button-on",
     bg: "#6FEA90"
   },
   {
     name: "SearchBar",
-    route: "NHSearchbar",
+    route: "Searchbar",
     icon: "search",
     bg: "#29783B"
   },
@@ -132,20 +132,20 @@ const datas = [
   },
   {
     name: "Spinner",
-    route: "NHSpinner",
+    route: "Spinner",
     icon: "navigate",
     bg: "#BE6F50"
   },
   {
     name: "Tabs",
-    route: "NHTab",
+    route: "Tab",
     icon: "home",
     bg: "#AB6AED",
     types: "3"
   },
   {
     name: "Thumbnail",
-    route: "NHThumbnail",
+    route: "Thumbnail",
     icon: "image",
     bg: "#cc0000",
     types: "2"
@@ -158,7 +158,7 @@ const datas = [
   },
   {
     name: "Typography",
-    route: "NHTypography",
+    route: "Typography",
     icon: "paper",
     bg: "#48525D"
   }

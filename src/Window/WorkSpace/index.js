@@ -8,6 +8,7 @@ import { nextPage, prevPage } from "../../Actions/navigation";
 
 class WorkSpace extends Component {
   render() {
+    console.log(this.props.page.selected, "test");
     return (
       <div
         style={{
@@ -58,7 +59,10 @@ class WorkSpace extends Component {
               onClick={() => this.props.prevPage()}
             />
           </Button>
-          <Artboard screen={this.props.page} route={this.props.route} />
+          <Artboard
+            screen={this.props.page.selected}
+            route={this.props.route}
+          />
           <Button style={{ background: "transparent", marginLeft: 56 }}>
             <Ionicon
               icon="ios-arrow-forward"
@@ -102,7 +106,8 @@ function bindAction(dispatch) {
 
 const mapStateToProps = state => ({
   page: state.navigation,
-  route: state.selectPage.page
+  route: state.navigation.page,
+  test: state
 });
 
 export default connect(mapStateToProps, bindAction)(WorkSpace);
