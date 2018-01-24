@@ -1,5 +1,5 @@
 const initialState = {
-  page: "Home",
+  page: "Anatomy",
   selected: 0,
   pageList: [
     {

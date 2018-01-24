@@ -2,101 +2,107 @@ import React, { Component } from "react";
 import Artboard from "./Artboard";
 import { connect } from "react-redux";
 import Ionicon from "react-ionicons";
+import Code from "./Code";
 
+import Screen from "../../StyledComponents/Screen";
+import Col from "../../StyledComponents/Col";
 import Button from "../../StyledComponents/Button";
+import ButtonGroup from "../../StyledComponents/ButtonGroup";
 import Text from "../../StyledComponents/Text";
+import Icon from "../../StyledComponents/Icon";
+import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import { nextPage, prevPage } from "../../Actions/navigation";
 
 class WorkSpace extends Component {
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      choice: false
+    };
+  }
   render() {
     const totalPages = this.props.page.pageList.length;
     const currentPageNum = this.props.page.selected + 1;
     return (
-      <div
-        style={{
-          alignItems: "center",
-          background: "#221f3d",
-          flex: 1,
-          paddingTop: 20,
-          paddingBottom: 20,
-          paddingLeft: 40,
-          paddingRight: 40
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", opacity: 0.6 }}>
-          <Ionicon
-            icon="ios-arrow-back"
-            color="#FFF"
+      <Screen uiBackground="400">
+        <ButtonGroup contentLeft style={{ opacity: 0.6, alignItems: "center" }}>
+          <Icon
+            name="ios-arrow-back"
             fontSize="20px"
-            style={{ opacity: 0.4 }}
+            style={{ opacity: currentPageNum <= 1 ? 0.2 : 0.7 }}
+            onClick={() => this.props.prevPage()}
           />
-          <span>
+          <Text uiSize="s">
             {currentPageNum}/{totalPages}
-          </span>
-          <Ionicon
-            icon="ios-arrow-forward"
-            color="#FFF"
+          </Text>
+          <Icon
+            name="ios-arrow-forward"
             fontSize="20px"
-            style={{ opacity: 0.4 }}
+            style={{ opacity: currentPageNum === totalPages ? 0.2 : 0.7 }}
+            onClick={() => this.props.nextPage()}
           />
-        </div>
-        <div style={{ justifyContent: "center", display: "flex" }}>
-          <Button width="100px">Design</Button>
-          <Button width="100px">Code</Button>
-        </div>
-        {/* <button style={{ height: 40 }}>Prev</button> */}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            marginTop: 40,
-            marginBottom: 40
-          }}
-        >
-          <Button style={{ background: "transparent", marginRight: 56 }}>
-            <Ionicon
-              icon="ios-arrow-back"
-              color="#FFF"
-              fontSize="46px"
-              style={{ opacity: 0.4 }}
-              onClick={() => this.props.prevPage()}
-            />
+        </ButtonGroup>
+        <ButtonGroup>
+          <Button leftRadius active height="40px" width="117px">
+            Design
           </Button>
-          <Artboard
-            screen={this.props.page.selected}
-            route={this.props.route}
-          />
-          <Button style={{ background: "transparent", marginLeft: 56 }}>
-            <Ionicon
-              icon="ios-arrow-forward"
-              color="#FFF"
-              fontSize="46px"
-              style={{ opacity: 0.4 }}
-              onClick={() => this.props.nextPage()}
-            />
+          <Button rightRadius height="40px" width="117px">
+            Code
           </Button>
-        </div>
-        <div style={{ justifyContent: "center", display: "flex" }}>
-          <Button style={{ width: 53 }}>
-            <Ionicon
-              icon="logo-apple"
-              color="#FFF"
-              fontSize="27px"
-              style={{ opacity: 0.4 }}
-            />
-          </Button>
-          <Button style={{ marginLeft: 8, width: 53 }}>
-            <Ionicon
-              icon="logo-android"
-              color="#FFF"
-              fontSize="27px"
-              style={{ opacity: 0.4 }}
-            />
-          </Button>
-        </div>
-        {/* <button style={{ height: 40 }}>Next</button> */}
-      </div>
+        </ButtonGroup>
+        {this.state.choice ? (
+          <WrapperDiv>
+            <Col
+              contentCenter
+              style={{
+                marginTop: 40,
+                marginBottom: 40
+              }}
+            >
+              <Button
+                transparent
+                disabled={currentPageNum <= 1}
+                style={{ marginRight: 56 }}
+                onClick={() => this.props.prevPage()}
+              >
+                <Icon
+                  name="ios-arrow-back"
+                  fontSize="46px"
+                  style={{ opacity: 0.4 }}
+                />
+              </Button>
+              <Artboard
+                screen={this.props.page.selected}
+                route={this.props.route}
+              />
+              <Button
+                transparent
+                disabled={currentPageNum === totalPages}
+                style={{ marginLeft: 56 }}
+                onClick={() => this.props.nextPage()}
+              >
+                <Icon
+                  name="ios-arrow-forward"
+                  fontSize="46px"
+                  style={{ opacity: 0.4 }}
+                />
+              </Button>
+            </Col>
+            <ButtonGroup>
+              <Button width="53px" active>
+                <Icon name="logo-apple" fontSize="27px" />
+              </Button>
+              <Button width="53px" style={{ marginLeft: 8 }}>
+                <Icon name="logo-android" fontSize="27px" />
+              </Button>
+            </ButtonGroup>
+          </WrapperDiv>
+        ) : (
+          <WrapperDiv>
+            <Code />
+          </WrapperDiv>
+        )}
+      </Screen>
     );
   }
 }

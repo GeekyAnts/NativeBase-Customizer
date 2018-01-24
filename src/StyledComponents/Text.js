@@ -2,10 +2,10 @@ import styled, { StyledFunction } from "styled-components";
 
 const uiSize = {
   xl: 28,
-  l: 16,
-  m: 13,
-  s: 12,
-  xs: 11
+  l: 24,
+  m: 18,
+  s: 14,
+  xs: 12
 };
 
 const div: StyledFunction<PropType & React.HTMLProps<HTMLDivElement>> =

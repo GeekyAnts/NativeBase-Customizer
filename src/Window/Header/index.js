@@ -18,12 +18,12 @@ class Header extends Component {
             <Text uiSize="xl" style={{ paddingLeft: 15 }}>NativeBase</Text>
           </Col>
           <Col contentRight>
-            <Button>
+            <Button active>
               <Icon
                 name="ios-download-outline"
               />
             </Button>
-            <Button style={{ marginLeft: 8 }}>
+            <Button active style={{ marginLeft: 8 }}>
               <Icon name="ios-share-outline" />
             </Button>
           </Col>

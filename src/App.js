@@ -50,7 +50,6 @@ class App extends React.Component {
               defaultSize={350}
               className="primary"
               primary="second"
-              pane2Style={{ display: "flex" }}
               paneStyle={{ overflow: "scroll" }}
             >
               <WorkSpace />

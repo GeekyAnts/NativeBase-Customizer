@@ -171,7 +171,11 @@ class LeftPanel extends Component {
     const renObjData = datas.map(function(data, idx) {
       const icon = "ios-" + data.icon;
       return (
-        <Bar key={idx} onClick={() => that.props.newPage(data.route)}>
+        <Bar
+          key={idx}
+          active={data.route === that.props.page.navigation.page}
+          onClick={() => that.props.newPage(data.route)}
+        >
           <Icon
             name={icon}
             uiSize="26px"
@@ -182,7 +186,7 @@ class LeftPanel extends Component {
       );
     });
     return (
-      <Pane uiBackground="300" style={{ paddingRight: 0, display: "flex" }}>
+      <Pane uiBackground="300" style={{ padding: 0, display: "flex" }}>
         <WrapperDiv style={{ overflowY: "scroll" }}>{renObjData}</WrapperDiv>
       </Pane>
     );
