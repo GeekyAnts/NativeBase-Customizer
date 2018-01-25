@@ -10,4 +10,5 @@ export default div`
   background: ${(props: PropType) =>
     props.uiBackground ? COLOR[props.uiBackground] : "transparent"};
   padding: 25px;
+  padding-bottom: 0px;
 `;

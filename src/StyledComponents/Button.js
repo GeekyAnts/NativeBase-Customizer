@@ -27,9 +27,7 @@ export default button`
   color: #FFF;
   box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
   border-radius: ${(props: PropType) => (props.noRadius ? "0px" : "3px")};
-  :hover {
-    background: ${COLOR[500]}
-  };
+  
   opacity: ${(props: PropType) => {
     if (props.disabled) {
       return 0.2;
@@ -41,14 +39,15 @@ export default button`
   ${(props: PropType) => {
     if (props.transparent) {
       return "background: transparent; box-shadow: none;:hover {background: transparent}";
-    }
-    else if(props.leftRadius) {
-      return "border-radius: 3px 0 0 3px"
-    }
-    else if(props.rightRadius) {
-      return "border-radius: 0 3px 3px 0"
+    } else if (props.leftRadius) {
+      return "border-radius: 3px 0 0 3px";
+    } else if (props.rightRadius) {
+      return "border-radius: 0 3px 3px 0";
     }
   }}
 
   
 `;
+// :hover {
+//   background: ${COLOR[500]}
+// };

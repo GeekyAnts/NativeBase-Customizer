@@ -17,8 +17,11 @@ class WorkSpace extends Component {
   constructor(props: any) {
     super(props);
     this.state = {
-      choice: false
+      choice: true
     };
+  }
+  selection() {
+    this.setState({ choice: !this.state.choice });
   }
   render() {
     const totalPages = this.props.page.pageList.length;
@@ -43,15 +46,27 @@ class WorkSpace extends Component {
           />
         </ButtonGroup>
         <ButtonGroup>
-          <Button leftRadius active height="40px" width="117px">
+          <Button
+            leftRadius
+            active={this.state.choice}
+            height="40px"
+            width="117px"
+            onClick={() => this.selection()}
+          >
             Design
           </Button>
-          <Button rightRadius height="40px" width="117px">
+          <Button
+            rightRadius
+            active={!this.state.choice}
+            height="40px"
+            width="117px"
+            onClick={() => this.selection()}
+          >
             Code
           </Button>
         </ButtonGroup>
         {this.state.choice ? (
-          <WrapperDiv>
+          <WrapperDiv style={{ paddingBottom: 25 }}>
             <Col
               contentCenter
               style={{
