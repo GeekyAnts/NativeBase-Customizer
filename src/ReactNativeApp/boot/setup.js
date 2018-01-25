@@ -108,7 +108,7 @@ function bindAction(dispatch) {
 }
 
 const mapStateToProps = state => ({
-  variables: state.theme.variables
+  variables: state.theme.variable
 });
 
 export default connect(mapStateToProps, bindAction)(Setup);
