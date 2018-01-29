@@ -8,6 +8,14 @@ export default function(state: any = initialState, action: Function) {
       ...state,
       variable: action.variable
     };
+  } else if (action.type === "CHANGE") {
+    console.log(action, "act");
+    return {
+      ...state,
+      variable: {
+        fontSizeBase: action.value
+      }
+    };
   }
   return state;
 }

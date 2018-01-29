@@ -14,7 +14,7 @@ const div: StyledFunction<PropType & React.HTMLProps<HTMLDivElement>> =
 export default div`
   font-size: ${(props: any) =>
     props.uiSize ? uiSize[props.uiSize] : uiSize["s"]}px;
-  letter-spacing: -0.27px;
+  letter-spacing: 1px;
   // font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: ${(props: any) => (props.header ? "500" : "100")};
   line-height: calc(${(props: any) =>

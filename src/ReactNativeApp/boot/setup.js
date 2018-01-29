@@ -35,9 +35,6 @@ import getTheme from "../theme/components";
 import variables from "../theme/variables/commonColor";
 
 class Setup extends Component {
-  componentWillMount() {
-    this.props.appliedTheme(variables);
-  }
   appScreen() {
     switch (this.props.screen.screen) {
       case 0:
@@ -94,7 +91,7 @@ class Setup extends Component {
   }
   render() {
     return (
-      <StyleProvider style={getTheme(variables)}>
+      <StyleProvider style={getTheme(this.props.variables)}>
         {this.appScreen()}
       </StyleProvider>
     );
@@ -108,7 +105,7 @@ function bindAction(dispatch) {
 }
 
 const mapStateToProps = state => ({
-  variables: state.theme.variable
+  variables: state.theme.variables
 });
 
 export default connect(mapStateToProps, bindAction)(Setup);

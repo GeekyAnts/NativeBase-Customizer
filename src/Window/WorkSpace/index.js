@@ -12,6 +12,8 @@ import Text from "../../StyledComponents/Text";
 import Icon from "../../StyledComponents/Icon";
 import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import { nextPage, prevPage } from "../../Actions/navigation";
+import { appliedTheme } from "../../Actions/theme";
+import variables from "../../ReactNativeApp/theme/variables/commonColor";
 
 class WorkSpace extends Component {
   constructor(props: any) {
@@ -19,6 +21,9 @@ class WorkSpace extends Component {
     this.state = {
       choice: true
     };
+  }
+  componentWillMount() {
+    this.props.appliedTheme(variables);
   }
   selection() {
     this.setState({ choice: !this.state.choice });
@@ -125,14 +130,16 @@ class WorkSpace extends Component {
 function bindAction(dispatch) {
   return {
     nextPage: () => dispatch(nextPage()),
-    prevPage: () => dispatch(prevPage())
+    prevPage: () => dispatch(prevPage()),
+    appliedTheme: variables => dispatch(appliedTheme(variables))
   };
 }
 
 const mapStateToProps = state => ({
   page: state.navigation,
   route: state.navigation.page,
-  test: state
+  test: state,
+  variables: state.theme
 });
 
 export default connect(mapStateToProps, bindAction)(WorkSpace);

@@ -31,16 +31,16 @@
   padding: 0 3px 0 5px;
   min-width: 20px;
   text-align: right;
-  color: #fff;
+  color: #fff !important;
   opacity: 0.3;
   white-space: nowrap;
 }
 
 .CodeMirror-guttermarker {
-  color: black;
+  color: black !important;
 }
 .CodeMirror-guttermarker-subtle {
-  color: #999;
+  color: #999 !important;
 }
 
 /* CURSOR */
@@ -57,13 +57,13 @@
 .cm-fat-cursor .CodeMirror-cursor {
   width: auto;
   border: 0 !important;
-  background: #7e7;
+  background: #7e7 !important;
 }
 .cm-fat-cursor div.CodeMirror-cursors {
   z-index: 1;
 }
 .cm-fat-cursor-mark {
-  background-color: rgba(20, 255, 20, 0.5);
+  background-color: rgba(20, 255, 20, 0.5) !important;
   -webkit-animation: blink 1.06s steps(1) infinite;
   -moz-animation: blink 1.06s steps(1) infinite;
   animation: blink 1.06s steps(1) infinite;
@@ -74,7 +74,7 @@
   -webkit-animation: blink 1.06s steps(1) infinite;
   -moz-animation: blink 1.06s steps(1) infinite;
   animation: blink 1.06s steps(1) infinite;
-  background-color: #7e7;
+  background-color: #7e7 !important;
 }
 @-moz-keyframes blink {
   0% {
@@ -131,16 +131,16 @@
 /* DEFAULT THEME */
 
 .cm-s-default .cm-header {
-  color: blue;
+  color: blue !important;
 }
 .cm-s-default .cm-quote {
-  color: #090;
+  color: #090 !important;
 }
 .cm-negative {
-  color: #d44;
+  color: #d44 !important;
 }
 .cm-positive {
-  color: #292;
+  color: #292 !important;
 }
 .cm-header,
 .cm-strong {
@@ -157,71 +157,71 @@
 }
 
 .cm-s-default .cm-keyword {
-  color: #708;
+  color: #708 !important;
 }
 .cm-s-default .cm-atom {
-  color: #219;
+  color: #219 !important;
 }
 .cm-s-default .cm-number {
-  color: #164;
+  color: #164 !important;
 }
 .cm-s-default .cm-def {
-  color: #fff;
+  color: #fff !important;
   opacity: 0.7;
 }
 .cm-s-default .cm-variable,
 .cm-s-default .cm-punctuation,
 .cm-s-default .cm-property,
 .cm-s-default .cm-operator {
-  color: #fff;
+  color: #fff !important;
   opacity: 0.7;
 }
 .cm-s-default .cm-variable-2 {
-  color: #2a93cf;
+  color: #2a93cf !important;
 }
 .cm-s-default .cm-variable-3,
 .cm-s-default .cm-type {
-  color: #085;
+  color: #085 !important;
 }
 .cm-s-default .cm-comment {
-  color: #085;
+  color: #085 !important;
 }
 .cm-s-default .cm-string {
-  color: #085;
+  color: #085 !important;
 }
 .cm-s-default .cm-string-2 {
-  color: #a50;
+  color: #a50 !important;
 }
 .cm-s-default .cm-meta {
-  color: #555;
+  color: #555 !important;
 }
 .cm-s-default .cm-qualifier {
-  color: #555;
+  color: #555 !important;
 }
 .cm-s-default .cm-builtin {
-  color: #30a;
+  color: #30a !important;
 }
 .cm-s-default .cm-bracket {
-  color: #997;
+  color: #997 !important;
 }
 .cm-s-default .cm-tag {
-  color: #170;
+  color: #170 !important;
 }
 .cm-s-default .cm-attribute {
-  color: #00c;
+  color: #00c !important;
 }
 .cm-s-default .cm-hr {
-  color: #999;
+  color: #999 !important;
 }
 .cm-s-default .cm-link {
-  color: #00c;
+  color: #00c !important;
 }
 
 .cm-s-default .cm-error {
-  color: #f00;
+  color: #f00 !important;
 }
 .cm-invalidchar {
-  color: #f00;
+  color: #f00 !important;
 }
 
 .CodeMirror-composing {
@@ -231,16 +231,16 @@
 /* Default styles for common addons */
 
 div.CodeMirror span.CodeMirror-matchingbracket {
-  color: #0b0;
+  color: #0b0 !important;
 }
 div.CodeMirror span.CodeMirror-nonmatchingbracket {
-  color: #a22;
+  color: #a22 !important;
 }
 .CodeMirror-matchingtag {
-  background: rgba(255, 150, 0, 0.3);
+  background: rgba(255, 150, 0, 0.3) !important;
 }
 .CodeMirror-activeline-background {
-  background: #e8f2ff;
+  background: #e8f2ff !important;
 }
 
 /* STOP */
@@ -281,7 +281,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   position: absolute;
   z-index: 6;
   display: none;
-  background: #2f2b4a;
+  background: #2f2b4a !important;
   width: 10px !important;
   right: -1px !important;
   border-radius: 4px;
@@ -314,7 +314,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   min-height: 100%;
   z-index: 3;
   min-width: 30px;
-  background: #221f3d;
+  background: #221f3d !important;
 }
 .CodeMirror-gutter {
   white-space: normal;
@@ -402,7 +402,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 
 .CodeMirror-code {
   outline: none;
-  color: #d0cfd6;
+  color: #d0cfd6 !important;
   letter-spacing: 1px;
   line-height: 20px;
   font-weight: 100;
@@ -448,10 +448,10 @@ div.CodeMirror-dragcursors {
 }
 
 .CodeMirror-selected {
-  background: #3f3b5a;
+  background: #3f3b5a !important;
 }
 .CodeMirror-focused .CodeMirror-selected {
-  background: #3f3b5a;
+  background: #3f3b5a !important;
 }
 .CodeMirror-crosshair {
   cursor: crosshair;
@@ -459,17 +459,17 @@ div.CodeMirror-dragcursors {
 .CodeMirror-line::selection,
 .CodeMirror-line > span::selection,
 .CodeMirror-line > span > span::selection {
-  background: #3f3b5a;
+  background: #3f3b5a !important;
 }
 .CodeMirror-line::-moz-selection,
 .CodeMirror-line > span::-moz-selection,
 .CodeMirror-line > span > span::-moz-selection {
-  background: #3f3b5a;
+  background: #3f3b5a !important;
 }
 
 .cm-searching {
-  background-color: #ffa;
-  background-color: rgba(255, 255, 0, 0.4);
+  background-color: #ffa !important;
+  background-color: rgba(255, 255, 0, 0.4) !important;
 }
 
 /* Used to force a border model for a node */

@@ -7,7 +7,7 @@ export default div`
     display: flex;
     padding: 5px 0;
     padding-top:${(props: PropType) => (props.noTopPadding ? "0" : "")};
-    padding-bottom: ${(props: PropType) => (props.noPadding ? "0" : "20px")};
+    padding-bottom: ${(props: PropType) => (props.noPadding ? "0" : "15px")};
     align-items: ${(props: PropType) => {
       if (props.alignTop) {
         return "flex-start";

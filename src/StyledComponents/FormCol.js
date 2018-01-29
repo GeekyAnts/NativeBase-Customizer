@@ -7,7 +7,6 @@ export default div`
     display: ${(props: any) => (props.flex ? "flex" : "block")};
     width: 100%;
     flex: ${(props: any) => (props.uiSize ? props.uiSize : 1)};
-    padding: ${(props: any) => (props.first ? "0 0 0 0" : "0 0 0 8px")};
     align-items: ${(props: PropType) => {
       if (props.alignTop) {
         return "flex-start";

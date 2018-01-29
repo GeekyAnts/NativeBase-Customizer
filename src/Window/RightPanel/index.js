@@ -5,13 +5,28 @@ import FormRow from "../../StyledComponents/FormRow";
 import FormCol from "../../StyledComponents/FormCol";
 import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import Dropdown from "../../StyledComponents/Dropdown";
-import Pane from "../../StyledComponents/Pane";
-import Text from "../../StyledComponents/Text";
+import Header from "./Header";
+import Badge from "./Badge";
+import Button from "./Button";
+import Card from "./Card";
+import CheckBox from "./CheckBox";
+import Footer from "./Footer";
+import FooterTab from "./FooterTab";
+import Icon from "./Icon";
+import InputGroup from "./InputGroup";
+import List from "./List";
+import RadioButton from "./RadioButton";
+import Segment from "./Segment";
+import Spinner from "./Spinner";
+import Tabs from "./Tabs";
+import Title from "./Title";
+import Colors from "./Colors";
+import DefaultText from "./Text";
 import { appliedTheme } from "../../Actions/theme";
 
 class RightPanel extends Component {
   render() {
-    console.log(this.props.variables, "var");
+    console.log(this.props.page.navigation.page, "ss");
     return (
       <WrapperDiv uiBackground="500">
         <FormGroup>
@@ -26,23 +41,23 @@ class RightPanel extends Component {
             </FormCol>
           </FormRow>
         </FormGroup>
-        <FormGroup noBorder>
-          <FormRow>
-            <FormCol>
-              <Text header uiSize="m">
-                Header
-              </Text>
-            </FormCol>
-          </FormRow>
-          <FormRow>
-            <FormCol>
-              <Text>FontSize</Text>
-            </FormCol>
-            <FormCol>
-              <input type="number" value={this.props.variables.titleFontSize} />
-            </FormCol>
-          </FormRow>
-        </FormGroup>
+        <Badge />
+        <Button />
+        <Card />
+        <CheckBox />
+        <DefaultText />
+        <Footer />
+        <FooterTab />
+        <Header />
+        <Icon />
+        <InputGroup />
+        <List />
+        <RadioButton />
+        <Segment />
+        <Spinner />
+        <Tabs />
+        <Title />
+        <Colors />
       </WrapperDiv>
     );
   }
@@ -55,7 +70,8 @@ function bindAction(dispatch) {
 }
 
 const mapStateToProps = state => ({
-  variables: state.theme.variable
+  variables: state.theme.variable,
+  page: state
 });
 
 export default connect(mapStateToProps, bindAction)(RightPanel);
