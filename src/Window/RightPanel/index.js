@@ -35,27 +35,29 @@ class RightPanel extends Component {
             <FormCol uiSize={3}>
               <Dropdown>
                 <option value="Platform">Platform</option>
-                <option value="Material">Material</option>
-                <option value="Common">Common</option>
+                {/* <option value="Material">Material</option> */}
+                {/* <option value="Common">Common</option> */}
               </Dropdown>
             </FormCol>
           </FormRow>
         </FormGroup>
-        <Badge />
-        <Button />
-        <Card />
-        <CheckBox />
-        <DefaultText />
-        <Footer />
-        <FooterTab />
-        <Header />
-        <Icon />
-        <InputGroup />
-        <List />
-        <RadioButton />
-        <Segment />
-        <Spinner />
-        <Tabs />
+        {this.props.page.navigation.page === "Badge" && <Badge />}
+        {this.props.page.navigation.page === "Button" && <Button />}
+        {this.props.page.navigation.page === "Card" && <Card />}
+        {this.props.page.navigation.page === "CheckBox" && <CheckBox />}
+        {this.props.page.navigation.page === "DefaultText" && <DefaultText />}
+        {(this.props.page.navigation.page === "Anatomy" ||
+          this.props.page.navigation.page === "Header") && <Header />}
+        {(this.props.page.navigation.page === "Anatomy" ||
+          this.props.page.navigation.page === "Footer") && <Footer />}
+        {this.props.page.navigation.page === "FooterTab" && <FooterTab />}
+        {this.props.page.navigation.page === "Icon" && <Icon />}
+        {this.props.page.navigation.page === "InputGroup" && <InputGroup />}
+        {this.props.page.navigation.page === "List" && <List />}
+        {this.props.page.navigation.page === "RadioButton" && <RadioButton />}
+        {this.props.page.navigation.page === "Segment" && <Segment />}
+        {this.props.page.navigation.page === "Spinner" && <Spinner />}
+        {this.props.page.navigation.page === "Tabs" && <Tabs />}
         <Title />
         <Colors />
       </WrapperDiv>

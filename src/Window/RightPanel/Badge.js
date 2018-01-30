@@ -7,21 +7,10 @@ import Text from "../../StyledComponents/Text";
 import Input from "../../StyledComponents/Input";
 import ColorPicker from "../../StyledComponents/ColorPicker";
 import Slider from "../../StyledComponents/Slider";
-import { appliedTheme, changeHeight } from "../../Actions/theme";
+import { appliedTheme, changeValue } from "../../Actions/theme";
 
 class Badge extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      newSize: this.props.variables.fontSizeBase
-    };
-  }
-  changeHeight(val) {
-    this.props.changeHeight(val);
-    this.setState({ newSize: val });
-  }
   render() {
-    console.log(this.props.variables.fontSizeBase, "size");
     return (
       <FormGroup noBorder>
         <FormRow>
@@ -38,8 +27,10 @@ class Badge extends Component {
           <FormCol>
             <Input
               type="number"
-              value={this.state.newSize}
-              onChange={e => this.changeHeight(e.target.value)}
+              value={this.props.variables.fontSizeBase}
+              onChange={e =>
+                this.props.changeValue("fontSizeBase", e.target.value)
+              }
             />
           </FormCol>
         </FormRow>
@@ -49,7 +40,10 @@ class Badge extends Component {
             <Text>Background Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.badgeBg} />
+            <ColorPicker
+              value={this.props.variables.badgeBg}
+              onChangeColor={color => this.props.changeValue("badgeBg", color)}
+            />
           </FormCol>
         </FormRow>
 
@@ -58,7 +52,12 @@ class Badge extends Component {
             <Text>Text Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.badgeColor} />
+            <ColorPicker
+              value={this.props.variables.badgeColor}
+              onChangeColor={color =>
+                this.props.changeValue("badgeColor", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -67,7 +66,13 @@ class Badge extends Component {
             <Text>Padding</Text>
           </FormCol>
           <FormCol>
-            <Input type="number" value={this.props.variables.badgePadding} />
+            <Input
+              type="number"
+              value={this.props.variables.badgePadding}
+              onChange={e =>
+                this.props.changeValue("badgePadding", e.target.value)
+              }
+            />
           </FormCol>
         </FormRow>
       </FormGroup>
@@ -78,7 +83,7 @@ class Badge extends Component {
 function bindAction(dispatch) {
   return {
     appliedTheme: () => dispatch(appliedTheme()),
-    changeHeight: val => dispatch(changeHeight(val))
+    changeValue: (property, val) => dispatch(changeValue(property, val))
   };
 }
 

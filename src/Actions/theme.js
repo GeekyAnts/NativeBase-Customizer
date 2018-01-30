@@ -9,14 +9,15 @@ export function appliedTheme(variable) {
     dispatch(theme(variable));
   };
 }
-export function change(value) {
+export function change(property, value) {
   return {
     type: "CHANGE",
+    property,
     value
   };
 }
-export function changeHeight(value) {
+export function changeValue(property, value) {
   return dispatch => {
-    dispatch(change(value));
+    dispatch(change(property, value));
   };
 }

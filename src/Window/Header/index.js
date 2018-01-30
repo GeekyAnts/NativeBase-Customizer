@@ -15,17 +15,18 @@ class Header extends Component {
         <Row>
           <Col>
             <img src={logo} alt="Smiley face" height="57" width="49" />
-            <Text uiSize="xl" style={{ paddingLeft: 15 }}>NativeBase</Text>
+            <Text uiSize="xl" style={{ paddingLeft: 15 }}>
+              NativeBase
+            </Text>
           </Col>
           <Col contentRight>
             <Button active>
-              <Icon
-                name="ios-download-outline"
-              />
+              <Icon name="ios-download-outline" />
             </Button>
             <Button active style={{ marginLeft: 8 }}>
               <Icon name="ios-share-outline" />
             </Button>
+            {/* <input type="file" onChange={e => console.log(e, "val")} /> */}
           </Col>
         </Row>
       </Pane>

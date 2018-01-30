@@ -5,7 +5,7 @@ import FormRow from "../../StyledComponents/FormRow";
 import FormCol from "../../StyledComponents/FormCol";
 import Text from "../../StyledComponents/Text";
 import ColorPicker from "../../StyledComponents/ColorPicker";
-import { appliedTheme } from "../../Actions/theme";
+import { appliedTheme, changeValue } from "../../Actions/theme";
 
 class Colors extends Component {
   render() {
@@ -24,7 +24,12 @@ class Colors extends Component {
             <Text>Primary</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.brandPrimary} />
+            <ColorPicker
+              value={this.props.variables.brandPrimary}
+              onChangeColor={color =>
+                this.props.changeValue("brandPrimary", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -33,7 +38,12 @@ class Colors extends Component {
             <Text>Info</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.brandInfo} />
+            <ColorPicker
+              value={this.props.variables.brandInfo}
+              onChangeColor={color =>
+                this.props.changeValue("brandInfo", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -42,7 +52,12 @@ class Colors extends Component {
             <Text>Success</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.brandSuccess} />
+            <ColorPicker
+              value={this.props.variables.brandSuccess}
+              onChangeColor={color =>
+                this.props.changeValue("brandSuccess", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -51,7 +66,12 @@ class Colors extends Component {
             <Text>Danger</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.brandDanger} />
+            <ColorPicker
+              value={this.props.variables.brandDanger}
+              onChangeColor={color =>
+                this.props.changeValue("brandDanger", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -60,7 +80,12 @@ class Colors extends Component {
             <Text>Warning</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.brandWarning} />
+            <ColorPicker
+              value={this.props.variables.brandWarning}
+              onChangeColor={color =>
+                this.props.changeValue("brandWarning", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -69,7 +94,12 @@ class Colors extends Component {
             <Text>Dark</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.brandDark} />
+            <ColorPicker
+              value={this.props.variables.brandDark}
+              onChangeColor={color =>
+                this.props.changeValue("brandDark", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -78,7 +108,12 @@ class Colors extends Component {
             <Text>Light</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.brandLight} />
+            <ColorPicker
+              value={this.props.variables.brandLight}
+              onChangeColor={color =>
+                this.props.changeValue("brandLight", color)
+              }
+            />
           </FormCol>
         </FormRow>
       </FormGroup>
@@ -88,7 +123,8 @@ class Colors extends Component {
 
 function bindAction(dispatch) {
   return {
-    appliedTheme: () => dispatch(appliedTheme())
+    appliedTheme: () => dispatch(appliedTheme()),
+    changeValue: (property, val) => dispatch(changeValue(property, val))
   };
 }
 

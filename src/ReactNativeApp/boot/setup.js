@@ -32,7 +32,7 @@ import Actionsheet from "../screens/actionsheet";
 
 import AppNavigator from "../AppNavigator";
 import getTheme from "../theme/components";
-import variables from "../theme/variables/commonColor";
+import variables from "../theme/variables/material";
 
 class Setup extends Component {
   appScreen() {
@@ -90,6 +90,7 @@ class Setup extends Component {
     }
   }
   render() {
+    console.log(this.props.variables, "var");
     return (
       <StyleProvider style={getTheme(this.props.variables)}>
         {this.appScreen()}
@@ -105,7 +106,7 @@ function bindAction(dispatch) {
 }
 
 const mapStateToProps = state => ({
-  variables: state.theme.variables
+  variables: state.theme.variable
 });
 
 export default connect(mapStateToProps, bindAction)(Setup);

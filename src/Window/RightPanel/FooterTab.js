@@ -7,7 +7,7 @@ import Text from "../../StyledComponents/Text";
 import Input from "../../StyledComponents/Input";
 import ColorPicker from "../../StyledComponents/ColorPicker";
 import Slider from "../../StyledComponents/Slider";
-import { appliedTheme } from "../../Actions/theme";
+import { appliedTheme, changeValue } from "../../Actions/theme";
 
 class FooterTab extends Component {
   render() {
@@ -27,7 +27,13 @@ class FooterTab extends Component {
             <Text>FontSize</Text>
           </FormCol>
           <FormCol>
-            <Input type="number" value={this.props.variables.tabBarTextSize} />
+            <Input
+              type="number"
+              value={this.props.variables.tabBarTextSize}
+              onChange={e =>
+                this.props.changeValue("tabBarTextSize", e.target.value)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -36,7 +42,12 @@ class FooterTab extends Component {
             <Text>Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.tabBarTextColor} />
+            <ColorPicker
+              value={this.props.variables.tabBarTextColor}
+              onChangeColor={color =>
+                this.props.changeValue("tabBarTextColor", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -45,7 +56,12 @@ class FooterTab extends Component {
             <Text>Active Background Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.tabActiveBgColor} />
+            <ColorPicker
+              value={this.props.variables.tabActiveBgColor}
+              onChangeColor={color =>
+                this.props.changeValue("tabActiveBgColor", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -54,7 +70,12 @@ class FooterTab extends Component {
             <Text>Active Text Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.tabBarActiveTextColor} />
+            <ColorPicker
+              value={this.props.variables.tabBarActiveTextColor}
+              onChangeColor={color =>
+                this.props.changeValue("tabBarActiveTextColor", color)
+              }
+            />
           </FormCol>
         </FormRow>
       </FormGroup>
@@ -64,7 +85,8 @@ class FooterTab extends Component {
 
 function bindAction(dispatch) {
   return {
-    appliedTheme: () => dispatch(appliedTheme())
+    appliedTheme: () => dispatch(appliedTheme()),
+    changeValue: (property, val) => dispatch(changeValue(property, val))
   };
 }
 

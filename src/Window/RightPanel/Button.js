@@ -7,7 +7,7 @@ import Text from "../../StyledComponents/Text";
 import Input from "../../StyledComponents/Input";
 import ColorPicker from "../../StyledComponents/ColorPicker";
 import Slider from "../../StyledComponents/Slider";
-import { appliedTheme } from "../../Actions/theme";
+import { appliedTheme, changeValue } from "../../Actions/theme";
 
 class Button extends Component {
   render() {
@@ -25,7 +25,13 @@ class Button extends Component {
             <Text>FontFamily</Text>
           </FormCol>
           <FormCol>
-            <Input type="text" value={this.props.variables.btnFontFamily} />
+            <Input
+              type="text"
+              value={this.props.variables.btnFontFamily}
+              onChange={e =>
+                this.props.changeValue("btnFontFamily", e.target.value)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -34,7 +40,12 @@ class Button extends Component {
             <Text>Disabled Button Background</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.btnDisabledBg} />
+            <ColorPicker
+              value={this.props.variables.btnDisabledBg}
+              onChangeColor={color =>
+                this.props.changeValue("btnDisabledBg", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -43,7 +54,13 @@ class Button extends Component {
             <Text>Padding</Text>
           </FormCol>
           <FormCol>
-            <Input type="number" value={this.props.variables.buttonPadding} />
+            <Input
+              type="number"
+              value={this.props.variables.buttonPadding}
+              onChange={e =>
+                this.props.changeValue("buttonPadding", e.target.value)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -52,7 +69,12 @@ class Button extends Component {
             <Text>Primary Background</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.btnPrimaryBg} />
+            <ColorPicker
+              value={this.props.variables.btnPrimaryBg}
+              onChangeColor={color =>
+                this.props.changeValue("btnPrimaryBg", color)
+              }
+            />
           </FormCol>
         </FormRow>
         <FormRow>
@@ -60,7 +82,12 @@ class Button extends Component {
             <Text>Primary Text Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.btnPrimaryColor} />
+            <ColorPicker
+              value={this.props.variables.btnPrimaryColor}
+              onChangeColor={color =>
+                this.props.changeValue("btnPrimaryColor", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -69,7 +96,12 @@ class Button extends Component {
             <Text>Info Background</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.btnInfoBg} />
+            <ColorPicker
+              value={this.props.variables.btnInfoBg}
+              onChangeColor={color =>
+                this.props.changeValue("btnInfoBg", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -78,7 +110,12 @@ class Button extends Component {
             <Text>Info Text Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.btnInfoColor} />
+            <ColorPicker
+              value={this.props.variables.btnInfoColor}
+              onChangeColor={color =>
+                this.props.changeValue("btnInfoColor", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -87,7 +124,12 @@ class Button extends Component {
             <Text>Success Background</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.btnSuccessBg} />
+            <ColorPicker
+              value={this.props.variables.btnSuccessBg}
+              onChangeColor={color =>
+                this.props.changeValue("btnSuccessBg", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -96,7 +138,12 @@ class Button extends Component {
             <Text>Success Text Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.btnSuccessColor} />
+            <ColorPicker
+              value={this.props.variables.btnSuccessColor}
+              onChangeColor={color =>
+                this.props.changeValue("btnSuccessColor", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -105,7 +152,12 @@ class Button extends Component {
             <Text>Danger Background</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.btnDangerBg} />
+            <ColorPicker
+              value={this.props.variables.btnDangerBg}
+              onChangeColor={color =>
+                this.props.changeValue("btnDangerBg", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -123,7 +175,12 @@ class Button extends Component {
             <Text>Warning Background</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.btnWarningBg} />
+            <ColorPicker
+              value={this.props.variables.btnWarningBg}
+              onChangeColor={color =>
+                this.props.changeValue("btnWarningBg", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -132,7 +189,12 @@ class Button extends Component {
             <Text>Warning Text Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.btnWarningColor} />
+            <ColorPicker
+              value={this.props.variables.btnWarningColor}
+              onChangeColor={color =>
+                this.props.changeValue("btnWarningColor", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -141,7 +203,13 @@ class Button extends Component {
             <Text>FontSize</Text>
           </FormCol>
           <FormCol>
-            <Input type="number" value={this.props.variables.btnTextSize} />
+            <Input
+              type="number"
+              value={this.props.variables.btnTextSize}
+              onChange={e =>
+                this.props.changeValue("btnTextSize", e.target.value)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -150,7 +218,13 @@ class Button extends Component {
             <Text>Line Height</Text>
           </FormCol>
           <FormCol>
-            <Input type="number" value={this.props.variables.btnLineHeight} />
+            <Input
+              type="number"
+              value={this.props.variables.btnLineHeight}
+              onChange={e =>
+                this.props.changeValue("btnLineHeight", e.target.value)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -162,6 +236,9 @@ class Button extends Component {
             <Input
               type="number"
               value={this.props.variables.btnTextSizeSmall}
+              onChange={e =>
+                this.props.changeValue("btnTextSizeSmall", e.target.value)
+              }
             />
           </FormCol>
         </FormRow>
@@ -174,6 +251,9 @@ class Button extends Component {
             <Input
               type="number"
               value={this.props.variables.btnTextSizeLarge}
+              onChange={e =>
+                this.props.changeValue("btnTextSizeLarge", e.target.value)
+              }
             />
           </FormCol>
         </FormRow>
@@ -187,6 +267,9 @@ class Button extends Component {
               min="0"
               max="100"
               value={this.props.variables.borderRadiusLarge}
+              onChange={e =>
+                this.props.changeValue("borderRadiusLarge", e.target.value)
+              }
             />
           </FormCol>
         </FormRow>
@@ -196,7 +279,13 @@ class Button extends Component {
             <Text>Small Icon Size</Text>
           </FormCol>
           <FormCol>
-            <Input type="number" value={this.props.variables.iconSizeSmall} />
+            <Input
+              type="number"
+              value={this.props.variables.iconSizeSmall}
+              onChange={e =>
+                this.props.changeValue("iconSizeSmall", e.target.value)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -205,7 +294,13 @@ class Button extends Component {
             <Text>Large Icon Size</Text>
           </FormCol>
           <FormCol>
-            <Input type="number" value={this.props.variables.iconSizeLarge} />
+            <Input
+              type="number"
+              value={this.props.variables.iconSizeLarge}
+              onChange={e =>
+                this.props.changeValue("iconSizeLarge", e.target.value)
+              }
+            />
           </FormCol>
         </FormRow>
       </FormGroup>
@@ -215,7 +310,8 @@ class Button extends Component {
 
 function bindAction(dispatch) {
   return {
-    appliedTheme: () => dispatch(appliedTheme())
+    appliedTheme: () => dispatch(appliedTheme()),
+    changeValue: (property, val) => dispatch(changeValue(property, val))
   };
 }
 

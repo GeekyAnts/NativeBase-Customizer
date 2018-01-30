@@ -5,7 +5,7 @@ import FormRow from "../../StyledComponents/FormRow";
 import FormCol from "../../StyledComponents/FormCol";
 import Text from "../../StyledComponents/Text";
 import ColorPicker from "../../StyledComponents/ColorPicker";
-import { appliedTheme } from "../../Actions/theme";
+import { appliedTheme, changeValue } from "../../Actions/theme";
 
 class Card extends Component {
   render() {
@@ -24,7 +24,12 @@ class Card extends Component {
             <Text>Background Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.cardDefaultBg} />
+            <ColorPicker
+              value={this.props.variables.cardDefaultBg}
+              onChangeColor={color =>
+                this.props.changeValue("cardDefaultBg", color)
+              }
+            />
           </FormCol>
         </FormRow>
         <FormRow>
@@ -32,7 +37,12 @@ class Card extends Component {
             <Text>Border Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.cardBorderColor} />
+            <ColorPicker
+              value={this.props.variables.cardBorderColor}
+              onChangeColor={color =>
+                this.props.changeValue("cardBorderColor", color)
+              }
+            />
           </FormCol>
         </FormRow>
       </FormGroup>
@@ -42,7 +52,8 @@ class Card extends Component {
 
 function bindAction(dispatch) {
   return {
-    appliedTheme: () => dispatch(appliedTheme())
+    appliedTheme: () => dispatch(appliedTheme()),
+    changeValue: (property, val) => dispatch(changeValue(property, val))
   };
 }
 

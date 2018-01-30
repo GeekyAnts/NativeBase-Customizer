@@ -7,7 +7,7 @@ import Text from "../../StyledComponents/Text";
 import Input from "../../StyledComponents/Input";
 import ColorPicker from "../../StyledComponents/ColorPicker";
 import Slider from "../../StyledComponents/Slider";
-import { appliedTheme } from "../../Actions/theme";
+import { appliedTheme, changeValue } from "../../Actions/theme";
 
 class Icon extends Component {
   render() {
@@ -25,7 +25,13 @@ class Icon extends Component {
             <Text>FontFamily</Text>
           </FormCol>
           <FormCol>
-            <Input type="text" value={this.props.variables.iconFamily} />
+            <Input
+              type="text"
+              value={this.props.variables.iconFamily}
+              onChange={e =>
+                this.props.changeValue("iconFamily", e.target.value)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -34,7 +40,13 @@ class Icon extends Component {
             <Text>Font Size</Text>
           </FormCol>
           <FormCol>
-            <Input type="number" value={this.props.variables.fontSizeBase} />
+            <Input
+              type="number"
+              value={this.props.variables.fontSizeBase}
+              onChange={e =>
+                this.props.changeValue("fontSizeBase", e.target.value)
+              }
+            />
           </FormCol>
         </FormRow>
       </FormGroup>
@@ -44,7 +56,8 @@ class Icon extends Component {
 
 function bindAction(dispatch) {
   return {
-    appliedTheme: () => dispatch(appliedTheme())
+    appliedTheme: () => dispatch(appliedTheme()),
+    changeValue: (property, val) => dispatch(changeValue(property, val))
   };
 }
 

@@ -1,5 +1,6 @@
 const initialState = {
-  variable: ""
+  variable: "",
+  var: ""
 };
 
 export default function(state: any = initialState, action: Function) {
@@ -9,11 +10,11 @@ export default function(state: any = initialState, action: Function) {
       variable: action.variable
     };
   } else if (action.type === "CHANGE") {
-    console.log(action, "act");
     return {
       ...state,
       variable: {
-        fontSizeBase: action.value
+        ...state.variable,
+        [action.property]: action.value
       }
     };
   }

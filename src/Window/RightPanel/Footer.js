@@ -7,7 +7,7 @@ import Text from "../../StyledComponents/Text";
 import Input from "../../StyledComponents/Input";
 import ColorPicker from "../../StyledComponents/ColorPicker";
 import Slider from "../../StyledComponents/Slider";
-import { appliedTheme } from "../../Actions/theme";
+import { appliedTheme, changeValue } from "../../Actions/theme";
 
 class Footer extends Component {
   render() {
@@ -27,7 +27,13 @@ class Footer extends Component {
             <Text>Height</Text>
           </FormCol>
           <FormCol>
-            <Input type="number" value={this.props.variables.footerHeight} />
+            <Input
+              type="number"
+              value={this.props.variables.footerHeight}
+              onChange={e =>
+                this.props.changeValue("footerHeight", e.target.value)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -36,7 +42,12 @@ class Footer extends Component {
             <Text>Background Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.footerDefaultBg} />
+            <ColorPicker
+              value={this.props.variables.footerDefaultBg}
+              onChangeColor={color =>
+                this.props.changeValue("footerDefaultBg", color)
+              }
+            />
           </FormCol>
         </FormRow>
       </FormGroup>
@@ -46,7 +57,8 @@ class Footer extends Component {
 
 function bindAction(dispatch) {
   return {
-    appliedTheme: () => dispatch(appliedTheme())
+    appliedTheme: () => dispatch(appliedTheme()),
+    changeValue: (property, val) => dispatch(changeValue(property, val))
   };
 }
 

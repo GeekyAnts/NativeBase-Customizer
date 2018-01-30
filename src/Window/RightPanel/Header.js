@@ -7,22 +7,11 @@ import Text from "../../StyledComponents/Text";
 import Input from "../../StyledComponents/Input";
 import ColorPicker from "../../StyledComponents/ColorPicker";
 import Slider from "../../StyledComponents/Slider";
-import { appliedTheme, changeHeight } from "../../Actions/theme";
+import { appliedTheme, changeValue } from "../../Actions/theme";
 
 class Header extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      newColor: "",
-      heightVal: null
-    };
-  }
-  changeHeight(val) {
-    this.props.changeHeight(val);
-  }
   render() {
-    console.log(this.props.variables.toolbarHeight, "check");
-    const heightVal = this.props.variables.toolbarHeight;
+    console.log(this.props.variables.titleFontSize, "font");
     return (
       <FormGroup noBorder>
         <FormRow>
@@ -37,7 +26,16 @@ class Header extends Component {
             <Text>FontSize</Text>
           </FormCol>
           <FormCol>
-            <Input type="number" value={this.props.variables.titleFontSize} />
+            <Input
+              type="number"
+              value={this.props.variables.titleFontSize}
+              onChange={e =>
+                this.props.changeValue(
+                  "titleFontSize",
+                  parseInt(e.target.value)
+                )
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -49,8 +47,7 @@ class Header extends Component {
             <ColorPicker
               value={this.props.variables.toolbarDefaultBg}
               onChangeColor={colorValue => {
-                console.log(colorValue, "changed color");
-                this.setState({ newColor: colorValue });
+                this.props.changeValue("toolbarDefaultBg", colorValue);
               }}
             />
           </FormCol>
@@ -63,21 +60,25 @@ class Header extends Component {
           <FormCol>
             <Input
               type="number"
-              onChange={e => this.changeHeight(e.target.value)}
-              value={heightVal}
+              onChange={e =>
+                this.props.changeValue(
+                  "toolbarHeight",
+                  parseInt(e.target.value)
+                )
+              }
+              value={this.props.variables.toolbarHeight}
             />
           </FormCol>
         </FormRow>
         <FormRow>
           <FormCol>
-            <Text>Button Text</Text>
+            <Text>Button Text Color</Text>
           </FormCol>
           <FormCol>
             <ColorPicker
               value={this.props.variables.toolbarBtnTextColor}
               onChangeColor={colorValue => {
-                console.log(colorValue, "changed color");
-                this.setState({ newColor: colorValue });
+                this.props.changeValue("toolbarBtnTextColor", colorValue);
               }}
             />
           </FormCol>
@@ -89,7 +90,12 @@ class Header extends Component {
           <FormCol>
             <Input
               type="number"
-              onChange={e => this.changeHeight(e.target.value)}
+              onChange={e =>
+                this.props.changeValue(
+                  "buttonPadding",
+                  parseInt(e.target.value)
+                )
+              }
               value={this.props.variables.buttonPadding}
             />
           </FormCol>
@@ -103,8 +109,7 @@ class Header extends Component {
             <ColorPicker
               value={this.props.variables.toolbarDefaultBorder}
               onChangeColor={colorValue => {
-                console.log(colorValue, "changed color");
-                this.setState({ newColor: colorValue });
+                this.props.changeValue("toolbarDefaultBorder", colorValue);
               }}
             />
           </FormCol>
@@ -117,8 +122,7 @@ class Header extends Component {
             <ColorPicker
               value={this.props.variables.toolbarBtnColor}
               onChangeColor={colorValue => {
-                console.log(colorValue, "changed color");
-                this.setState({ newColor: colorValue });
+                this.props.changeValue("toolbarBtnColor", colorValue);
               }}
             />
           </FormCol>
@@ -130,6 +134,12 @@ class Header extends Component {
           <FormCol>
             <Input
               type="number"
+              onChange={e =>
+                this.props.changeValue(
+                  "toolbarSearchIconSize",
+                  parseInt(e.target.value)
+                )
+              }
               value={this.props.variables.toolbarSearchIconSize}
             />
           </FormCol>
@@ -143,8 +153,7 @@ class Header extends Component {
             <ColorPicker
               value={this.props.variables.toolbarInputColor}
               onChangeColor={colorValue => {
-                console.log(colorValue, "changed color");
-                this.setState({ newColor: colorValue });
+                this.props.changeValue("toolbarInputColor", colorValue);
               }}
             />
           </FormCol>
@@ -154,7 +163,16 @@ class Header extends Component {
             <Text>SearchBar Height</Text>
           </FormCol>
           <FormCol>
-            <Input type="number" value={this.props.variables.searchBarHeight} />
+            <Input
+              type="number"
+              value={this.props.variables.searchBarHeight}
+              onChange={e =>
+                this.props.changeValue(
+                  "searchBarHeight",
+                  parseInt(e.target.value)
+                )
+              }
+            />
           </FormCol>
         </FormRow>
         <FormRow>
@@ -164,6 +182,12 @@ class Header extends Component {
           <FormCol>
             <Input
               type="number"
+              onChange={e =>
+                this.props.changeValue(
+                  "searchBarInputHeight",
+                  parseInt(e.target.value)
+                )
+              }
               value={this.props.variables.searchBarInputHeight}
             />
           </FormCol>
@@ -184,7 +208,7 @@ class Header extends Component {
 function bindAction(dispatch) {
   return {
     appliedTheme: () => dispatch(appliedTheme()),
-    changeHeight: val => dispatch(changeHeight(val))
+    changeValue: (property, val) => dispatch(changeValue(property, val))
   };
 }
 

@@ -13,7 +13,7 @@ import Icon from "../../StyledComponents/Icon";
 import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import { nextPage, prevPage } from "../../Actions/navigation";
 import { appliedTheme } from "../../Actions/theme";
-import variables from "../../ReactNativeApp/theme/variables/commonColor";
+import variables from "../../ReactNativeApp/theme/variables/platform";
 
 class WorkSpace extends Component {
   constructor(props: any) {
