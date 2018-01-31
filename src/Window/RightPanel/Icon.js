@@ -29,7 +29,7 @@ class Icon extends Component {
               type="text"
               value={this.props.variables.iconFamily}
               onChange={e =>
-                this.props.changeValue("iconFamily", e.target.value)
+                this.props.changeValue("iconFamily", parseInt(e.target.value))
               }
             />
           </FormCol>
@@ -44,7 +44,7 @@ class Icon extends Component {
               type="number"
               value={this.props.variables.fontSizeBase}
               onChange={e =>
-                this.props.changeValue("fontSizeBase", e.target.value)
+                this.props.changeValue("fontSizeBase", parseInt(e.target.value))
               }
             />
           </FormCol>

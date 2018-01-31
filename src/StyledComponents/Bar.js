@@ -6,13 +6,15 @@ const div: StyledFunction<PropType & React.HTMLProps<HTMLInputElement>> =
 
 export default div`
 background: ${(props: PropType) => {
-  if (props.active) {
+  if (props.active && props.sub) {
     return COLOR[200];
+  } else if (props.active) {
+    return COLOR[100];
   } else {
     return props.uiBackground ? COLOR[props.uiBackground] : "transparent";
   }
 }};
-  height:  45px;
+  height:  ${(props: PropType) => (props.sub ? "35px" : "45px")};
   flex-grow: 1;
   text-align: ${(props: PropType) => {
     if (props.contentCenter) {
@@ -21,15 +23,25 @@ background: ${(props: PropType) => {
       return "left";
     }
   }};
-  padding-left: 35px;
+  padding-left: ${(props: PropType) => (props.sub ? "50px" : "35px")};
+  padding-right: 5px;
   color: #FFF;
   opacity: 0.6;
   display: flex;
   align-items: center;
   font-weight: 100;
-  font-size: 15px;
+  text-overflow: ellipsis;
+  font-size: ${(props: PropType) => (props.sub ? "13px" : "15px")};
   :hover {
-    background: ${COLOR[500]}
+    background: ${(props: PropType) => {
+      if (props.active && props.sub) {
+        return COLOR[200];
+      } else if (props.active) {
+        return COLOR[100];
+      } else {
+        return COLOR[500];
+      }
+    }};
   }
   
 `;

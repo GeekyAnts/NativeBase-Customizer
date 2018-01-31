@@ -1,12 +1,13 @@
-export function selectPage(page) {
+export function selectPage(page, subpage) {
   return {
     type: "SELECT_PAGE",
-    page
+    page,
+    subpage
   };
 }
 
-export function newPage(page) {
+export function newPage(page, subpage) {
   return dispatch => {
-    dispatch(selectPage(page));
+    dispatch(selectPage(page, subpage));
   };
 }

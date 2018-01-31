@@ -5,7 +5,7 @@ import FormRow from "../../StyledComponents/FormRow";
 import FormCol from "../../StyledComponents/FormCol";
 import Text from "../../StyledComponents/Text";
 import ColorPicker from "../../StyledComponents/ColorPicker";
-import { appliedTheme } from "../../Actions/theme";
+import { appliedTheme, changeValue } from "../../Actions/theme";
 
 class Spinner extends Component {
   render() {
@@ -24,7 +24,12 @@ class Spinner extends Component {
             <Text>Default Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.defaultSpinnerColor} />
+            <ColorPicker
+              value={this.props.variables.defaultSpinnerColor}
+              onChangeColor={color =>
+                this.props.changeValue("defaultSpinnerColor", color)
+              }
+            />
           </FormCol>
         </FormRow>
         <FormRow>
@@ -32,7 +37,12 @@ class Spinner extends Component {
             <Text>Inverse Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.inverseSpinnerColor} />
+            <ColorPicker
+              value={this.props.variables.inverseSpinnerColor}
+              onChangeColor={color =>
+                this.props.changeValue("inverseSpinnerColor", color)
+              }
+            />
           </FormCol>
         </FormRow>
       </FormGroup>
@@ -42,7 +52,8 @@ class Spinner extends Component {
 
 function bindAction(dispatch) {
   return {
-    appliedTheme: () => dispatch(appliedTheme())
+    appliedTheme: () => dispatch(appliedTheme()),
+    changeValue: (property, val) => dispatch(changeValue(property, val))
   };
 }
 

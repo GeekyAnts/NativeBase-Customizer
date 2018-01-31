@@ -30,7 +30,10 @@ class CheckBox extends Component {
               max="100"
               value={this.props.variables.CheckboxRadius}
               onChange={e =>
-                this.props.changeValue("CheckboxRadius", e.target.value)
+                this.props.changeValue(
+                  "CheckboxRadius",
+                  parseInt(e.target.value)
+                )
               }
             />
           </FormCol>
@@ -45,7 +48,10 @@ class CheckBox extends Component {
               type="number"
               value={this.props.variables.CheckboxBorderWidth}
               onChange={e =>
-                this.props.changeValue("CheckboxBorderWidth", e.target.value)
+                this.props.changeValue(
+                  "CheckboxBorderWidth",
+                  parseInt(e.target.value)
+                )
               }
             />
           </FormCol>
@@ -60,7 +66,10 @@ class CheckBox extends Component {
               type="number"
               value={this.props.variables.CheckboxPaddingLeft}
               onChange={e =>
-                this.props.changeValue("CheckboxPaddingLeft", e.target.value)
+                this.props.changeValue(
+                  "CheckboxPaddingLeft",
+                  parseInt(e.target.value)
+                )
               }
             />
           </FormCol>
@@ -75,7 +84,10 @@ class CheckBox extends Component {
               type="number"
               value={this.props.variables.CheckboxPaddingBottom}
               onChange={e =>
-                this.props.changeValue("CheckboxPaddingBottom", e.target.value)
+                this.props.changeValue(
+                  "CheckboxPaddingBottom",
+                  parseInt(e.target.value)
+                )
               }
             />
           </FormCol>
@@ -90,7 +102,10 @@ class CheckBox extends Component {
               type="number"
               value={this.props.variables.CheckboxFontSize}
               onChange={e =>
-                this.props.changeValue("CheckboxFontSize", e.target.value)
+                this.props.changeValue(
+                  "CheckboxFontSize",
+                  parseInt(e.target.value)
+                )
               }
             />
           </FormCol>
@@ -105,7 +120,10 @@ class CheckBox extends Component {
               type="number"
               value={this.props.variables.CheckboxIconSize}
               onChange={e =>
-                this.props.changeValue("CheckboxIconSize", e.target.value)
+                this.props.changeValue(
+                  "CheckboxIconSize",
+                  parseInt(e.target.value)
+                )
               }
             />
           </FormCol>
@@ -120,7 +138,10 @@ class CheckBox extends Component {
               type="number"
               value={this.props.variables.CheckboxIconMarginTop}
               onChange={e =>
-                this.props.changeValue("CheckboxIconMarginTop", e.target.value)
+                this.props.changeValue(
+                  "CheckboxIconMarginTop",
+                  parseInt(e.target.value)
+                )
               }
             />
           </FormCol>
@@ -135,7 +156,7 @@ class CheckBox extends Component {
               type="number"
               value={this.props.variables.checkboxSize}
               onChange={e =>
-                this.props.changeValue("checkboxSize", e.target.value)
+                this.props.changeValue("checkboxSize", parseInt(e.target.value))
               }
             />
           </FormCol>

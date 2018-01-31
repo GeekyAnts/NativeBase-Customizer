@@ -5,7 +5,7 @@ import FormRow from "../../StyledComponents/FormRow";
 import FormCol from "../../StyledComponents/FormCol";
 import Text from "../../StyledComponents/Text";
 import ColorPicker from "../../StyledComponents/ColorPicker";
-import { appliedTheme } from "../../Actions/theme";
+import { appliedTheme, changeValue } from "../../Actions/theme";
 
 class Segment extends Component {
   render() {
@@ -24,7 +24,12 @@ class Segment extends Component {
             <Text>Background Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.segmentBackgroundColor} />
+            <ColorPicker
+              value={this.props.variables.segmentBackgroundColor}
+              onChangeColor={color =>
+                this.props.changeValue("segmentBackgroundColor", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -35,6 +40,9 @@ class Segment extends Component {
           <FormCol>
             <ColorPicker
               value={this.props.variables.segmentActiveBackgroundColor}
+              onChangeColor={color =>
+                this.props.changeValue("segmentActiveBackgroundColor", color)
+              }
             />
           </FormCol>
         </FormRow>
@@ -44,7 +52,12 @@ class Segment extends Component {
             <Text>Text Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.segmentTextColor} />
+            <ColorPicker
+              value={this.props.variables.segmentTextColor}
+              onChangeColor={color =>
+                this.props.changeValue("segmentTextColor", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -53,7 +66,12 @@ class Segment extends Component {
             <Text>Active Text Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.segmentActiveTextColor} />
+            <ColorPicker
+              value={this.props.variables.segmentActiveTextColor}
+              onChangeColor={color =>
+                this.props.changeValue("segmentActiveTextColor", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -62,7 +80,12 @@ class Segment extends Component {
             <Text>Border Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.segmentBorderColor} />
+            <ColorPicker
+              value={this.props.variables.segmentBorderColor}
+              onChangeColor={color =>
+                this.props.changeValue("segmentBorderColor", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -81,7 +104,8 @@ class Segment extends Component {
 
 function bindAction(dispatch) {
   return {
-    appliedTheme: () => dispatch(appliedTheme())
+    appliedTheme: () => dispatch(appliedTheme()),
+    changeValue: (property, val) => dispatch(changeValue(property, val))
   };
 }
 

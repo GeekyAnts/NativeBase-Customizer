@@ -11,7 +11,6 @@ import { appliedTheme, changeValue } from "../../Actions/theme";
 
 class Header extends Component {
   render() {
-    console.log(this.props.variables.titleFontSize, "font");
     return (
       <FormGroup noBorder>
         <FormRow>
@@ -116,7 +115,7 @@ class Header extends Component {
         </FormRow>
         <FormRow>
           <FormCol>
-            <Text>Button Bg</Text>
+            <Text>Button Icon Color</Text>
           </FormCol>
           <FormCol>
             <ColorPicker

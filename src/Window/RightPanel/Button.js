@@ -29,7 +29,43 @@ class Button extends Component {
               type="text"
               value={this.props.variables.btnFontFamily}
               onChange={e =>
-                this.props.changeValue("btnFontFamily", e.target.value)
+                this.props.changeValue(
+                  "btnFontFamily",
+                  parseInt(e.target.value)
+                )
+              }
+            />
+          </FormCol>
+        </FormRow>
+
+        <FormRow>
+          <FormCol>
+            <Text>FontSize</Text>
+          </FormCol>
+          <FormCol>
+            <Input
+              type="number"
+              value={this.props.variables.btnTextSize}
+              onChange={e =>
+                this.props.changeValue("btnTextSize", parseInt(e.target.value))
+              }
+            />
+          </FormCol>
+        </FormRow>
+
+        <FormRow>
+          <FormCol>
+            <Text>Line Height</Text>
+          </FormCol>
+          <FormCol>
+            <Input
+              type="number"
+              value={this.props.variables.btnLineHeight}
+              onChange={e =>
+                this.props.changeValue(
+                  "btnLineHeight",
+                  parseInt(e.target.value)
+                )
               }
             />
           </FormCol>
@@ -58,7 +94,10 @@ class Button extends Component {
               type="number"
               value={this.props.variables.buttonPadding}
               onChange={e =>
-                this.props.changeValue("buttonPadding", e.target.value)
+                this.props.changeValue(
+                  "buttonPadding",
+                  parseInt(e.target.value)
+                )
               }
             />
           </FormCol>
@@ -200,36 +239,6 @@ class Button extends Component {
 
         <FormRow>
           <FormCol>
-            <Text>FontSize</Text>
-          </FormCol>
-          <FormCol>
-            <Input
-              type="number"
-              value={this.props.variables.btnTextSize}
-              onChange={e =>
-                this.props.changeValue("btnTextSize", e.target.value)
-              }
-            />
-          </FormCol>
-        </FormRow>
-
-        <FormRow>
-          <FormCol>
-            <Text>Line Height</Text>
-          </FormCol>
-          <FormCol>
-            <Input
-              type="number"
-              value={this.props.variables.btnLineHeight}
-              onChange={e =>
-                this.props.changeValue("btnLineHeight", e.target.value)
-              }
-            />
-          </FormCol>
-        </FormRow>
-
-        <FormRow>
-          <FormCol>
             <Text>Small FontSize</Text>
           </FormCol>
           <FormCol>
@@ -237,7 +246,10 @@ class Button extends Component {
               type="number"
               value={this.props.variables.btnTextSizeSmall}
               onChange={e =>
-                this.props.changeValue("btnTextSizeSmall", e.target.value)
+                this.props.changeValue(
+                  "btnTextSizeSmall",
+                  parseInt(e.target.value)
+                )
               }
             />
           </FormCol>
@@ -252,7 +264,10 @@ class Button extends Component {
               type="number"
               value={this.props.variables.btnTextSizeLarge}
               onChange={e =>
-                this.props.changeValue("btnTextSizeLarge", e.target.value)
+                this.props.changeValue(
+                  "btnTextSizeLarge",
+                  parseInt(e.target.value)
+                )
               }
             />
           </FormCol>
@@ -268,7 +283,10 @@ class Button extends Component {
               max="100"
               value={this.props.variables.borderRadiusLarge}
               onChange={e =>
-                this.props.changeValue("borderRadiusLarge", e.target.value)
+                this.props.changeValue(
+                  "borderRadiusLarge",
+                  parseInt(e.target.value)
+                )
               }
             />
           </FormCol>
@@ -283,7 +301,10 @@ class Button extends Component {
               type="number"
               value={this.props.variables.iconSizeSmall}
               onChange={e =>
-                this.props.changeValue("iconSizeSmall", e.target.value)
+                this.props.changeValue(
+                  "iconSizeSmall",
+                  parseInt(e.target.value)
+                )
               }
             />
           </FormCol>
@@ -298,7 +319,10 @@ class Button extends Component {
               type="number"
               value={this.props.variables.iconSizeLarge}
               onChange={e =>
-                this.props.changeValue("iconSizeLarge", e.target.value)
+                this.props.changeValue(
+                  "iconSizeLarge",
+                  parseInt(e.target.value)
+                )
               }
             />
           </FormCol>

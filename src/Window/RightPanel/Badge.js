@@ -29,7 +29,21 @@ class Badge extends Component {
               type="number"
               value={this.props.variables.fontSizeBase}
               onChange={e =>
-                this.props.changeValue("fontSizeBase", e.target.value)
+                this.props.changeValue("fontSizeBase", parseInt(e.target.value))
+              }
+            />
+          </FormCol>
+        </FormRow>
+        <FormRow>
+          <FormCol>
+            <Text>Line Height</Text>
+          </FormCol>
+          <FormCol>
+            <Input
+              type="number"
+              value={this.props.variables.lineHeight}
+              onChange={e =>
+                this.props.changeValue("lineHeight", parseInt(e.target.value))
               }
             />
           </FormCol>
@@ -70,7 +84,72 @@ class Badge extends Component {
               type="number"
               value={this.props.variables.badgePadding}
               onChange={e =>
-                this.props.changeValue("badgePadding", e.target.value)
+                this.props.changeValue("badgePadding", parseInt(e.target.value))
+              }
+            />
+          </FormCol>
+        </FormRow>
+        <FormRow>
+          <FormCol>
+            <Text>Primary</Text>
+          </FormCol>
+          <FormCol>
+            <ColorPicker
+              value={this.props.variables.btnPrimaryBg}
+              onChangeColor={color =>
+                this.props.changeValue("btnPrimaryBg", color)
+              }
+            />
+          </FormCol>
+        </FormRow>
+        <FormRow>
+          <FormCol>
+            <Text>Warning</Text>
+          </FormCol>
+          <FormCol>
+            <ColorPicker
+              value={this.props.variables.btnWarningBg}
+              onChangeColor={color =>
+                this.props.changeValue("btnWarningBg", color)
+              }
+            />
+          </FormCol>
+        </FormRow>
+        <FormRow>
+          <FormCol>
+            <Text>Info</Text>
+          </FormCol>
+          <FormCol>
+            <ColorPicker
+              value={this.props.variables.btnInfoBg}
+              onChangeColor={color =>
+                this.props.changeValue("btnInfoBg", color)
+              }
+            />
+          </FormCol>
+        </FormRow>
+        <FormRow>
+          <FormCol>
+            <Text>Success</Text>
+          </FormCol>
+          <FormCol>
+            <ColorPicker
+              value={this.props.variables.btnSuccessBg}
+              onChangeColor={color =>
+                this.props.changeValue("btnSuccessBg", color)
+              }
+            />
+          </FormCol>
+        </FormRow>
+        <FormRow>
+          <FormCol>
+            <Text>Danger</Text>
+          </FormCol>
+          <FormCol>
+            <ColorPicker
+              value={this.props.variables.btnDangerBg}
+              onChangeColor={color =>
+                this.props.changeValue("btnDangerBg", color)
               }
             />
           </FormCol>

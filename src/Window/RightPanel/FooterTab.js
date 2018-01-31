@@ -11,7 +11,6 @@ import { appliedTheme, changeValue } from "../../Actions/theme";
 
 class FooterTab extends Component {
   render() {
-    console.log(this.props.variables.toolbarHeight, "check");
     const heightVal = this.props.variables.toolbarHeight;
     return (
       <FormGroup noBorder>
@@ -31,7 +30,10 @@ class FooterTab extends Component {
               type="number"
               value={this.props.variables.tabBarTextSize}
               onChange={e =>
-                this.props.changeValue("tabBarTextSize", e.target.value)
+                this.props.changeValue(
+                  "tabBarTextSize",
+                  parseInt(e.target.value)
+                )
               }
             />
           </FormCol>

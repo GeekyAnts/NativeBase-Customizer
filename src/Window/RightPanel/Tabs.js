@@ -6,7 +6,7 @@ import FormCol from "../../StyledComponents/FormCol";
 import Text from "../../StyledComponents/Text";
 import Input from "../../StyledComponents/Input";
 import ColorPicker from "../../StyledComponents/ColorPicker";
-import { appliedTheme } from "../../Actions/theme";
+import { appliedTheme, changeValue } from "../../Actions/theme";
 
 class Tabs extends Component {
   render() {
@@ -25,7 +25,12 @@ class Tabs extends Component {
             <Text>Background Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.tabDefaultBg} />
+            <ColorPicker
+              value={this.props.variables.tabDefaultBg}
+              onChangeColor={color =>
+                this.props.changeValue("tabDefaultBg", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -34,7 +39,13 @@ class Tabs extends Component {
             <Text>Font Size</Text>
           </FormCol>
           <FormCol>
-            <Input type="number" value={this.props.variables.fontSizeBase} />
+            <Input
+              type="number"
+              value={this.props.variables.fontSizeBase}
+              onChange={e =>
+                this.props.changeValue("fontSizeBase", parseInt(e.target.value))
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -43,7 +54,12 @@ class Tabs extends Component {
             <Text>Text Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.tabFontSize} />
+            <ColorPicker
+              value={this.props.variables.tabFontSize}
+              onChangeColor={color =>
+                this.props.changeValue("tabFontSize", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -54,6 +70,9 @@ class Tabs extends Component {
           <FormCol>
             <ColorPicker
               value={this.props.variables.topTabBarActiveTextColor}
+              onChangeColor={color =>
+                this.props.changeValue("topTabBarActiveTextColor", color)
+              }
             />
           </FormCol>
         </FormRow>
@@ -63,7 +82,12 @@ class Tabs extends Component {
             <Text>Border Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.topTabBarBorderColor} />
+            <ColorPicker
+              value={this.props.variables.topTabBarBorderColor}
+              onChangeColor={color =>
+                this.props.changeValue("topTabBarBorderColor", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -74,6 +98,9 @@ class Tabs extends Component {
           <FormCol>
             <ColorPicker
               value={this.props.variables.topTabBarActiveBorderColor}
+              onChangeColor={color =>
+                this.props.changeValue("topTabBarActiveBorderColor", color)
+              }
             />
           </FormCol>
         </FormRow>
@@ -84,7 +111,8 @@ class Tabs extends Component {
 
 function bindAction(dispatch) {
   return {
-    appliedTheme: () => dispatch(appliedTheme())
+    appliedTheme: () => dispatch(appliedTheme()),
+    changeValue: (property, val) => dispatch(changeValue(property, val))
   };
 }
 

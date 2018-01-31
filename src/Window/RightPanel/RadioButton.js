@@ -7,7 +7,7 @@ import Text from "../../StyledComponents/Text";
 import Input from "../../StyledComponents/Input";
 import ColorPicker from "../../StyledComponents/ColorPicker";
 import Slider from "../../StyledComponents/Slider";
-import { appliedTheme } from "../../Actions/theme";
+import { appliedTheme, changeValue } from "../../Actions/theme";
 
 class RadioButton extends Component {
   render() {
@@ -25,7 +25,13 @@ class RadioButton extends Component {
             <Text>Size</Text>
           </FormCol>
           <FormCol>
-            <Input type="number" value={this.props.variables.radioBtnSize} />
+            <Input
+              type="number"
+              value={this.props.variables.radioBtnSize}
+              onChange={e =>
+                this.props.changeValue("radioBtnSize", parseInt(e.target.value))
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -37,6 +43,12 @@ class RadioButton extends Component {
             <Input
               type="number"
               value={this.props.variables.radioBtnLineHeight}
+              onChange={e =>
+                this.props.changeValue(
+                  "radioBtnLineHeight",
+                  parseInt(e.target.value)
+                )
+              }
             />
           </FormCol>
         </FormRow>
@@ -48,6 +60,9 @@ class RadioButton extends Component {
           <FormCol>
             <ColorPicker
               value={this.props.variables.radioSelectedColorAndroid}
+              onChangeColor={color =>
+                this.props.changeValue("radioSelectedColorAndroid", color)
+              }
             />
           </FormCol>
         </FormRow>
@@ -56,7 +71,12 @@ class RadioButton extends Component {
             <Text>Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.radioColor} />
+            <ColorPicker
+              value={this.props.variables.radioColor}
+              onChangeColor={color =>
+                this.props.changeValue("radioColor", color)
+              }
+            />
           </FormCol>
         </FormRow>
       </FormGroup>
@@ -66,7 +86,8 @@ class RadioButton extends Component {
 
 function bindAction(dispatch) {
   return {
-    appliedTheme: () => dispatch(appliedTheme())
+    appliedTheme: () => dispatch(appliedTheme()),
+    changeValue: (property, val) => dispatch(changeValue(property, val))
   };
 }
 

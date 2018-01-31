@@ -6,7 +6,7 @@ import FormCol from "../../StyledComponents/FormCol";
 import Text from "../../StyledComponents/Text";
 import Input from "../../StyledComponents/Input";
 import ColorPicker from "../../StyledComponents/ColorPicker";
-import { appliedTheme } from "../../Actions/theme";
+import { appliedTheme, changeValue } from "../../Actions/theme";
 
 class Title extends Component {
   render() {
@@ -24,7 +24,16 @@ class Title extends Component {
             <Text>Font Family</Text>
           </FormCol>
           <FormCol>
-            <Input type="text" value={this.props.variables.titleFontfamily} />
+            <Input
+              type="text"
+              value={this.props.variables.titleFontfamily}
+              onChange={e =>
+                this.props.changeValue(
+                  "titleFontfamily",
+                  parseInt(e.target.value)
+                )
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -33,7 +42,16 @@ class Title extends Component {
             <Text>FontSize</Text>
           </FormCol>
           <FormCol>
-            <Input type="number" value={this.props.variables.titleFontSize} />
+            <Input
+              type="number"
+              value={this.props.variables.titleFontSize}
+              onChange={e =>
+                this.props.changeValue(
+                  "titleFontSize",
+                  parseInt(e.target.value)
+                )
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -45,6 +63,12 @@ class Title extends Component {
             <Input
               type="number"
               value={this.props.variables.subTitleFontSize}
+              onChange={e =>
+                this.props.changeValue(
+                  "subTitleFontSize",
+                  parseInt(e.target.value)
+                )
+              }
             />
           </FormCol>
         </FormRow>
@@ -54,7 +78,12 @@ class Title extends Component {
             <Text>Title Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.titleFontColor} />
+            <ColorPicker
+              value={this.props.variables.titleFontColor}
+              onChangeColor={color =>
+                this.props.changeValue("titleFontColor", color)
+              }
+            />
           </FormCol>
         </FormRow>
         <FormRow>
@@ -62,7 +91,12 @@ class Title extends Component {
             <Text>SubTitle Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.subtitleColor} />
+            <ColorPicker
+              value={this.props.variables.subtitleColor}
+              onChangeColor={color =>
+                this.props.changeValue("subtitleColor", color)
+              }
+            />
           </FormCol>
         </FormRow>
       </FormGroup>
@@ -72,7 +106,8 @@ class Title extends Component {
 
 function bindAction(dispatch) {
   return {
-    appliedTheme: () => dispatch(appliedTheme())
+    appliedTheme: () => dispatch(appliedTheme()),
+    changeValue: (property, val) => dispatch(changeValue(property, val))
   };
 }
 

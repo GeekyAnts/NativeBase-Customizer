@@ -26,7 +26,6 @@ import { appliedTheme } from "../../Actions/theme";
 
 class RightPanel extends Component {
   render() {
-    console.log(this.props.page.navigation.page, "ss");
     return (
       <WrapperDiv uiBackground="500">
         <FormGroup>
@@ -58,8 +57,8 @@ class RightPanel extends Component {
         {this.props.page.navigation.page === "Segment" && <Segment />}
         {this.props.page.navigation.page === "Spinner" && <Spinner />}
         {this.props.page.navigation.page === "Tabs" && <Tabs />}
-        <Title />
-        <Colors />
+        {/* <Title /> */}
+        {/* <Colors /> */}
       </WrapperDiv>
     );
   }

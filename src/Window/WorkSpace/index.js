@@ -13,7 +13,7 @@ import Icon from "../../StyledComponents/Icon";
 import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import { nextPage, prevPage } from "../../Actions/navigation";
 import { appliedTheme } from "../../Actions/theme";
-import variables from "../../ReactNativeApp/theme/variables/platform";
+import variables from "../../ReactNativeApp/theme/variables/variables";
 
 class WorkSpace extends Component {
   constructor(props: any) {
@@ -94,6 +94,7 @@ class WorkSpace extends Component {
               <Artboard
                 screen={this.props.page.selected}
                 route={this.props.route}
+                subRoute={this.props.page.subPage}
               />
               <Button
                 transparent

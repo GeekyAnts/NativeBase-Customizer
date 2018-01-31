@@ -6,7 +6,7 @@ import FormCol from "../../StyledComponents/FormCol";
 import Text from "../../StyledComponents/Text";
 import Input from "../../StyledComponents/Input";
 import ColorPicker from "../../StyledComponents/ColorPicker";
-import { appliedTheme } from "../../Actions/theme";
+import { appliedTheme, changeValue } from "../../Actions/theme";
 
 class List extends Component {
   render() {
@@ -24,7 +24,13 @@ class List extends Component {
             <Text>Note FontSize</Text>
           </FormCol>
           <FormCol>
-            <Input type="number" value={this.props.variables.listNoteSize} />
+            <Input
+              type="number"
+              value={this.props.variables.listNoteSize}
+              onChange={e =>
+                this.props.changeValue("listNoteSize", parseInt(e.target.value))
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -33,7 +39,12 @@ class List extends Component {
             <Text>Note Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.listNoteColor} />
+            <ColorPicker
+              value={this.props.variables.listNoteColor}
+              onChangeColor={color =>
+                this.props.changeValue("listNoteColor", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -42,7 +53,16 @@ class List extends Component {
             <Text>Padding</Text>
           </FormCol>
           <FormCol>
-            <Input type="number" value={this.props.variables.listItemPadding} />
+            <Input
+              type="number"
+              value={this.props.variables.listItemPadding}
+              onChange={e =>
+                this.props.changeValue(
+                  "listItemPadding",
+                  parseInt(e.target.value)
+                )
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -51,7 +71,10 @@ class List extends Component {
             <Text>Background Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.listBg} />
+            <ColorPicker
+              value={this.props.variables.listBg}
+              onChangeColor={color => this.props.changeValue("listBg", color)}
+            />
           </FormCol>
         </FormRow>
 
@@ -69,7 +92,12 @@ class List extends Component {
             <Text>Border Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.listBorderColor} />
+            <ColorPicker
+              value={this.props.variables.listBorderColor}
+              onChangeColor={color =>
+                this.props.changeValue("listBorderColor", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -78,7 +106,12 @@ class List extends Component {
             <Text>Divider Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.listDividerBg} />
+            <ColorPicker
+              value={this.props.variables.listDividerBg}
+              onChangeColor={color =>
+                this.props.changeValue("listDividerBg", color)
+              }
+            />
           </FormCol>
         </FormRow>
       </FormGroup>
@@ -88,7 +121,8 @@ class List extends Component {
 
 function bindAction(dispatch) {
   return {
-    appliedTheme: () => dispatch(appliedTheme())
+    appliedTheme: () => dispatch(appliedTheme()),
+    changeValue: (property, val) => dispatch(changeValue(property, val))
   };
 }
 

@@ -11,7 +11,6 @@ import { appliedTheme, changeValue } from "../../Actions/theme";
 
 class Footer extends Component {
   render() {
-    console.log(this.props.variables.toolbarHeight, "check");
     const heightVal = this.props.variables.toolbarHeight;
     return (
       <FormGroup noBorder>
@@ -31,7 +30,7 @@ class Footer extends Component {
               type="number"
               value={this.props.variables.footerHeight}
               onChange={e =>
-                this.props.changeValue("footerHeight", e.target.value)
+                this.props.changeValue("footerHeight", parseInt(e.target.value))
               }
             />
           </FormCol>

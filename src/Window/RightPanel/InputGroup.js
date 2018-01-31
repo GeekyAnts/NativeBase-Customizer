@@ -6,7 +6,7 @@ import FormCol from "../../StyledComponents/FormCol";
 import Text from "../../StyledComponents/Text";
 import Input from "../../StyledComponents/Input";
 import ColorPicker from "../../StyledComponents/ColorPicker";
-import { appliedTheme } from "../../Actions/theme";
+import { appliedTheme, changeValue } from "../../Actions/theme";
 
 class InputGroup extends Component {
   render() {
@@ -24,7 +24,16 @@ class InputGroup extends Component {
             <Text>Font Size</Text>
           </FormCol>
           <FormCol>
-            <Input type="number" value={this.props.variables.inputFontSize} />
+            <Input
+              type="number"
+              value={this.props.variables.inputFontSize}
+              onChange={e =>
+                this.props.changeValue(
+                  "inputFontSize",
+                  parseInt(e.target.value)
+                )
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -33,7 +42,12 @@ class InputGroup extends Component {
             <Text>Input Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.inputColor} />
+            <ColorPicker
+              value={this.props.variables.inputColor}
+              onChangeColor={color =>
+                this.props.changeValue("inputColor", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -42,7 +56,12 @@ class InputGroup extends Component {
             <Text>Placeholder Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.inputColorPlaceholder} />
+            <ColorPicker
+              value={this.props.variables.inputColorPlaceholder}
+              onChangeColor={color =>
+                this.props.changeValue("inputColorPlaceholder", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -51,7 +70,12 @@ class InputGroup extends Component {
             <Text>Border Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.inputBorderColor} />
+            <ColorPicker
+              value={this.props.variables.inputBorderColor}
+              onChangeColor={color =>
+                this.props.changeValue("inputBorderColor", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -60,7 +84,12 @@ class InputGroup extends Component {
             <Text>Success Border Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.inputSuccessBorderColor} />
+            <ColorPicker
+              value={this.props.variables.inputSuccessBorderColor}
+              onChangeColor={color =>
+                this.props.changeValue("inputSuccessBorderColor", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -69,7 +98,12 @@ class InputGroup extends Component {
             <Text>Error Border Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.inputErrorBorderColor} />
+            <ColorPicker
+              value={this.props.variables.inputErrorBorderColor}
+              onChangeColor={color =>
+                this.props.changeValue("inputErrorBorderColor", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -78,7 +112,16 @@ class InputGroup extends Component {
             <Text>Height</Text>
           </FormCol>
           <FormCol>
-            <Input type="number" value={this.props.variables.inputHeightBase} />
+            <Input
+              type="number"
+              value={this.props.variables.inputHeightBase}
+              onChange={e =>
+                this.props.changeValue(
+                  "inputHeightBase",
+                  parseInt(e.target.value)
+                )
+              }
+            />
           </FormCol>
         </FormRow>
       </FormGroup>
@@ -88,7 +131,8 @@ class InputGroup extends Component {
 
 function bindAction(dispatch) {
   return {
-    appliedTheme: () => dispatch(appliedTheme())
+    appliedTheme: () => dispatch(appliedTheme()),
+    changeValue: (property, val) => dispatch(changeValue(property, val))
   };
 }
 

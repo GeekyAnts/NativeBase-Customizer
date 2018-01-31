@@ -6,7 +6,7 @@ import FormCol from "../../StyledComponents/FormCol";
 import Text from "../../StyledComponents/Text";
 import Input from "../../StyledComponents/Input";
 import ColorPicker from "../../StyledComponents/ColorPicker";
-import { appliedTheme } from "../../Actions/theme";
+import { appliedTheme, changeValue } from "../../Actions/theme";
 
 class DefaultText extends Component {
   render() {
@@ -24,7 +24,13 @@ class DefaultText extends Component {
             <Text>Font Size</Text>
           </FormCol>
           <FormCol>
-            <Input type="number" value={this.props.variables.fontSizeBase} />
+            <Input
+              type="number"
+              value={this.props.variables.fontSizeBase}
+              onChange={e =>
+                this.props.changeValue("fontSizeBase", parseInt(e.target.value))
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -33,7 +39,13 @@ class DefaultText extends Component {
             <Text>FontFamily</Text>
           </FormCol>
           <FormCol>
-            <Input type="text" value={this.props.variables.fontFamily} />
+            <Input
+              type="text"
+              value={this.props.variables.fontFamily}
+              onChange={e =>
+                this.props.changeValue("fontFamily", parseInt(e.target.value))
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -42,7 +54,12 @@ class DefaultText extends Component {
             <Text>Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.textColor} />
+            <ColorPicker
+              value={this.props.variables.textColor}
+              onChangeColor={color =>
+                this.props.changeValue("textColor", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -51,7 +68,12 @@ class DefaultText extends Component {
             <Text>Inverse Color</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker value={this.props.variables.inverseTextColor} />
+            <ColorPicker
+              value={this.props.variables.inverseTextColor}
+              onChangeColor={color =>
+                this.props.changeValue("inverseTextColor", color)
+              }
+            />
           </FormCol>
         </FormRow>
 
@@ -60,7 +82,13 @@ class DefaultText extends Component {
             <Text>Note Font Size</Text>
           </FormCol>
           <FormCol>
-            <Input type="number" value={this.props.variables.noteFontSize} />
+            <Input
+              type="number"
+              value={this.props.variables.noteFontSize}
+              onChange={e =>
+                this.props.changeValue("noteFontSize", parseInt(e.target.value))
+              }
+            />
           </FormCol>
         </FormRow>
       </FormGroup>
@@ -70,7 +98,8 @@ class DefaultText extends Component {
 
 function bindAction(dispatch) {
   return {
-    appliedTheme: () => dispatch(appliedTheme())
+    appliedTheme: () => dispatch(appliedTheme()),
+    changeValue: (property, val) => dispatch(changeValue(property, val))
   };
 }
 

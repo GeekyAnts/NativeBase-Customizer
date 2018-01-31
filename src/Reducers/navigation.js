@@ -1,6 +1,7 @@
 const initialState = {
   page: "Anatomy",
   selected: 0,
+  subPage: null,
   pageList: [
     {
       id: 0,
@@ -105,13 +106,16 @@ export default function(state = initialState, action) {
     case "INCREMENT":
       var abc = null;
       state.pageList.forEach(function(element) {
-        if (state.selected === element.id) abc = element.route;
+        if (state.selected + 1 === element.id) {
+          abc = element.route;
+        }
       });
       if (!(state.selected >= 23))
         return {
           ...state,
           selected: state.selected + 1,
-          route: abc
+          page: abc,
+          subPage: null
         };
       else
         return {
@@ -120,13 +124,14 @@ export default function(state = initialState, action) {
     case "DECREMENT":
       var abc = null;
       state.pageList.forEach(function(element) {
-        if (state.selected === element.id) abc = element.route;
+        if (state.selected - 1 === element.id) abc = element.route;
       });
       if (!(state.selected <= 0))
         return {
           ...state,
           selected: state.selected - 1,
-          route: abc
+          page: abc,
+          subPage: null
         };
       else
         return {
@@ -134,6 +139,7 @@ export default function(state = initialState, action) {
         };
     case "SELECT_PAGE":
       var abc = null;
+      var sub = null;
       state.pageList.forEach(function(element) {
         if (action.page === element.route) {
           abc = element.id;
@@ -142,6 +148,7 @@ export default function(state = initialState, action) {
       return {
         ...state,
         page: action.page,
+        subPage: action.subpage,
         selected: abc
       };
     default:

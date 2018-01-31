@@ -21,7 +21,6 @@ class ColorPicker extends Component {
   };
   @autobind
   handleChange(color) {
-    console.log(color, "color");
     if (color !== undefined) {
       this.props.onChangeColor(
         `rgba(${color.rgb.r},${color.rgb.g},${color.rgb.b},${color.rgb.a})`

@@ -24,14 +24,23 @@ const datas = [
     route: "Header",
     icon: "phone-landscape",
     bg: "#477EEA",
-    types: "8"
+    types: "8",
+    sub: [
+      "Title",
+      "Icon Button",
+      "Text Button",
+      "Multiple Buttons",
+      "SubTitle",
+      "Custom Background"
+    ]
   },
   {
     name: "Footer",
     route: "Footer",
     icon: "phone-landscape",
     bg: "#DA4437",
-    types: "4"
+    types: "4",
+    sub: ["Basic", "Icon Buttons", "Icon & Text", "Badge"]
   },
   {
     name: "Badge",
@@ -44,14 +53,32 @@ const datas = [
     route: "Button",
     icon: "radio-button-off",
     bg: "#1EBC7C",
-    types: "9"
+    types: "9",
+    sub: [
+      "Default",
+      "Outline",
+      "Rounded",
+      "Block",
+      "Full",
+      "Custom Size",
+      "Transparent",
+      "Icon Button",
+      "Disabled"
+    ]
   },
   {
     name: "Card",
     route: "Card",
     icon: "keypad",
     bg: "#B89EF5",
-    types: "5"
+    types: "5",
+    sub: [
+      "Basic",
+      "Card List",
+      "Card Image",
+      "Card Showcase",
+      "Header & Footer"
+    ]
   },
   {
     name: "Check Box",
@@ -64,21 +91,36 @@ const datas = [
     route: "DeckSwiper",
     icon: "swap",
     bg: "#3591FA",
-    types: "2"
+    types: "2",
+    sub: ["Basic", "Advanced"]
   },
   {
     name: "Fab",
     route: "Fab",
     icon: "help-buoy",
     bg: "#EF6092",
-    types: "2"
+    types: "2",
+    sub: ["Basic", "Multiple"]
   },
   {
     name: "Form & Inputs",
     route: "Form",
     icon: "call",
     bg: "#EFB406",
-    types: "12"
+    types: "12",
+    sub: [
+      "Regular",
+      "Fixed",
+      "Inline",
+      "Floating",
+      "Placeholder",
+      "Stacked",
+      "Underlined",
+      "Rounded",
+      "Success",
+      "Error",
+      "Disabled"
+    ]
   },
   {
     name: "Icon",
@@ -168,22 +210,59 @@ const datas = [
 class LeftPanel extends Component {
   render() {
     const that = this;
+
     const renObjData = datas.map(function(data, idx) {
       const icon = "ios-" + data.icon;
-      return (
-        <Bar
-          key={idx}
-          active={data.route === that.props.page.navigation.page}
-          onClick={() => that.props.newPage(data.route)}
-        >
-          <Icon
-            name={icon}
-            uiSize="26px"
-            style={{ marginRight: 10, opacity: 0.4 }}
-          />
-          {data.name}
-        </Bar>
-      );
+      if (data.sub === undefined) {
+        return (
+          <Bar
+            key={idx}
+            active={data.route === that.props.page.navigation.page}
+            onClick={() => that.props.newPage(data.route)}
+          >
+            <Icon
+              name={icon}
+              uiSize="26px"
+              style={{ marginRight: 10, opacity: 0.4 }}
+            />
+            {data.name}
+          </Bar>
+        );
+      } else {
+        const newSub = data.sub.map(function(subData, idx) {
+          return (
+            <Bar
+              sub
+              onClick={() => that.props.newPage(data.route, subData)}
+              active={subData === that.props.page.navigation.subPage}
+            >
+              <Icon
+                name="md-add-circle"
+                uiSize="20px"
+                style={{ marginRight: 10, opacity: 0.4 }}
+              />
+              {subData}
+            </Bar>
+          );
+        });
+        return (
+          <div>
+            <Bar
+              key={idx}
+              active={data.route === that.props.page.navigation.page}
+              onClick={() => that.props.newPage(data.route, data.sub[0])}
+            >
+              <Icon
+                name={icon}
+                uiSize="26px"
+                style={{ marginRight: 10, opacity: 0.4 }}
+              />
+              {data.name}
+            </Bar>
+            {data.route === that.props.page.navigation.page && newSub}
+          </div>
+        );
+      }
     });
     return (
       <Pane uiBackground="300" style={{ padding: 0, display: "flex" }}>
@@ -195,7 +274,7 @@ class LeftPanel extends Component {
 
 function bindAction(dispatch) {
   return {
-    newPage: page => dispatch(newPage(page))
+    newPage: (page, subPage) => dispatch(newPage(page, subPage))
   };
 }
 
