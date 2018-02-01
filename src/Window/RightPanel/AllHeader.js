@@ -6,33 +6,23 @@ import FormCol from "../../StyledComponents/FormCol";
 import Text from "../../StyledComponents/Text";
 import Input from "../../StyledComponents/Input";
 import ColorPicker from "../../StyledComponents/ColorPicker";
+import Slider from "../../StyledComponents/Slider";
 import { appliedTheme, changeValue } from "../../Actions/theme";
 
-class Title extends Component {
+class AllHeader extends Component {
   render() {
     return (
       <FormGroup noBorder>
         <FormRow>
           <FormCol>
-            <Text>Title Font Family</Text>
-          </FormCol>
-          <FormCol>
-            <Input
-              type="text"
-              value={this.props.variables.titleFontfamily}
-              onChange={e =>
-                this.props.changeValue(
-                  "titleFontfamily",
-                  parseInt(e.target.value)
-                )
-              }
-            />
+            <Text header uiSize="m">
+              Header
+            </Text>
           </FormCol>
         </FormRow>
-
         <FormRow>
           <FormCol>
-            <Text>Title FontSize</Text>
+            <Text>FontSize</Text>
           </FormCol>
           <FormCol>
             <Input
@@ -50,45 +40,76 @@ class Title extends Component {
 
         <FormRow>
           <FormCol>
-            <Text>SubTitle FontSize</Text>
+            <Text>Background Color</Text>
           </FormCol>
           <FormCol>
-            <Input
-              type="number"
-              value={this.props.variables.subTitleFontSize}
-              onChange={e =>
-                this.props.changeValue(
-                  "subTitleFontSize",
-                  parseInt(e.target.value)
-                )
-              }
+            <ColorPicker
+              value={this.props.variables.toolbarDefaultBg}
+              onChangeColor={colorValue => {
+                this.props.changeValue("toolbarDefaultBg", colorValue);
+              }}
             />
           </FormCol>
         </FormRow>
 
         <FormRow>
           <FormCol>
-            <Text>Title Color</Text>
+            <Text>Height</Text>
           </FormCol>
           <FormCol>
-            <ColorPicker
-              value={this.props.variables.titleFontColor}
-              onChangeColor={color =>
-                this.props.changeValue("titleFontColor", color)
+            <Input
+              type="number"
+              onChange={e =>
+                this.props.changeValue(
+                  "toolbarHeight",
+                  parseInt(e.target.value)
+                )
               }
+              value={this.props.variables.toolbarHeight}
             />
           </FormCol>
         </FormRow>
         <FormRow>
           <FormCol>
-            <Text>SubTitle Color</Text>
+            <Text>Button Padding</Text>
+          </FormCol>
+          <FormCol>
+            <Input
+              type="number"
+              onChange={e =>
+                this.props.changeValue(
+                  "buttonPadding",
+                  parseInt(e.target.value)
+                )
+              }
+              value={this.props.variables.buttonPadding}
+            />
+          </FormCol>
+        </FormRow>
+
+        <FormRow>
+          <FormCol>
+            <Text>Border</Text>
           </FormCol>
           <FormCol>
             <ColorPicker
-              value={this.props.variables.subtitleColor}
-              onChangeColor={color =>
-                this.props.changeValue("subtitleColor", color)
-              }
+              value={this.props.variables.toolbarDefaultBorder}
+              onChangeColor={colorValue => {
+                this.props.changeValue("toolbarDefaultBorder", colorValue);
+              }}
+            />
+          </FormCol>
+        </FormRow>
+        <FormRow>
+          <FormCol>
+            <Text>Button Icon Color</Text>
+          </FormCol>
+          <FormCol>
+            <ColorPicker
+              value={this.props.variables.toolbarBtnColor}
+              onChangeColor={colorValue => {
+                this.props.changeValue("toolbarBtnColor", colorValue);
+              }}
             />
           </FormCol>
         </FormRow>
@@ -108,4 +129,4 @@ const mapStateToProps = state => ({
   variables: state.theme.variable
 });
 
-export default connect(mapStateToProps, bindAction)(Title);
+export default connect(mapStateToProps, bindAction)(AllHeader);

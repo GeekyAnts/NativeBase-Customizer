@@ -9,9 +9,16 @@ import Row from "../../StyledComponents/Row";
 import Button from "../../StyledComponents/Button";
 import Text from "../../StyledComponents/Text";
 import logo from "../../assets/logo.png";
+import someFile from "../../ReactNativeApp/theme/variables/material";
 import { appliedTheme } from "../../Actions/theme";
 
 class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      newFile: null
+    };
+  }
   download(filename, text) {
     var element = document.createElement("a");
     element.setAttribute(
@@ -27,7 +34,37 @@ class Header extends Component {
 
     document.body.removeChild(element);
   }
+  // readBlob(newFile) {
+  //   var files = newFile;
+
+  //   var file = files[0];
+  //   var start = 0;
+  //   var stop = file.size - 1;
+
+  //   var reader = new FileReader();
+  //   var newVariables = null;
+
+  //   // If we use onloadend, we need to check the readyState.
+  //   const that = this;
+  //   reader.onloadend = function(evt) {
+  //     if (evt.target.readyState == FileReader.DONE) {
+  //       newVariables = evt.target.result;
+  //       var n = newVariables.search("export default {");
+  //       var str = "export default {";
+  //       var len = str.length;
+  //       var res = newVariables.slice(n + (len - 1), newVariables.length);
+  //       // var some = JSON.parse(res);
+  //       console.log(res, "upload");
+
+  //       // that.props.appliedTheme(newVariables);
+  //     }
+  //   };
+
+  //   var blob = file.slice(start, stop + 1);
+  //   reader.readAsBinaryString(blob);
+  // }
   render() {
+    console.log(this.props.variables, "var");
     return (
       <Pane uiBackground="300">
         <Row>
@@ -49,10 +86,9 @@ class Header extends Component {
             >
               <Icon name="ios-download-outline" />
             </Button>
-            <Button active style={{ marginLeft: 8 }}>
+            {/* <Button active style={{ marginLeft: 8 }}>
               <Icon name="ios-share-outline" />
-            </Button>
-            {/* <input type="file" onChange={e => console.log(e, "val")} /> */}
+            </Button> */}
           </Col>
         </Row>
       </Pane>
@@ -62,7 +98,7 @@ class Header extends Component {
 
 function bindAction(dispatch) {
   return {
-    appliedTheme: () => dispatch(appliedTheme())
+    appliedTheme: variable => dispatch(appliedTheme(variable))
   };
 }
 

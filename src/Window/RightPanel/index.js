@@ -7,6 +7,8 @@ import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import Dropdown from "../../StyledComponents/Dropdown";
 import Header from "./Header";
 import Badge from "./Badge";
+import Anatomy from "./Anatomy";
+import ActionSheet from "./ActionSheet";
 import Button from "./Button";
 import Card from "./Card";
 import CheckBox from "./CheckBox";
@@ -40,16 +42,18 @@ class RightPanel extends Component {
             </FormCol>
           </FormRow>
         </FormGroup>
+        {this.props.page.navigation.page === "Anatomy" && <Anatomy />}
+        {this.props.page.navigation.page === "Actionsheet" && <ActionSheet />}
         {this.props.page.navigation.page === "Badge" && <Badge />}
         {this.props.page.navigation.page === "Button" && <Button />}
         {this.props.page.navigation.page === "Card" && <Card />}
-        {this.props.page.navigation.page === "CheckBox" && <CheckBox />}
+        {this.props.page.navigation.page === "Checkbox" && <CheckBox />}
         {this.props.page.navigation.page === "DefaultText" && <DefaultText />}
         {/* {(this.props.page.navigation.page === "Anatomy" ||
           this.props.page.navigation.page === "Header") && <Header />} */}
-        {(this.props.page.navigation.page === "Anatomy" ||
-          this.props.page.navigation.page === "Footer") && <Footer />}
-        {this.props.page.navigation.page === "FooterTab" && <FooterTab />}
+        {this.props.page.navigation.page === "Header" && <Header />}
+        {/* {this.props.page.navigation.page != "Anatomy" && <Title />} */}
+        {this.props.page.navigation.page === "Footer" && <Footer />}
         {this.props.page.navigation.page === "Icon" && <Icon />}
         {this.props.page.navigation.page === "InputGroup" && <InputGroup />}
         {this.props.page.navigation.page === "List" && <List />}
@@ -57,9 +61,7 @@ class RightPanel extends Component {
         {this.props.page.navigation.page === "Segment" && <Segment />}
         {this.props.page.navigation.page === "Spinner" && <Spinner />}
         {this.props.page.navigation.page === "Tabs" && <Tabs />}
-        <Header />
-        {/* <Title /> */}
-        <Colors />
+        {/* {this.props.page.navigation.page != "Anatomy" && <Colors />} */}
       </WrapperDiv>
     );
   }

@@ -3,15 +3,15 @@ import { connect } from "react-redux";
 import FormGroup from "../../StyledComponents/FormGroup";
 import FormRow from "../../StyledComponents/FormRow";
 import FormCol from "../../StyledComponents/FormCol";
-import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import Text from "../../StyledComponents/Text";
 import Input from "../../StyledComponents/Input";
+import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import ColorPicker from "../../StyledComponents/ColorPicker";
 import Slider from "../../StyledComponents/Slider";
 import AllHeader from "./AllHeader";
 import { appliedTheme, changeValue } from "../../Actions/theme";
 
-class Badge extends Component {
+class ActionSheet extends Component {
   render() {
     return (
       <WrapperDiv>
@@ -19,37 +19,24 @@ class Badge extends Component {
           <FormRow>
             <FormCol>
               <Text header uiSize="m">
-                Badge
+                ActionSheet
               </Text>
             </FormCol>
           </FormRow>
+
           <FormRow>
             <FormCol>
-              <Text>FontSize</Text>
+              <Text>FontFamily</Text>
             </FormCol>
             <FormCol>
               <Input
-                type="number"
-                value={this.props.variables.fontSizeBase}
+                type="text"
+                value={this.props.variables.btnFontFamily}
                 onChange={e =>
                   this.props.changeValue(
-                    "fontSizeBase",
+                    "btnFontFamily",
                     parseInt(e.target.value)
                   )
-                }
-              />
-            </FormCol>
-          </FormRow>
-          <FormRow>
-            <FormCol>
-              <Text>Line Height</Text>
-            </FormCol>
-            <FormCol>
-              <Input
-                type="number"
-                value={this.props.variables.lineHeight}
-                onChange={e =>
-                  this.props.changeValue("lineHeight", parseInt(e.target.value))
                 }
               />
             </FormCol>
@@ -57,13 +44,49 @@ class Badge extends Component {
 
           <FormRow>
             <FormCol>
-              <Text>Background Color</Text>
+              <Text>FontSize</Text>
+            </FormCol>
+            <FormCol>
+              <Input
+                type="number"
+                value={this.props.variables.btnTextSize}
+                onChange={e =>
+                  this.props.changeValue(
+                    "btnTextSize",
+                    parseInt(e.target.value)
+                  )
+                }
+              />
+            </FormCol>
+          </FormRow>
+
+          <FormRow>
+            <FormCol>
+              <Text>Line Height</Text>
+            </FormCol>
+            <FormCol>
+              <Input
+                type="number"
+                value={this.props.variables.btnLineHeight}
+                onChange={e =>
+                  this.props.changeValue(
+                    "btnLineHeight",
+                    parseInt(e.target.value)
+                  )
+                }
+              />
+            </FormCol>
+          </FormRow>
+
+          <FormRow>
+            <FormCol>
+              <Text>Background</Text>
             </FormCol>
             <FormCol>
               <ColorPicker
-                value={this.props.variables.badgeBg}
+                value={this.props.variables.btnPrimaryBg}
                 onChangeColor={color =>
-                  this.props.changeValue("badgeBg", color)
+                  this.props.changeValue("btnPrimaryBg", color)
                 }
               />
             </FormCol>
@@ -75,9 +98,9 @@ class Badge extends Component {
             </FormCol>
             <FormCol>
               <ColorPicker
-                value={this.props.variables.badgeColor}
+                value={this.props.variables.inverseTextColor}
                 onChangeColor={color =>
-                  this.props.changeValue("badgeColor", color)
+                  this.props.changeValue("inverseTextColor", color)
                 }
               />
             </FormCol>
@@ -85,82 +108,18 @@ class Badge extends Component {
 
           <FormRow>
             <FormCol>
-              <Text>Padding</Text>
+              <Text>Border Radius</Text>
             </FormCol>
             <FormCol>
-              <Input
-                type="number"
-                value={this.props.variables.badgePadding}
+              <Slider
+                min="0"
+                max="50"
+                value={this.props.variables.borderRadiusBase}
                 onChange={e =>
                   this.props.changeValue(
-                    "badgePadding",
+                    "borderRadiusBase",
                     parseInt(e.target.value)
                   )
-                }
-              />
-            </FormCol>
-          </FormRow>
-          <FormRow>
-            <FormCol>
-              <Text>Primary</Text>
-            </FormCol>
-            <FormCol>
-              <ColorPicker
-                value={this.props.variables.btnPrimaryBg}
-                onChangeColor={color =>
-                  this.props.changeValue("btnPrimaryBg", color)
-                }
-              />
-            </FormCol>
-          </FormRow>
-          <FormRow>
-            <FormCol>
-              <Text>Warning</Text>
-            </FormCol>
-            <FormCol>
-              <ColorPicker
-                value={this.props.variables.btnWarningBg}
-                onChangeColor={color =>
-                  this.props.changeValue("btnWarningBg", color)
-                }
-              />
-            </FormCol>
-          </FormRow>
-          <FormRow>
-            <FormCol>
-              <Text>Info</Text>
-            </FormCol>
-            <FormCol>
-              <ColorPicker
-                value={this.props.variables.btnInfoBg}
-                onChangeColor={color =>
-                  this.props.changeValue("btnInfoBg", color)
-                }
-              />
-            </FormCol>
-          </FormRow>
-          <FormRow>
-            <FormCol>
-              <Text>Success</Text>
-            </FormCol>
-            <FormCol>
-              <ColorPicker
-                value={this.props.variables.btnSuccessBg}
-                onChangeColor={color =>
-                  this.props.changeValue("btnSuccessBg", color)
-                }
-              />
-            </FormCol>
-          </FormRow>
-          <FormRow>
-            <FormCol>
-              <Text>Danger</Text>
-            </FormCol>
-            <FormCol>
-              <ColorPicker
-                value={this.props.variables.btnDangerBg}
-                onChangeColor={color =>
-                  this.props.changeValue("btnDangerBg", color)
                 }
               />
             </FormCol>
@@ -183,4 +142,4 @@ const mapStateToProps = state => ({
   variables: state.theme.variable
 });
 
-export default connect(mapStateToProps, bindAction)(Badge);
+export default connect(mapStateToProps, bindAction)(ActionSheet);

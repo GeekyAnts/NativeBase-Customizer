@@ -5,6 +5,7 @@ export function theme(variable) {
   };
 }
 export function appliedTheme(variable) {
+  // console.log(variable, "upload");
   return dispatch => {
     dispatch(theme(variable));
   };
