@@ -114,6 +114,7 @@ const datas = [
       "Inline",
       "Floating",
       "Placeholder",
+      "With Icon",
       "Stacked",
       "Underlined",
       "Rounded",
@@ -140,20 +141,39 @@ const datas = [
     route: "List",
     icon: "lock",
     bg: "#5DCEE2",
-    types: "7"
+    types: "7",
+    sub: [
+      "Basic List",
+      "List Divider",
+      "List Separator",
+      "List Header",
+      "List Icon",
+      "List Avatar",
+      "List Thumbnail"
+    ]
   },
   {
     name: "ListSwipe",
     route: "ListSwipe",
     icon: "swap",
     bg: "#C5F442",
-    types: "2"
+    types: "2",
+    sub: ["Basic", "Advanced"]
   },
   {
     name: "Picker",
     route: "Picker",
     icon: "arrow-dropdown",
-    bg: "#F50C75"
+    bg: "#F50C75",
+    sub: [
+      "Regular",
+      "Placeholder",
+      "Placeholder Note",
+      "Back Button",
+      "Header",
+      "Header Style",
+      "Custom Header"
+    ]
   },
   {
     name: "Radio",
@@ -172,7 +192,8 @@ const datas = [
     route: "Segment",
     icon: "menu",
     bg: "#0A2C6B",
-    types: "2"
+    types: "2",
+    sub: ["Basic", "Advanced"]
   },
   {
     name: "Spinner",
@@ -182,10 +203,11 @@ const datas = [
   },
   {
     name: "Tabs",
-    route: "Tab",
+    route: "Tabs",
     icon: "home",
     bg: "#AB6AED",
-    types: "3"
+    types: "3",
+    sub: ["Basic", "Configurable", "Scrollable"]
   },
   {
     name: "Thumbnail",

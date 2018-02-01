@@ -30,7 +30,45 @@ import SimpleDeck from "../screens/deckswiper/simple";
 import AdvancedDeck from "../screens/deckswiper/advanced";
 import BasicFab from "../screens/fab/basic";
 import MultipleFab from "../screens/fab/multiple";
-import Form from "../screens/form/";
+import FixedLabel from "../screens/form/fixedLabel";
+import InlineLabel from "../screens/form/inlineLabel";
+import FloatingLabel from "../screens/form/floatingLabel";
+import PlaceholderLabel from "../screens/form/placeholder";
+import StackedLabel from "../screens/form/stacked";
+import RegularInput from "../screens/form/regular";
+import UnderlineInput from "../screens/form/underline";
+import RoundedInput from "../screens/form/rounded";
+import IconInput from "../screens/form/iconInput";
+import SuccessInput from "../screens/form/success";
+import ErrorInput from "../screens/form/error";
+import DisabledInput from "../screens/form/disabledInput";
+
+import BasicSegment from "../screens/segment/SegmentHeader";
+import AdvSegment from "../screens/segment/segmentTab";
+
+import RegularPicker from "../screens/picker/regularPicker";
+import PlaceholderPicker from "../screens/picker/placeholderPicker";
+import PlaceholderPickerNote from "../screens/picker/placeholderPickernote";
+import BackButtonPicker from "../screens/picker/backButtonPicker";
+import HeaderPicker from "../screens/picker/headerPicker";
+import HeaderStylePicker from "../screens/picker/headerStylePicker";
+import CustomHeaderPicker from "../screens/picker/customHeaderPicker";
+
+import BasicTab from "../screens/tab/basicTab";
+import ConfigTab from "../screens/tab/configTab";
+import ScrollableTab from "../screens/tab/scrollableTab";
+
+import BasicListSwipe from "../screens/listSwipe/basic-list-swipe";
+import MultiListSwipe from "../screens/listSwipe/multi-list-swipe";
+
+import NHBasicList from "../screens/list/basic-list";
+import NHListDivider from "../screens/list/list-divider";
+import NHListSeparator from "../screens/list/list-separator";
+import NHListHeader from "../screens/list/list-headers";
+import NHListIcon from "../screens/list/list-icon";
+import NHListAvatar from "../screens/list/list-avatar";
+import NHListThumbnail from "../screens/list/list-thumbnail";
+
 import Header from "../screens/Header/1";
 import Header2 from "../screens/Header/2";
 import Header3 from "../screens/Header/3";
@@ -158,27 +196,111 @@ class Setup extends Component {
             return <BasicFab />;
         }
       case 10:
-        return <Form />;
+        switch (this.props.screen.subRoute) {
+          case "Fixed":
+            return <FixedLabel />;
+          case "Regular":
+            return <RegularInput />;
+          case "Inline":
+            return <InlineLabel />;
+          case "Floating":
+            return <FloatingLabel />;
+          case "Placeholder":
+            return <PlaceholderLabel />;
+          case "Stacked":
+            return <StackedLabel />;
+          case "Underlined":
+            return <UnderlineInput />;
+          case "Rounded":
+            return <RoundedInput />;
+          case "Success":
+            return <SuccessInput />;
+          case "Error":
+            return <ErrorInput />;
+          case "With Icon":
+            return <IconInput />;
+          case "Disabled":
+            return <DisabledInput />;
+          default:
+            return <RegularInput />;
+        }
       case 11:
         return <Icon />;
       case 12:
         return <Layout />;
       case 13:
-        return <List />;
+        switch (this.props.screen.subRoute) {
+          case "Basic List":
+            return <NHBasicList />;
+          case "List Divider":
+            return <NHListDivider />;
+          case "List Separator":
+            return <NHListSeparator />;
+          case "List Header":
+            return <NHListHeader />;
+          case "List Icon":
+            return <NHListIcon />;
+          case "List Avatar":
+            return <NHListAvatar />;
+          case "List Thumbnail":
+            return <NHListThumbnail />;
+          default:
+            return <NHBasicList />;
+        }
       case 14:
-        return <ListSwipe />;
+        switch (this.props.screen.subRoute) {
+          case "Basic":
+            return <BasicListSwipe />;
+          case "Advanced":
+            return <MultiListSwipe />;
+          default:
+            return <BasicListSwipe />;
+        }
       case 15:
-        return <Picker />;
+        switch (this.props.screen.subRoute) {
+          case "Regular":
+            return <RegularPicker />;
+          case "Placeholder":
+            return <PlaceholderPicker />;
+          case "Placeholder Note":
+            return <PlaceholderPickerNote />;
+          case "Back Button":
+            return <BackButtonPicker />;
+          case "Header":
+            return <HeaderPicker />;
+          case "Header Style":
+            return <HeaderStylePicker />;
+          case "Custom Header":
+            return <CustomHeaderPicker />;
+          default:
+            return <RegularPicker />;
+        }
       case 16:
         return <Radio />;
       case 17:
         return <Searchbar />;
       case 18:
-        return <Segment />;
+        switch (this.props.screen.subRoute) {
+          case "Basic":
+            return <BasicSegment />;
+          case "Advanced":
+            return <AdvSegment />;
+          default:
+            return <BasicSegment />;
+        }
       case 19:
         return <Spinner />;
       case 20:
-        return <Tabs />;
+        switch (this.props.screen.subRoute) {
+          case "Basic":
+            return <BasicTab />;
+          case "Configurable":
+            return <ConfigTab />;
+          case "Scrollable":
+            return <ScrollableTab />;
+          default:
+            return <BasicTab />;
+        }
       case 21:
         return <Thumbnail />;
       case 22:
