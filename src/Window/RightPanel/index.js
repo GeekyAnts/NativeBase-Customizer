@@ -45,8 +45,8 @@ class RightPanel extends Component {
         {this.props.page.navigation.page === "Card" && <Card />}
         {this.props.page.navigation.page === "CheckBox" && <CheckBox />}
         {this.props.page.navigation.page === "DefaultText" && <DefaultText />}
-        {(this.props.page.navigation.page === "Anatomy" ||
-          this.props.page.navigation.page === "Header") && <Header />}
+        {/* {(this.props.page.navigation.page === "Anatomy" ||
+          this.props.page.navigation.page === "Header") && <Header />} */}
         {(this.props.page.navigation.page === "Anatomy" ||
           this.props.page.navigation.page === "Footer") && <Footer />}
         {this.props.page.navigation.page === "FooterTab" && <FooterTab />}
@@ -57,8 +57,9 @@ class RightPanel extends Component {
         {this.props.page.navigation.page === "Segment" && <Segment />}
         {this.props.page.navigation.page === "Spinner" && <Spinner />}
         {this.props.page.navigation.page === "Tabs" && <Tabs />}
+        <Header />
         {/* <Title /> */}
-        {/* <Colors /> */}
+        <Colors />
       </WrapperDiv>
     );
   }
