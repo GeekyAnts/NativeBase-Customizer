@@ -9,7 +9,7 @@ import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import AllHeader from "./AllHeader";
 import { appliedTheme, changeValue } from "../../Actions/theme";
 
-class Spinner extends Component {
+class Fab extends Component {
   render() {
     return (
       <WrapperDiv>
@@ -17,35 +17,8 @@ class Spinner extends Component {
           <FormRow>
             <FormCol>
               <Text header uiSize="m">
-                Spinner
+                No Variables Related to Fab
               </Text>
-            </FormCol>
-          </FormRow>
-
-          <FormRow>
-            <FormCol>
-              <Text>Default Color</Text>
-            </FormCol>
-            <FormCol>
-              <ColorPicker
-                value={this.props.variables.defaultSpinnerColor}
-                onChangeColor={color =>
-                  this.props.changeValue("defaultSpinnerColor", color)
-                }
-              />
-            </FormCol>
-          </FormRow>
-          <FormRow>
-            <FormCol>
-              <Text>Inverse Color</Text>
-            </FormCol>
-            <FormCol>
-              <ColorPicker
-                value={this.props.variables.inverseSpinnerColor}
-                onChangeColor={color =>
-                  this.props.changeValue("inverseSpinnerColor", color)
-                }
-              />
             </FormCol>
           </FormRow>
         </FormGroup>
@@ -66,4 +39,4 @@ const mapStateToProps = state => ({
   variables: state.theme.variable
 });
 
-export default connect(mapStateToProps, bindAction)(Spinner);
+export default connect(mapStateToProps, bindAction)(Fab);

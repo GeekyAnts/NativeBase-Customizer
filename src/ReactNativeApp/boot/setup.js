@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleProvider, getTheme } from "native-base";
+import { StyleProvider, getTheme, Root } from "native-base";
 import { connect } from "react-redux";
 import { appliedTheme } from "../../Actions/theme";
 
@@ -117,8 +117,6 @@ class Setup extends Component {
             return <Header6 />;
           case "SubTitle":
             return <Header7 />;
-          case "Custom Background":
-            return <Header8 />;
           default:
             return <Header />;
         }
@@ -128,7 +126,7 @@ class Setup extends Component {
             return <BasicFooter />;
           case "Icon Buttons":
             return <IconFooter />;
-          case "Icon &Text":
+          case "Icon & Text":
             return <IconText />;
           case "Badge":
             return <BadgeFooter />;
@@ -149,11 +147,11 @@ class Setup extends Component {
             return <Block />;
           case "Full":
             return <Full />;
-          case "Custom":
+          case "Custom Size":
             return <Custom />;
           case "Transparent":
             return <Transparent />;
-          case "IconBtn":
+          case "Icon Button":
             return <IconBtn />;
           case "Disabled":
             return <Disabled />;
@@ -313,9 +311,11 @@ class Setup extends Component {
   }
   render() {
     return (
-      <StyleProvider style={getTheme(this.props.variables)}>
-        {this.appScreen()}
-      </StyleProvider>
+      <Root>
+        <StyleProvider style={getTheme(this.props.variables)}>
+          {this.appScreen()}
+        </StyleProvider>
+      </Root>
     );
   }
 }

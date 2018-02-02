@@ -99,7 +99,7 @@ class BadgeFooter extends Component {
               vertical
               badge
             >
-              <Badge style={{ backgroundColor: "green" }}>
+              <Badge success>
                 <Text>51</Text>
               </Badge>
               <Icon active={this.state.tab3} name="compass" />

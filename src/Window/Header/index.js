@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Ionicon from "react-ionicons";
-
+import ejs from "ejs";
 import { connect } from "react-redux";
 import Pane from "../../StyledComponents/Pane";
 import Icon from "../../StyledComponents/Icon";
@@ -9,7 +9,7 @@ import Row from "../../StyledComponents/Row";
 import Button from "../../StyledComponents/Button";
 import Text from "../../StyledComponents/Text";
 import logo from "../../assets/logo.png";
-import someFile from "../../ReactNativeApp/theme/variables/material";
+// import template from "../../ReactNativeApp/theme/variables/template";
 import { appliedTheme } from "../../Actions/theme";
 
 class Header extends Component {
@@ -20,49 +20,44 @@ class Header extends Component {
     };
   }
   download(filename, text) {
+    const data = {
+      obj: text
+    };
+    const template = `import color from "color";
+
+    import { Platform, Dimensions, PixelRatio } from "react-native";
+    
+    const deviceHeight = Dimensions.get("window").height;
+    const deviceWidth = Dimensions.get("window").width;
+    const platform = Platform.OS;
+    const platformStyle = "material";
+    const isIphoneX =
+      platform === "ios" && deviceHeight === 812 && deviceWidth === 375;
+    
+    export default <%- obj -%>`;
+
+    const test = ejs.render(template, data);
+    // var re = new RegExp("&#34;", "g");
+    // var nn = test.replace(re, "");
+    // var re1 = new RegExp("&#34", "g");
+    // var mm = nn.replace(re1, "");
+    // console.log(mm, "raw");
     var element = document.createElement("a");
     element.setAttribute(
       "href",
-      "data:text/plain;charset=utf-8," + encodeURIComponent(text)
+      "data:text/plain;charset=utf-8," + encodeURIComponent(test)
     );
     element.setAttribute("download", filename);
 
-    element.style.display = "none";
     document.body.appendChild(element);
 
     element.click();
 
     document.body.removeChild(element);
+
+    console.log(test, "raw1");
   }
-  // readBlob(newFile) {
-  //   var files = newFile;
 
-  //   var file = files[0];
-  //   var start = 0;
-  //   var stop = file.size - 1;
-
-  //   var reader = new FileReader();
-  //   var newVariables = null;
-
-  //   // If we use onloadend, we need to check the readyState.
-  //   const that = this;
-  //   reader.onloadend = function(evt) {
-  //     if (evt.target.readyState == FileReader.DONE) {
-  //       newVariables = evt.target.result;
-  //       var n = newVariables.search("export default {");
-  //       var str = "export default {";
-  //       var len = str.length;
-  //       var res = newVariables.slice(n + (len - 1), newVariables.length);
-  //       // var some = JSON.parse(res);
-  //       console.log(res, "upload");
-
-  //       // that.props.appliedTheme(newVariables);
-  //     }
-  //   };
-
-  //   var blob = file.slice(start, stop + 1);
-  //   reader.readAsBinaryString(blob);
-  // }
   render() {
     console.log(this.props.variables, "var");
     return (

@@ -5,13 +5,12 @@ import FormRow from "../../StyledComponents/FormRow";
 import FormCol from "../../StyledComponents/FormCol";
 import Text from "../../StyledComponents/Text";
 import Input from "../../StyledComponents/Input";
-import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import ColorPicker from "../../StyledComponents/ColorPicker";
-import Slider from "../../StyledComponents/Slider";
+import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import AllHeader from "./AllHeader";
 import { appliedTheme, changeValue } from "../../Actions/theme";
 
-class CheckBox extends Component {
+class Typography extends Component {
   render() {
     return (
       <WrapperDiv>
@@ -19,177 +18,159 @@ class CheckBox extends Component {
           <FormRow>
             <FormCol>
               <Text header uiSize="m">
-                CheckBox
+                Typography
               </Text>
             </FormCol>
           </FormRow>
-          <FormRow>
-            <FormCol>
-              <Text>Radius</Text>
-            </FormCol>
-            <FormCol>
-              <Slider
-                min="0"
-                max="100"
-                value={this.props.variables.CheckboxRadius}
-                onChange={e =>
-                  this.props.changeValue(
-                    "CheckboxRadius",
-                    parseInt(e.target.value)
-                  )
-                }
-              />
-            </FormCol>
-          </FormRow>
 
           <FormRow>
             <FormCol>
-              <Text>Border Width</Text>
-            </FormCol>
-            <FormCol>
-              <Input
-                type="number"
-                value={this.props.variables.CheckboxBorderWidth}
-                onChange={e =>
-                  this.props.changeValue(
-                    "CheckboxBorderWidth",
-                    parseInt(e.target.value)
-                  )
-                }
-              />
-            </FormCol>
-          </FormRow>
-
-          <FormRow>
-            <FormCol>
-              <Text>Padding Left</Text>
-            </FormCol>
-            <FormCol>
-              <Input
-                type="number"
-                value={this.props.variables.CheckboxPaddingLeft}
-                onChange={e =>
-                  this.props.changeValue(
-                    "CheckboxPaddingLeft",
-                    parseInt(e.target.value)
-                  )
-                }
-              />
-            </FormCol>
-          </FormRow>
-
-          <FormRow>
-            <FormCol>
-              <Text>Padding Bottom</Text>
-            </FormCol>
-            <FormCol>
-              <Input
-                type="number"
-                value={this.props.variables.CheckboxPaddingBottom}
-                onChange={e =>
-                  this.props.changeValue(
-                    "CheckboxPaddingBottom",
-                    parseInt(e.target.value)
-                  )
-                }
-              />
-            </FormCol>
-          </FormRow>
-
-          <FormRow>
-            <FormCol>
-              <Text>Icon Size</Text>
-            </FormCol>
-            <FormCol>
-              <Input
-                type="number"
-                value={this.props.variables.CheckboxFontSize}
-                onChange={e =>
-                  this.props.changeValue(
-                    "CheckboxFontSize",
-                    parseInt(e.target.value)
-                  )
-                }
-              />
-            </FormCol>
-          </FormRow>
-
-          <FormRow>
-            <FormCol>
-              <Text>Line Height</Text>
-            </FormCol>
-            <FormCol>
-              <Input
-                type="number"
-                value={this.props.variables.CheckboxIconSize}
-                onChange={e =>
-                  this.props.changeValue(
-                    "CheckboxIconSize",
-                    parseInt(e.target.value)
-                  )
-                }
-              />
-            </FormCol>
-          </FormRow>
-
-          {/* <FormRow>
-            <FormCol>
-              <Text>Margin Top</Text>
-            </FormCol>
-            <FormCol>
-              <Input
-                type="number"
-                value={this.props.variables.CheckboxIconMarginTop}
-                onChange={e =>
-                  this.props.changeValue(
-                    "CheckboxIconMarginTop",
-                    parseInt(e.target.value)
-                  )
-                }
-              />
-            </FormCol>
-          </FormRow> */}
-
-          <FormRow>
-            <FormCol>
-              <Text>Size</Text>
-            </FormCol>
-            <FormCol>
-              <Input
-                type="number"
-                value={this.props.variables.checkboxSize}
-                onChange={e =>
-                  this.props.changeValue(
-                    "checkboxSize",
-                    parseInt(e.target.value)
-                  )
-                }
-              />
-            </FormCol>
-          </FormRow>
-
-          <FormRow>
-            <FormCol>
-              <Text>Background Color</Text>
+              <Text>Text Color</Text>
             </FormCol>
             <FormCol>
               <ColorPicker
-                value={this.props.variables.checkboxBgColor}
+                value={this.props.variables.textColor}
                 onChangeColor={color =>
-                  this.props.changeValue("checkboxBgColor", color)
+                  this.props.changeValue("textColor", color)
                 }
               />
             </FormCol>
           </FormRow>
           <FormRow>
             <FormCol>
-              <Text>Icon Color</Text>
+              <Text>H1 FontSize</Text>
+            </FormCol>
+            <FormCol>
+              <Input
+                type="number"
+                value={this.props.variables.fontSizeH1}
+                onChange={e =>
+                  this.props.changeValue("fontSizeH1", parseInt(e.target.value))
+                }
+              />
+            </FormCol>
+          </FormRow>
+          <FormRow>
+            <FormCol>
+              <Text>H1 LineHeight</Text>
+            </FormCol>
+            <FormCol>
+              <Input
+                type="number"
+                value={this.props.variables.lineHeightH1}
+                onChange={e =>
+                  this.props.changeValue(
+                    "lineHeightH1",
+                    parseInt(e.target.value)
+                  )
+                }
+              />
+            </FormCol>
+          </FormRow>
+          <FormRow>
+            <FormCol>
+              <Text>H2 FontSize</Text>
+            </FormCol>
+            <FormCol>
+              <Input
+                type="number"
+                value={this.props.variables.fontSizeH2}
+                onChange={e =>
+                  this.props.changeValue("fontSizeH2", parseInt(e.target.value))
+                }
+              />
+            </FormCol>
+          </FormRow>
+          <FormRow>
+            <FormCol>
+              <Text>H2 LineHeight</Text>
+            </FormCol>
+            <FormCol>
+              <Input
+                type="number"
+                value={this.props.variables.lineHeightH2}
+                onChange={e =>
+                  this.props.changeValue(
+                    "lineHeightH2",
+                    parseInt(e.target.value)
+                  )
+                }
+              />
+            </FormCol>
+          </FormRow>
+          <FormRow>
+            <FormCol>
+              <Text>H3 FontSize</Text>
+            </FormCol>
+            <FormCol>
+              <Input
+                type="number"
+                value={this.props.variables.fontSizeH3}
+                onChange={e =>
+                  this.props.changeValue("fontSizeH3", parseInt(e.target.value))
+                }
+              />
+            </FormCol>
+          </FormRow>
+          <FormRow>
+            <FormCol>
+              <Text>H3 LineHeight</Text>
+            </FormCol>
+            <FormCol>
+              <Input
+                type="number"
+                value={this.props.variables.lineHeightH3}
+                onChange={e =>
+                  this.props.changeValue(
+                    "lineHeightH3",
+                    parseInt(e.target.value)
+                  )
+                }
+              />
+            </FormCol>
+          </FormRow>
+          <FormRow>
+            <FormCol>
+              <Text>Default FontSize</Text>
+            </FormCol>
+            <FormCol>
+              <Input
+                type="number"
+                value={this.props.variables.DefaultFontSize}
+                onChange={e =>
+                  this.props.changeValue(
+                    "DefaultFontSize",
+                    parseInt(e.target.value)
+                  )
+                }
+              />
+            </FormCol>
+          </FormRow>
+
+          <FormRow>
+            <FormCol>
+              <Text>FontFamily</Text>
+            </FormCol>
+            <FormCol>
+              <Input
+                type="text"
+                value={this.props.variables.fontFamily}
+                onChange={e =>
+                  this.props.changeValue("fontFamily", parseInt(e.target.value))
+                }
+              />
+            </FormCol>
+          </FormRow>
+
+          <FormRow>
+            <FormCol>
+              <Text>Color</Text>
             </FormCol>
             <FormCol>
               <ColorPicker
-                value={this.props.variables.checkboxTickColor}
+                value={this.props.variables.textColor}
                 onChangeColor={color =>
-                  this.props.changeValue("checkboxTickColor", color)
+                  this.props.changeValue("textColor", color)
                 }
               />
             </FormCol>
@@ -212,4 +193,4 @@ const mapStateToProps = state => ({
   variables: state.theme.variable
 });
 
-export default connect(mapStateToProps, bindAction)(CheckBox);
+export default connect(mapStateToProps, bindAction)(Typography);

@@ -4,12 +4,14 @@ import FormGroup from "../../StyledComponents/FormGroup";
 import FormRow from "../../StyledComponents/FormRow";
 import FormCol from "../../StyledComponents/FormCol";
 import Text from "../../StyledComponents/Text";
+import Input from "../../StyledComponents/Input";
 import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import ColorPicker from "../../StyledComponents/ColorPicker";
+import Slider from "../../StyledComponents/Slider";
 import AllHeader from "./AllHeader";
 import { appliedTheme, changeValue } from "../../Actions/theme";
 
-class Segment extends Component {
+class Toast extends Component {
   render() {
     return (
       <WrapperDiv>
@@ -17,20 +19,24 @@ class Segment extends Component {
           <FormRow>
             <FormCol>
               <Text header uiSize="m">
-                Segment
+                Toast
               </Text>
             </FormCol>
           </FormRow>
 
           <FormRow>
             <FormCol>
-              <Text>Background Color</Text>
+              <Text>FontFamily</Text>
             </FormCol>
             <FormCol>
-              <ColorPicker
-                value={this.props.variables.segmentBackgroundColor}
-                onChangeColor={color =>
-                  this.props.changeValue("segmentBackgroundColor", color)
+              <Input
+                type="text"
+                value={this.props.variables.btnFontFamily}
+                onChange={e =>
+                  this.props.changeValue(
+                    "btnFontFamily",
+                    parseInt(e.target.value)
+                  )
                 }
               />
             </FormCol>
@@ -38,13 +44,49 @@ class Segment extends Component {
 
           <FormRow>
             <FormCol>
-              <Text>Active Background Color</Text>
+              <Text>FontSize</Text>
+            </FormCol>
+            <FormCol>
+              <Input
+                type="number"
+                value={this.props.variables.btnTextSize}
+                onChange={e =>
+                  this.props.changeValue(
+                    "btnTextSize",
+                    parseInt(e.target.value)
+                  )
+                }
+              />
+            </FormCol>
+          </FormRow>
+
+          <FormRow>
+            <FormCol>
+              <Text>Line Height</Text>
+            </FormCol>
+            <FormCol>
+              <Input
+                type="number"
+                value={this.props.variables.btnLineHeight}
+                onChange={e =>
+                  this.props.changeValue(
+                    "btnLineHeight",
+                    parseInt(e.target.value)
+                  )
+                }
+              />
+            </FormCol>
+          </FormRow>
+
+          <FormRow>
+            <FormCol>
+              <Text>Button Background</Text>
             </FormCol>
             <FormCol>
               <ColorPicker
-                value={this.props.variables.segmentActiveBackgroundColor}
+                value={this.props.variables.btnPrimaryBg}
                 onChangeColor={color =>
-                  this.props.changeValue("segmentActiveBackgroundColor", color)
+                  this.props.changeValue("btnPrimaryBg", color)
                 }
               />
             </FormCol>
@@ -56,9 +98,9 @@ class Segment extends Component {
             </FormCol>
             <FormCol>
               <ColorPicker
-                value={this.props.variables.segmentTextColor}
+                value={this.props.variables.inverseTextColor}
                 onChangeColor={color =>
-                  this.props.changeValue("segmentTextColor", color)
+                  this.props.changeValue("inverseTextColor", color)
                 }
               />
             </FormCol>
@@ -66,40 +108,22 @@ class Segment extends Component {
 
           <FormRow>
             <FormCol>
-              <Text>Active Text Color</Text>
+              <Text>Border Radius</Text>
             </FormCol>
             <FormCol>
-              <ColorPicker
-                value={this.props.variables.segmentActiveTextColor}
-                onChangeColor={color =>
-                  this.props.changeValue("segmentActiveTextColor", color)
+              <Slider
+                min="0"
+                max="50"
+                value={this.props.variables.borderRadiusBase}
+                onChange={e =>
+                  this.props.changeValue(
+                    "borderRadiusBase",
+                    parseInt(e.target.value)
+                  )
                 }
               />
             </FormCol>
           </FormRow>
-
-          <FormRow>
-            <FormCol>
-              <Text>Border Color</Text>
-            </FormCol>
-            <FormCol>
-              <ColorPicker
-                value={this.props.variables.segmentBorderColor}
-                onChangeColor={color =>
-                  this.props.changeValue("segmentBorderColor", color)
-                }
-              />
-            </FormCol>
-          </FormRow>
-
-          {/* <FormRow>
-          <FormCol>
-            <Text>Active Border Color</Text>
-          </FormCol>
-          <FormCol>
-            <ColorPicker value={this.props.variables.segmentBorderColorMain} />
-          </FormCol>
-        </FormRow> */}
         </FormGroup>
         <AllHeader />
       </WrapperDiv>
@@ -118,4 +142,4 @@ const mapStateToProps = state => ({
   variables: state.theme.variable
 });
 
-export default connect(mapStateToProps, bindAction)(Segment);
+export default connect(mapStateToProps, bindAction)(Toast);

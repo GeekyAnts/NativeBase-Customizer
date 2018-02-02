@@ -25,14 +25,7 @@ const datas = [
     icon: "phone-landscape",
     bg: "#477EEA",
     types: "8",
-    sub: [
-      "Title",
-      "Icon Button",
-      "Text Button",
-      "Multiple Buttons",
-      "SubTitle",
-      "Custom Background"
-    ]
+    sub: ["Title", "Icon Button", "Text Button", "Multiple Buttons", "SubTitle"]
   },
   {
     name: "Footer",

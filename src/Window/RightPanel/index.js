@@ -11,17 +11,22 @@ import Anatomy from "./Anatomy";
 import ActionSheet from "./ActionSheet";
 import Button from "./Button";
 import Card from "./Card";
+import Radio from "./RadioButton";
 import CheckBox from "./CheckBox";
 import Footer from "./Footer";
-import FooterTab from "./FooterTab";
+import Typography from "./Typography";
 import Icon from "./Icon";
+import Toast from "./Toast";
+import Thumbnail from "./Thumbnail";
 import InputGroup from "./InputGroup";
 import List from "./List";
 import RadioButton from "./RadioButton";
+import SearchBar from "./SearchBar";
 import Segment from "./Segment";
 import Spinner from "./Spinner";
 import Tabs from "./Tabs";
 import Title from "./Title";
+import Fab from "./Fab";
 import Colors from "./Colors";
 import DefaultText from "./Text";
 import { appliedTheme } from "../../Actions/theme";
@@ -44,16 +49,21 @@ class RightPanel extends Component {
         </FormGroup>
         {this.props.page.navigation.page === "Anatomy" && <Anatomy />}
         {this.props.page.navigation.page === "Actionsheet" && <ActionSheet />}
+        {this.props.page.navigation.page === "Toast" && <Toast />}
         {this.props.page.navigation.page === "Badge" && <Badge />}
         {this.props.page.navigation.page === "Button" && <Button />}
+        {this.props.page.navigation.page === "Radio" && <Radio />}
         {this.props.page.navigation.page === "Card" && <Card />}
         {this.props.page.navigation.page === "Checkbox" && <CheckBox />}
+        {this.props.page.navigation.page === "Thumbnail" && <Thumbnail />}
         {this.props.page.navigation.page === "DefaultText" && <DefaultText />}
         {/* {(this.props.page.navigation.page === "Anatomy" ||
           this.props.page.navigation.page === "Header") && <Header />} */}
         {this.props.page.navigation.page === "Header" && <Header />}
+        {this.props.page.navigation.page === "Typography" && <Typography />}
         {/* {this.props.page.navigation.page != "Anatomy" && <Title />} */}
         {this.props.page.navigation.page === "Footer" && <Footer />}
+        {this.props.page.navigation.page === "Searchbar" && <SearchBar />}
         {this.props.page.navigation.page === "Icon" && <Icon />}
         {this.props.page.navigation.page === "InputGroup" && <InputGroup />}
         {this.props.page.navigation.page === "List" && <List />}
@@ -61,6 +71,7 @@ class RightPanel extends Component {
         {this.props.page.navigation.page === "Segment" && <Segment />}
         {this.props.page.navigation.page === "Spinner" && <Spinner />}
         {this.props.page.navigation.page === "Tabs" && <Tabs />}
+        {this.props.page.navigation.page === "Fab" && <Fab />}
         {/* {this.props.page.navigation.page != "Anatomy" && <Colors />} */}
       </WrapperDiv>
     );

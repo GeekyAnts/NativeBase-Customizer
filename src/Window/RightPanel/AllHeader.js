@@ -20,23 +20,6 @@ class AllHeader extends Component {
             </Text>
           </FormCol>
         </FormRow>
-        <FormRow>
-          <FormCol>
-            <Text>FontSize</Text>
-          </FormCol>
-          <FormCol>
-            <Input
-              type="number"
-              value={this.props.variables.titleFontSize}
-              onChange={e =>
-                this.props.changeValue(
-                  "titleFontSize",
-                  parseInt(e.target.value)
-                )
-              }
-            />
-          </FormCol>
-        </FormRow>
 
         <FormRow>
           <FormCol>
@@ -69,6 +52,57 @@ class AllHeader extends Component {
             />
           </FormCol>
         </FormRow>
+
+        <FormRow>
+          <FormCol>
+            <Text>Title Font Family</Text>
+          </FormCol>
+          <FormCol>
+            <Input
+              type="text"
+              value={this.props.variables.titleFontfamily}
+              onChange={e =>
+                this.props.changeValue(
+                  "titleFontfamily",
+                  parseInt(e.target.value)
+                )
+              }
+            />
+          </FormCol>
+        </FormRow>
+
+        <FormRow>
+          <FormCol>
+            <Text>Title FontSize</Text>
+          </FormCol>
+          <FormCol>
+            <Input
+              type="number"
+              value={this.props.variables.titleFontSize}
+              onChange={e =>
+                this.props.changeValue(
+                  "titleFontSize",
+                  parseInt(e.target.value)
+                )
+              }
+            />
+          </FormCol>
+        </FormRow>
+
+        <FormRow>
+          <FormCol>
+            <Text>Title Color</Text>
+          </FormCol>
+          <FormCol>
+            <ColorPicker
+              value={this.props.variables.titleFontColor}
+              onChangeColor={color =>
+                this.props.changeValue("titleFontColor", color)
+              }
+            />
+          </FormCol>
+        </FormRow>
+
         <FormRow>
           <FormCol>
             <Text>Button Padding</Text>

@@ -7,79 +7,90 @@ import Text from "../../StyledComponents/Text";
 import Input from "../../StyledComponents/Input";
 import ColorPicker from "../../StyledComponents/ColorPicker";
 import Slider from "../../StyledComponents/Slider";
+import WrapperDiv from "../../StyledComponents/WrapperDiv";
+import AllHeader from "./AllHeader";
 import { appliedTheme, changeValue } from "../../Actions/theme";
+import { Platform } from "react-native-web";
 
 class RadioButton extends Component {
   render() {
     return (
-      <FormGroup noBorder>
-        <FormRow>
-          <FormCol>
-            <Text header uiSize="m">
-              Radio Button
-            </Text>
-          </FormCol>
-        </FormRow>
-        <FormRow>
-          <FormCol>
-            <Text>Size</Text>
-          </FormCol>
-          <FormCol>
-            <Input
-              type="number"
-              value={this.props.variables.radioBtnSize}
-              onChange={e =>
-                this.props.changeValue("radioBtnSize", parseInt(e.target.value))
-              }
-            />
-          </FormCol>
-        </FormRow>
+      <WrapperDiv>
+        <FormGroup noBorder>
+          <FormRow>
+            <FormCol>
+              <Text header uiSize="m">
+                Radio Button
+              </Text>
+            </FormCol>
+          </FormRow>
+          <FormRow>
+            <FormCol>
+              <Text>Size</Text>
+            </FormCol>
+            <FormCol>
+              <Input
+                type="number"
+                value={this.props.variables.radioBtnSize}
+                onChange={e =>
+                  this.props.changeValue(
+                    "radioBtnSize",
+                    parseInt(e.target.value)
+                  )
+                }
+              />
+            </FormCol>
+          </FormRow>
 
-        <FormRow>
-          <FormCol>
-            <Text>Line Height</Text>
-          </FormCol>
-          <FormCol>
-            <Input
-              type="number"
-              value={this.props.variables.radioBtnLineHeight}
-              onChange={e =>
-                this.props.changeValue(
-                  "radioBtnLineHeight",
-                  parseInt(e.target.value)
-                )
-              }
-            />
-          </FormCol>
-        </FormRow>
-
-        <FormRow>
-          <FormCol>
-            <Text>Active Color</Text>
-          </FormCol>
-          <FormCol>
-            <ColorPicker
-              value={this.props.variables.radioSelectedColorAndroid}
-              onChangeColor={color =>
-                this.props.changeValue("radioSelectedColorAndroid", color)
-              }
-            />
-          </FormCol>
-        </FormRow>
-        <FormRow>
-          <FormCol>
-            <Text>Color</Text>
-          </FormCol>
-          <FormCol>
-            <ColorPicker
-              value={this.props.variables.radioColor}
-              onChangeColor={color =>
-                this.props.changeValue("radioColor", color)
-              }
-            />
-          </FormCol>
-        </FormRow>
-      </FormGroup>
+          <FormRow>
+            <FormCol>
+              <Text>Line Height</Text>
+            </FormCol>
+            <FormCol>
+              <Input
+                type="number"
+                value={this.props.variables.radioBtnLineHeight}
+                onChange={e =>
+                  this.props.changeValue(
+                    "radioBtnLineHeight",
+                    parseInt(e.target.value)
+                  )
+                }
+              />
+            </FormCol>
+          </FormRow>
+          {Platform.OS === "android" ? (
+            <FormRow>
+              <FormCol>
+                <Text>Active Radio Color</Text>
+              </FormCol>
+              <FormCol>
+                <ColorPicker
+                  value={this.props.variables.radioSelectedColorAndroid}
+                  onChangeColor={color =>
+                    this.props.changeValue("radioSelectedColorAndroid", color)
+                  }
+                />
+              </FormCol>
+            </FormRow>
+          ) : (
+            <FormRow>
+              <FormCol>
+                <Text>Radio Color</Text>
+              </FormCol>
+              <FormCol>
+                <ColorPicker
+                  value={this.props.variables.radioColor}
+                  onChangeColor={color =>
+                    this.props.changeValue("radioColor", color)
+                  }
+                />
+              </FormCol>
+            </FormRow>
+          )}
+        </FormGroup>
+        <AllHeader />
+      </WrapperDiv>
     );
   }
 }

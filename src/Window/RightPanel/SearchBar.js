@@ -5,13 +5,12 @@ import FormRow from "../../StyledComponents/FormRow";
 import FormCol from "../../StyledComponents/FormCol";
 import Text from "../../StyledComponents/Text";
 import Input from "../../StyledComponents/Input";
-import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import ColorPicker from "../../StyledComponents/ColorPicker";
-import Slider from "../../StyledComponents/Slider";
+import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import AllHeader from "./AllHeader";
 import { appliedTheme, changeValue } from "../../Actions/theme";
 
-class CheckBox extends Component {
+class SearchBar extends Component {
   render() {
     return (
       <WrapperDiv>
@@ -19,83 +18,41 @@ class CheckBox extends Component {
           <FormRow>
             <FormCol>
               <Text header uiSize="m">
-                CheckBox
+                SearchBar
               </Text>
             </FormCol>
           </FormRow>
-          <FormRow>
-            <FormCol>
-              <Text>Radius</Text>
-            </FormCol>
-            <FormCol>
-              <Slider
-                min="0"
-                max="100"
-                value={this.props.variables.CheckboxRadius}
-                onChange={e =>
-                  this.props.changeValue(
-                    "CheckboxRadius",
-                    parseInt(e.target.value)
-                  )
-                }
-              />
-            </FormCol>
-          </FormRow>
 
           <FormRow>
             <FormCol>
-              <Text>Border Width</Text>
+              <Text>Input Background</Text>
+            </FormCol>
+            <FormCol>
+              <ColorPicker
+                value={this.props.variables.toolbarInputColor}
+                onChangeColor={colorValue => {
+                  this.props.changeValue("toolbarInputColor", colorValue);
+                }}
+              />
+            </FormCol>
+          </FormRow>
+          <FormRow>
+            <FormCol>
+              <Text>SearchBar Height</Text>
             </FormCol>
             <FormCol>
               <Input
                 type="number"
-                value={this.props.variables.CheckboxBorderWidth}
+                value={this.props.variables.searchBarHeight}
                 onChange={e =>
                   this.props.changeValue(
-                    "CheckboxBorderWidth",
+                    "searchBarHeight",
                     parseInt(e.target.value)
                   )
                 }
               />
             </FormCol>
           </FormRow>
-
-          <FormRow>
-            <FormCol>
-              <Text>Padding Left</Text>
-            </FormCol>
-            <FormCol>
-              <Input
-                type="number"
-                value={this.props.variables.CheckboxPaddingLeft}
-                onChange={e =>
-                  this.props.changeValue(
-                    "CheckboxPaddingLeft",
-                    parseInt(e.target.value)
-                  )
-                }
-              />
-            </FormCol>
-          </FormRow>
-
-          <FormRow>
-            <FormCol>
-              <Text>Padding Bottom</Text>
-            </FormCol>
-            <FormCol>
-              <Input
-                type="number"
-                value={this.props.variables.CheckboxPaddingBottom}
-                onChange={e =>
-                  this.props.changeValue(
-                    "CheckboxPaddingBottom",
-                    parseInt(e.target.value)
-                  )
-                }
-              />
-            </FormCol>
-          </FormRow>
-
           <FormRow>
             <FormCol>
               <Text>Icon Size</Text>
@@ -103,10 +60,114 @@ class CheckBox extends Component {
             <FormCol>
               <Input
                 type="number"
-                value={this.props.variables.CheckboxFontSize}
+                value={this.props.variables.toolbarSearchIconSize}
                 onChange={e =>
                   this.props.changeValue(
-                    "CheckboxFontSize",
+                    "toolbarSearchIconSize",
+                    parseInt(e.target.value)
+                  )
+                }
+              />
+            </FormCol>
+          </FormRow>
+          <FormRow>
+            <FormCol>
+              <Text>Icon Color</Text>
+            </FormCol>
+            <FormCol>
+              <ColorPicker
+                value={this.props.variables.dropdownLinkColor}
+                onChangeColor={colorValue => {
+                  this.props.changeValue("dropdownLinkColor", colorValue);
+                }}
+              />
+            </FormCol>
+          </FormRow>
+          <FormRow>
+            <FormCol>
+              <Text>FontSize</Text>
+            </FormCol>
+            <FormCol>
+              <Input
+                type="number"
+                value={this.props.variables.btnTextSize}
+                onChange={e =>
+                  this.props.changeValue(
+                    "btnTextSize",
+                    parseInt(e.target.value)
+                  )
+                }
+              />
+            </FormCol>
+          </FormRow>
+          <FormRow>
+            <FormCol>
+              <Text>Text Color</Text>
+            </FormCol>
+            <FormCol>
+              <ColorPicker
+                value={this.props.variables.toolbarBtnTextColor}
+                onChangeColor={colorValue => {
+                  this.props.changeValue("toolbarBtnTextColor", colorValue);
+                }}
+              />
+            </FormCol>
+          </FormRow>
+          {/* <FormRow>
+          <FormCol>
+            <Text>SearchBar Input Height</Text>
+          </FormCol>
+          <FormCol>
+            <Input
+              type="number"
+              onChange={e =>
+                this.props.changeValue(
+                  "searchBarInputHeight",
+                  parseInt(e.target.value)
+                )
+              }
+              value={this.props.variables.searchBarInputHeight}
+            />
+          </FormCol>
+        </FormRow> */}
+        </FormGroup>
+        <FormGroup noBorder>
+          <FormRow>
+            <FormCol>
+              <Text header uiSize="m">
+                Button
+              </Text>
+            </FormCol>
+          </FormRow>
+          <FormRow>
+            <FormCol>
+              <Text>FontFamily</Text>
+            </FormCol>
+            <FormCol>
+              <Input
+                type="text"
+                value={this.props.variables.btnFontFamily}
+                onChange={e =>
+                  this.props.changeValue(
+                    "btnFontFamily",
+                    parseInt(e.target.value)
+                  )
+                }
+              />
+            </FormCol>
+          </FormRow>
+
+          <FormRow>
+            <FormCol>
+              <Text>FontSize</Text>
+            </FormCol>
+            <FormCol>
+              <Input
+                type="number"
+                value={this.props.variables.btnTextSize}
+                onChange={e =>
+                  this.props.changeValue(
+                    "btnTextSize",
                     parseInt(e.target.value)
                   )
                 }
@@ -121,75 +182,38 @@ class CheckBox extends Component {
             <FormCol>
               <Input
                 type="number"
-                value={this.props.variables.CheckboxIconSize}
+                value={this.props.variables.btnLineHeight}
                 onChange={e =>
                   this.props.changeValue(
-                    "CheckboxIconSize",
+                    "btnLineHeight",
                     parseInt(e.target.value)
                   )
                 }
               />
             </FormCol>
           </FormRow>
-
-          {/* <FormRow>
-            <FormCol>
-              <Text>Margin Top</Text>
-            </FormCol>
-            <FormCol>
-              <Input
-                type="number"
-                value={this.props.variables.CheckboxIconMarginTop}
-                onChange={e =>
-                  this.props.changeValue(
-                    "CheckboxIconMarginTop",
-                    parseInt(e.target.value)
-                  )
-                }
-              />
-            </FormCol>
-          </FormRow> */}
-
           <FormRow>
             <FormCol>
-              <Text>Size</Text>
-            </FormCol>
-            <FormCol>
-              <Input
-                type="number"
-                value={this.props.variables.checkboxSize}
-                onChange={e =>
-                  this.props.changeValue(
-                    "checkboxSize",
-                    parseInt(e.target.value)
-                  )
-                }
-              />
-            </FormCol>
-          </FormRow>
-
-          <FormRow>
-            <FormCol>
-              <Text>Background Color</Text>
+              <Text>Background</Text>
             </FormCol>
             <FormCol>
               <ColorPicker
-                value={this.props.variables.checkboxBgColor}
+                value={this.props.variables.btnPrimaryBg}
                 onChangeColor={color =>
-                  this.props.changeValue("checkboxBgColor", color)
+                  this.props.changeValue("btnPrimaryBg", color)
                 }
               />
             </FormCol>
           </FormRow>
           <FormRow>
             <FormCol>
-              <Text>Icon Color</Text>
+              <Text>Text Color</Text>
             </FormCol>
             <FormCol>
               <ColorPicker
-                value={this.props.variables.checkboxTickColor}
+                value={this.props.variables.inverseTextColor}
                 onChangeColor={color =>
-                  this.props.changeValue("checkboxTickColor", color)
+                  this.props.changeValue("inverseTextColor", color)
                 }
               />
             </FormCol>
@@ -212,4 +236,4 @@ const mapStateToProps = state => ({
   variables: state.theme.variable
 });
 
-export default connect(mapStateToProps, bindAction)(CheckBox);
+export default connect(mapStateToProps, bindAction)(SearchBar);
