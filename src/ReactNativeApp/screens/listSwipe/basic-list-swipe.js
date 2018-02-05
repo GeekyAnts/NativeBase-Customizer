@@ -37,7 +37,7 @@ class BasicListSwipe extends Component {
             rightOpenValue={-75}
             left={
               <Button success onPress={() => alert("Add")}>
-                <Icon active name="add" style={{ color: "#FFF" }} />
+                <Icon active name="add" />
               </Button>
             }
             right={

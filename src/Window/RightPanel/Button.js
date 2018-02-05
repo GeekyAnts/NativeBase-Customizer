@@ -250,19 +250,6 @@ class Button extends Component {
                     />
                   </FormCol>
                 </FormRow>
-                <FormRow>
-                  <FormCol>
-                    <Text>Primary Text Color</Text>
-                  </FormCol>
-                  <FormCol>
-                    <ColorPicker
-                      value={this.props.variables.btnPrimaryColor}
-                      onChangeColor={color =>
-                        this.props.changeValue("btnPrimaryColor", color)
-                      }
-                    />
-                  </FormCol>
-                </FormRow>
 
                 <FormRow>
                   <FormCol>
@@ -273,20 +260,6 @@ class Button extends Component {
                       value={this.props.variables.btnInfoBg}
                       onChangeColor={color =>
                         this.props.changeValue("btnInfoBg", color)
-                      }
-                    />
-                  </FormCol>
-                </FormRow>
-
-                <FormRow>
-                  <FormCol>
-                    <Text>Info Text Color</Text>
-                  </FormCol>
-                  <FormCol>
-                    <ColorPicker
-                      value={this.props.variables.btnInfoColor}
-                      onChangeColor={color =>
-                        this.props.changeValue("btnInfoColor", color)
                       }
                     />
                   </FormCol>
@@ -308,20 +281,6 @@ class Button extends Component {
 
                 <FormRow>
                   <FormCol>
-                    <Text>Success Text Color</Text>
-                  </FormCol>
-                  <FormCol>
-                    <ColorPicker
-                      value={this.props.variables.btnSuccessColor}
-                      onChangeColor={color =>
-                        this.props.changeValue("btnSuccessColor", color)
-                      }
-                    />
-                  </FormCol>
-                </FormRow>
-
-                <FormRow>
-                  <FormCol>
                     <Text>Danger Background</Text>
                   </FormCol>
                   <FormCol>
@@ -331,15 +290,6 @@ class Button extends Component {
                         this.props.changeValue("btnDangerBg", color)
                       }
                     />
-                  </FormCol>
-                </FormRow>
-
-                <FormRow>
-                  <FormCol>
-                    <Text>Danger Text Color</Text>
-                  </FormCol>
-                  <FormCol>
-                    <ColorPicker value={this.props.variables.btnDangerColor} />
                   </FormCol>
                 </FormRow>
 
@@ -357,19 +307,6 @@ class Button extends Component {
                   </FormCol>
                 </FormRow>
 
-                <FormRow>
-                  <FormCol>
-                    <Text>Warning Text Color</Text>
-                  </FormCol>
-                  <FormCol>
-                    <ColorPicker
-                      value={this.props.variables.btnWarningColor}
-                      onChangeColor={color =>
-                        this.props.changeValue("btnWarningColor", color)
-                      }
-                    />
-                  </FormCol>
-                </FormRow>
                 {this.props.navigation.subPage === "Disabled" && (
                   <FormRow>
                     <FormCol>

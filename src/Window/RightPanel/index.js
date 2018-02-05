@@ -17,13 +17,16 @@ import Footer from "./Footer";
 import Typography from "./Typography";
 import Icon from "./Icon";
 import Toast from "./Toast";
+import Form from "./Form";
 import Thumbnail from "./Thumbnail";
+import DeckSwiper from "./DeckSwiper";
 import InputGroup from "./InputGroup";
 import List from "./List";
 import RadioButton from "./RadioButton";
 import SearchBar from "./SearchBar";
 import Segment from "./Segment";
 import Spinner from "./Spinner";
+import ListSwipe from "./ListSwipe";
 import Tabs from "./Tabs";
 import Title from "./Title";
 import Fab from "./Fab";
@@ -40,8 +43,8 @@ class RightPanel extends Component {
             <FormCol uiSize={2} />
             <FormCol uiSize={3}>
               <Dropdown>
-                <option value="Platform">Platform</option>
-                {/* <option value="Material">Material</option> */}
+                {/* <option value="Platform">Platform</option> */}
+                <option value="Material">Material</option>
                 {/* <option value="Common">Common</option> */}
               </Dropdown>
             </FormCol>
@@ -55,6 +58,7 @@ class RightPanel extends Component {
         {this.props.page.navigation.page === "Radio" && <Radio />}
         {this.props.page.navigation.page === "Card" && <Card />}
         {this.props.page.navigation.page === "Checkbox" && <CheckBox />}
+        {this.props.page.navigation.page === "DeckSwiper" && <DeckSwiper />}
         {this.props.page.navigation.page === "Thumbnail" && <Thumbnail />}
         {this.props.page.navigation.page === "DefaultText" && <DefaultText />}
         {/* {(this.props.page.navigation.page === "Anatomy" ||
@@ -63,6 +67,7 @@ class RightPanel extends Component {
         {this.props.page.navigation.page === "Typography" && <Typography />}
         {/* {this.props.page.navigation.page != "Anatomy" && <Title />} */}
         {this.props.page.navigation.page === "Footer" && <Footer />}
+        {this.props.page.navigation.page === "Form" && <Form />}
         {this.props.page.navigation.page === "Searchbar" && <SearchBar />}
         {this.props.page.navigation.page === "Icon" && <Icon />}
         {this.props.page.navigation.page === "InputGroup" && <InputGroup />}
@@ -72,6 +77,7 @@ class RightPanel extends Component {
         {this.props.page.navigation.page === "Spinner" && <Spinner />}
         {this.props.page.navigation.page === "Tabs" && <Tabs />}
         {this.props.page.navigation.page === "Fab" && <Fab />}
+        {this.props.page.navigation.page === "ListSwipe" && <ListSwipe />}
         {/* {this.props.page.navigation.page != "Anatomy" && <Colors />} */}
       </WrapperDiv>
     );

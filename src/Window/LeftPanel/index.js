@@ -123,13 +123,6 @@ const datas = [
     bg: "#EF6092"
   },
   {
-    name: "Layout",
-    route: "Layout",
-    icon: "grid",
-    bg: "#9F897C",
-    types: "5"
-  },
-  {
     name: "List",
     route: "List",
     icon: "lock",
@@ -153,21 +146,21 @@ const datas = [
     types: "2",
     sub: ["Basic", "Advanced"]
   },
-  {
-    name: "Picker",
-    route: "Picker",
-    icon: "arrow-dropdown",
-    bg: "#F50C75",
-    sub: [
-      "Regular",
-      "Placeholder",
-      "Placeholder Note",
-      "Back Button",
-      "Header",
-      "Header Style",
-      "Custom Header"
-    ]
-  },
+  // {
+  //   name: "Picker",
+  //   route: "Picker",
+  //   icon: "arrow-dropdown",
+  //   bg: "#F50C75",
+  //   sub: [
+  //     "Regular",
+  //     "Placeholder",
+  //     "Placeholder Note",
+  //     "Back Button",
+  //     "Header",
+  //     "Header Style",
+  //     "Custom Header"
+  //   ]
+  // },
   {
     name: "Radio",
     route: "Radio",

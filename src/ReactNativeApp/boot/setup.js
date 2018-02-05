@@ -225,8 +225,6 @@ class Setup extends Component {
       case 11:
         return <Icon />;
       case 12:
-        return <Layout />;
-      case 13:
         switch (this.props.screen.subRoute) {
           case "Basic List":
             return <NHBasicList />;
@@ -245,7 +243,7 @@ class Setup extends Component {
           default:
             return <NHBasicList />;
         }
-      case 14:
+      case 13:
         switch (this.props.screen.subRoute) {
           case "Basic":
             return <BasicListSwipe />;
@@ -254,30 +252,30 @@ class Setup extends Component {
           default:
             return <BasicListSwipe />;
         }
-      case 15:
-        switch (this.props.screen.subRoute) {
-          case "Regular":
-            return <RegularPicker />;
-          case "Placeholder":
-            return <PlaceholderPicker />;
-          case "Placeholder Note":
-            return <PlaceholderPickerNote />;
-          case "Back Button":
-            return <BackButtonPicker />;
-          case "Header":
-            return <HeaderPicker />;
-          case "Header Style":
-            return <HeaderStylePicker />;
-          case "Custom Header":
-            return <CustomHeaderPicker />;
-          default:
-            return <RegularPicker />;
-        }
-      case 16:
+      // case 14:
+      //   switch (this.props.screen.subRoute) {
+      //     case "Regular":
+      //       return <RegularPicker />;
+      //     case "Placeholder":
+      //       return <PlaceholderPicker />;
+      //     case "Placeholder Note":
+      //       return <PlaceholderPickerNote />;
+      //     case "Back Button":
+      //       return <BackButtonPicker />;
+      //     case "Header":
+      //       return <HeaderPicker />;
+      //     case "Header Style":
+      //       return <HeaderStylePicker />;
+      //     case "Custom Header":
+      //       return <CustomHeaderPicker />;
+      //     default:
+      //       return <RegularPicker />;
+      //   }
+      case 14:
         return <Radio />;
-      case 17:
+      case 15:
         return <Searchbar />;
-      case 18:
+      case 16:
         switch (this.props.screen.subRoute) {
           case "Basic":
             return <BasicSegment />;
@@ -286,9 +284,9 @@ class Setup extends Component {
           default:
             return <BasicSegment />;
         }
-      case 19:
+      case 17:
         return <Spinner />;
-      case 20:
+      case 18:
         switch (this.props.screen.subRoute) {
           case "Basic":
             return <BasicTab />;
@@ -299,11 +297,11 @@ class Setup extends Component {
           default:
             return <BasicTab />;
         }
-      case 21:
+      case 19:
         return <Thumbnail />;
-      case 22:
+      case 20:
         return <Toast />;
-      case 23:
+      case 21:
         return <Typography />;
       default:
         return <Anatomy />;

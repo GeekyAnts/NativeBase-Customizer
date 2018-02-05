@@ -78,28 +78,24 @@ class NHListAvatar extends Component {
         </Header>
 
         <Content>
-          <List
-            dataArray={datas}
-            renderRow={data =>
+          <List>
+            {datas.map((data, i) => (
               <ListItem avatar>
                 <Left>
                   <Thumbnail small source={data.img} />
                 </Left>
                 <Body>
-                  <Text>
-                    {data.text}
-                  </Text>
+                  <Text>{data.text}</Text>
                   <Text numberOfLines={1} note>
                     {data.note}
                   </Text>
                 </Body>
                 <Right>
-                  <Text note>
-                    {data.time}
-                  </Text>
+                  <Text note>{data.time}</Text>
                 </Right>
-              </ListItem>}
-          />
+              </ListItem>
+            ))}
+          </List>
         </Content>
       </Container>
     );

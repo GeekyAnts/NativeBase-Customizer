@@ -25,7 +25,7 @@ export default {
   badgePadding: platform === "ios" ? 3 : 0,
 
   // Button
-  btnFontFamily: platform === "ios" ? "Roboto" : "Roboto_medium",
+  btnFontFamily: platform === "ios" ? "System" : "Roboto_medium",
   btnDisabledBg: "#b5b5b5",
   buttonPadding: 6,
   get btnPrimaryBg() {
@@ -104,7 +104,7 @@ export default {
   brandLight: "#f4f4f4",
 
   // Font
-  fontFamily: "Roboto",
+  fontFamily: platform === "ios" ? "System" : "Roboto",
   fontSizeBase: 15,
   get fontSizeH1() {
     return this.fontSizeBase * 1.8;
@@ -118,7 +118,7 @@ export default {
 
   // Footer
   footerHeight: isIphoneX ? 89 : 55,
-  footerDefaultBg: this.brandPrimary,
+  footerDefaultBg: "#3F51B5",
   footerPaddingBottom: isIphoneX ? 34 : 0,
 
   // FooterTab
@@ -127,18 +127,18 @@ export default {
   activeTab: "#fff",
   sTabBarActiveTextColor: "#007aff",
   tabBarActiveTextColor: "#fff",
-  tabActiveBgColor: this.brandPrimary,
+  tabActiveBgColor: "#3F51B5",
 
   // Header
   toolbarBtnColor: "#fff",
-  toolbarDefaultBg: this.brandPrimary,
+  toolbarDefaultBg: "#3F51B5",
   toolbarHeight: platform === "ios" ? (isIphoneX ? 88 : 64) : 56,
   toolbarSearchIconSize: platform === "ios" ? 20 : 23,
   toolbarInputColor: "#fff",
   searchBarHeight: platform === "ios" ? 30 : 40,
   searchBarInputHeight: platform === "ios" ? 30 : 50,
   toolbarBtnTextColor: "#fff",
-  toolbarDefaultBorder: this.brandPrimary,
+  toolbarDefaultBorder: "#3F51B5",
   iosStatusbar: "light-content",
   get statusBarColor() {
     return color(this.toolbarDefaultBg)
@@ -196,19 +196,19 @@ export default {
   radioColor: this.brandPrimary,
 
   // Segment
-  segmentBackgroundColor: this.brandPrimary,
+  segmentBackgroundColor: "#3F51B5",
   segmentActiveBackgroundColor: "#fff",
   segmentTextColor: "#fff",
-  segmentActiveTextColor: this.brandPrimary,
+  segmentActiveTextColor: "#3F51B5",
   segmentBorderColor: "#fff",
-  segmentBorderColorMain: this.brandPrimary,
+  segmentBorderColorMain: "#3F51B5",
 
   // Spinner
   defaultSpinnerColor: "#45D56E",
   inverseSpinnerColor: "#1A191B",
 
   // Tab
-  tabDefaultBg: this.brandPrimary,
+  tabDefaultBg: "#3F51B5",
   topTabBarTextColor: "#b3c7f9",
   topTabBarActiveTextColor: "#fff",
   topTabBarBorderColor: "#fff",
@@ -227,7 +227,7 @@ export default {
   },
 
   // Title
-  titleFontfamily: platform === "ios" ? "Roboto" : "Roboto_medium",
+  titleFontfamily: platform === "ios" ? "System" : "Roboto",
   titleFontSize: 19,
   subTitleFontSize: 14,
   subtitleColor: "#FFF",

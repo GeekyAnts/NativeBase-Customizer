@@ -1,5 +1,5 @@
 import * as React from "react";
-
+import Test from "./test";
 import Anatomy from "../../../ReactNativeApp/screens/anatomy/index";
 import * as CodeMirror from "react-codemirror";
 // import "../../../../node_modules/codemirror/lib/codemirror.css";
@@ -9,6 +9,7 @@ require("../../../../node_modules/codemirror/addon/wrap/hardwrap");
 
 export default class extends React.Component {
   render() {
+    console.log(Test, "test");
     var options = {
       lineNumbers: true,
       mode: "javascript",

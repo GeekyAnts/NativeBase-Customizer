@@ -72,17 +72,14 @@ class NHListThumbnail extends Component {
         </Header>
 
         <Content>
-          <List
-            dataArray={datas}
-            renderRow={data =>
+          <List>
+            {datas.map((data, i) => (
               <ListItem thumbnail>
                 <Left>
                   <Thumbnail square size={55} source={data.img} />
                 </Left>
                 <Body>
-                  <Text>
-                    {data.text}
-                  </Text>
+                  <Text>{data.text}</Text>
                   <Text numberOfLines={1} note>
                     {data.note}
                   </Text>
@@ -92,8 +89,9 @@ class NHListThumbnail extends Component {
                     <Text>View</Text>
                   </Button>
                 </Right>
-              </ListItem>}
-          />
+              </ListItem>
+            ))}
+          </List>
         </Content>
       </Container>
     );

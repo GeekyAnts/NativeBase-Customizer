@@ -28,26 +28,29 @@ class App extends React.Component {
       <Provider store={this.state.store}>
         <SplitPane
           split="horizontal"
-          minSize={50}
-          maxSize={100}
+          // minSize={80}
+          // maxSize={100}
           defaultSize={80}
+          allowResize={false}
           className="primary"
         >
           <Header />
           <SplitPane
             split="vertical"
-            minSize={150}
-            maxSize={200}
+            // minSize={150}
+            // maxSize={200}
             defaultSize={200}
+            allowResize={false}
             className="primary"
             paneStyle={{ display: "flex" }}
           >
             <LeftPanel />
             <SplitPane
               split="vertical"
-              minSize={300}
-              maxSize={380}
+              // minSize={300}
+              // maxSize={380}
               defaultSize={350}
+              allowResize={false}
               className="primary"
               primary="second"
               paneStyle={{ overflow: "scroll" }}

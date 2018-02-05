@@ -13,20 +13,20 @@ import Icon from "../../StyledComponents/Icon";
 import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import { nextPage, prevPage } from "../../Actions/navigation";
 import { appliedTheme } from "../../Actions/theme";
-import variables from "../../ReactNativeApp/theme/variables/variables";
+import variables from "../../ReactNativeApp/theme/variables/material";
 
 class WorkSpace extends Component {
   constructor(props: any) {
     super(props);
     this.state = {
-      choice: true
+      choice: "design"
     };
   }
   componentWillMount() {
     this.props.appliedTheme(variables);
   }
-  selection() {
-    this.setState({ choice: !this.state.choice });
+  selection(value) {
+    this.setState({ choice: value });
   }
   render() {
     const totalPages = this.props.page.pageList.length;
@@ -53,24 +53,24 @@ class WorkSpace extends Component {
         <ButtonGroup>
           <Button
             leftRadius
-            active={this.state.choice}
+            active={this.state.choice === "design"}
             height="40px"
             width="117px"
-            onClick={() => this.selection()}
+            onClick={() => this.selection("design")}
           >
             Design
           </Button>
           <Button
             rightRadius
-            active={!this.state.choice}
+            active={this.state.choice === "code"}
             height="40px"
             width="117px"
-            onClick={() => this.selection()}
+            onClick={() => this.selection("code")}
           >
             Code
           </Button>
         </ButtonGroup>
-        {this.state.choice ? (
+        {this.state.choice === "design" ? (
           <WrapperDiv style={{ paddingBottom: 25 }}>
             <Col
               contentCenter

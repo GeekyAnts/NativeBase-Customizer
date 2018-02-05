@@ -43,20 +43,18 @@ class NHBasicList extends Component {
         </Header>
 
         <Content>
-          <List
-            dataArray={datas}
-            renderRow={data =>
+          <List>
+            {datas.map((data, i) => (
               <ListItem>
                 <Left>
-                  <Text>
-                    {data}
-                  </Text>
+                  <Text>{data}</Text>
                 </Left>
                 <Right>
                   <Icon name="arrow-forward" />
                 </Right>
-              </ListItem>}
-          />
+              </ListItem>
+            ))}
+          </List>
         </Content>
       </Container>
     );

@@ -105,14 +105,10 @@ class Card extends Component {
                   <Text>Note Color</Text>
                 </FormCol>
                 <FormCol>
-                  <Input
-                    type="number"
+                  <ColorPicker
                     value={this.props.variables.listNoteColor}
-                    onChange={e =>
-                      this.props.changeValue(
-                        "listNoteColor",
-                        parseInt(e.target.value)
-                      )
+                    onChangeColor={color =>
+                      this.props.changeValue("listNoteColor", color)
                     }
                   />
                 </FormCol>

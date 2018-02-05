@@ -53,50 +53,46 @@ const initialState = {
     },
     {
       id: 12,
-      route: "Layout"
-    },
-    {
-      id: 13,
       route: "List"
     },
     {
-      id: 14,
+      id: 13,
       route: "ListSwipe"
     },
+    // {
+    //   id: 14,
+    //   route: "Picker"
+    // },
     {
-      id: 15,
-      route: "Picker"
-    },
-    {
-      id: 16,
+      id: 14,
       route: "Radio"
     },
     {
-      id: 17,
+      id: 15,
       route: "Searchbar"
     },
     {
-      id: 18,
+      id: 16,
       route: "Segment"
     },
     {
-      id: 19,
+      id: 17,
       route: "Spinner"
     },
     {
-      id: 20,
+      id: 18,
       route: "Tabs"
     },
     {
-      id: 21,
+      id: 19,
       route: "Thumbnail"
     },
     {
-      id: 22,
+      id: 20,
       route: "Toast"
     },
     {
-      id: 23,
+      id: 21,
       route: "Typography"
     }
   ]
@@ -110,7 +106,7 @@ export default function(state = initialState, action) {
           abc = element.route;
         }
       });
-      if (!(state.selected >= 23))
+      if (!(state.selected >= 21))
         return {
           ...state,
           selected: state.selected + 1,
