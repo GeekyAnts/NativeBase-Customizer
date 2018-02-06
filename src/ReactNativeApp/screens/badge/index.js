@@ -20,10 +20,7 @@ class NHBadge extends Component {
       <Container style={styles.container}>
         <Header>
           <Left>
-            <Button
-              transparent
-              onPress={() => this.props.navigation.navigate("DrawerOpen")}
-            >
+            <Button transparent>
               <Icon name="menu" />
             </Button>
           </Left>

@@ -76,10 +76,7 @@ class NHForm extends Component {
       <Container style={styles.container}>
         <Header>
           <Left>
-            <Button
-              transparent
-              onPress={() => this.props.navigation.navigate("DrawerOpen")}
-            >
+            <Button transparent>
               <Icon name="menu" />
             </Button>
           </Left>
@@ -93,10 +90,7 @@ class NHForm extends Component {
           <List
             dataArray={datas}
             renderRow={data =>
-              <ListItem
-                button
-                onPress={() => this.props.navigation.navigate(data.route)}
-              >
+              <ListItem button>
                 <Left>
                   <Text>
                     {data.text}

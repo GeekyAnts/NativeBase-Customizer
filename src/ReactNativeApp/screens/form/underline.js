@@ -21,7 +21,7 @@ class Underline extends Component {
       <Container style={styles.container}>
         <Header>
           <Left>
-            <Button transparent onPress={() => this.props.navigation.goBack()}>
+            <Button transparent>
               <Icon name="arrow-back" />
             </Button>
           </Left>

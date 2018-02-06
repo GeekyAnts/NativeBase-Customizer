@@ -65,10 +65,7 @@ class NHTab extends Component {
       <Container style={styles.container}>
         <Header noShadow>
           <Left>
-            <Button
-              transparent
-              onPress={() => this.props.navigation.navigate("DrawerOpen")}
-            >
+            <Button transparent>
               <Icon name="menu" />
             </Button>
           </Left>
@@ -82,10 +79,7 @@ class NHTab extends Component {
           <List
             dataArray={datas}
             renderRow={data =>
-              <ListItem
-                button
-                onPress={() => this.props.navigation.navigate(data.route)}
-              >
+              <ListItem button>
                 <Left>
                   <Text>
                     {data.text}

@@ -43,10 +43,7 @@ class NHLayout extends Component {
       <Container style={{ backgroundColor: "#FBFAFA" }}>
         <Header>
           <Left>
-            <Button
-              transparent
-              onPress={() => this.props.navigation.navigate("DrawerOpen")}
-            >
+            <Button transparent>
               <Icon name="menu" />
             </Button>
           </Left>
@@ -60,10 +57,7 @@ class NHLayout extends Component {
           <List
             dataArray={datas}
             renderRow={data =>
-              <ListItem
-                button
-                onPress={() => this.props.navigation.navigate(data.route)}
-              >
+              <ListItem button>
                 <Left>
                   <Text>
                     {data.text}

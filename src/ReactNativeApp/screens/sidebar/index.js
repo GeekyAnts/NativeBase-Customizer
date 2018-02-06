@@ -197,11 +197,7 @@ class SideBar extends Component {
           <List
             dataArray={datas}
             renderRow={data => (
-              <ListItem
-                button
-                noBorder
-                onPress={() => this.props.navigation.navigate(data.route)}
-              >
+              <ListItem button noBorder>
                 <Left>
                   <Icon
                     active

@@ -19,7 +19,7 @@ class TextArea extends Component {
       <Container style={styles.container}>
         <Header>
           <Left>
-            <Button transparent onPress={() => this.props.navigation.goBack()}>
+            <Button transparent>
               <IconNB name="ios-arrow-back" />
             </Button>
           </Left>
