@@ -53,7 +53,7 @@ class App extends React.Component {
               allowResize={false}
               className="primary"
               primary="second"
-              paneStyle={{ overflow: "scroll" }}
+              pane2Style={{ overflow: "scroll" }}
             >
               <WorkSpace />
               <RightPanel />

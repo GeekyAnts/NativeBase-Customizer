@@ -8,6 +8,12 @@ import Col from "../../StyledComponents/Col";
 import Row from "../../StyledComponents/Row";
 import Button from "../../StyledComponents/Button";
 import Text from "../../StyledComponents/Text";
+import {
+  MenuDropdown,
+  Option,
+  OptionMenu,
+  OptionMenuTitle
+} from "../../StyledComponents/MenuDropdown";
 import logo from "../../assets/logo.png";
 // import template from "../../ReactNativeApp/theme/variables/template";
 import { appliedTheme } from "../../Actions/theme";
@@ -16,9 +22,26 @@ class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      newFile: null
+      newFile: null,
+      isMenuOpen: false
     };
+    this.click = this.click.bind(this);
+    this.toggle = this.toggle.bind(this);
+    this.close = this.close.bind(this);
   }
+
+  toggle() {
+    this.setState({ isMenuOpen: !this.state.isMenuOpen });
+  }
+
+  close() {
+    this.setState({ isMenuOpen: false });
+  }
+
+  click() {
+    console.log("You clicked an item");
+  }
+
   download(filename, text) {
     const data = {
       obj: text
@@ -37,11 +60,6 @@ class Header extends Component {
     export default <%- obj -%>`;
 
     const test = ejs.render(template, data);
-    // var re = new RegExp("&#34;", "g");
-    // var nn = test.replace(re, "");
-    // var re1 = new RegExp("&#34", "g");
-    // var mm = nn.replace(re1, "");
-    // console.log(mm, "raw");
     var element = document.createElement("a");
     element.setAttribute(
       "href",
@@ -59,7 +77,16 @@ class Header extends Component {
   }
 
   render() {
-    console.log(this.props.variables, "var");
+    const menuOptions = {
+      isOpen: this.state.isMenuOpen,
+      close: this.close,
+      toggle: (
+        <button type="button" onClick={this.toggle}>
+          Click me!
+        </button>
+      ),
+      align: "right"
+    };
     return (
       <Pane uiBackground="300">
         <Row>
@@ -70,7 +97,7 @@ class Header extends Component {
             </Text>
           </Col>
           <Col contentRight>
-            <Button
+            {/* <Button
               active
               onClick={() =>
                 this.download(
@@ -80,10 +107,54 @@ class Header extends Component {
               }
             >
               <Icon name="ios-download-outline" />
-            </Button>
+            </Button> */}
             {/* <Button active style={{ marginLeft: 8 }}>
               <Icon name="ios-share-outline" />
             </Button> */}
+            <MenuDropdown>
+              <Option>
+                <OptionMenu menuButton>
+                  <div
+                    style={{
+                      width: 47,
+                      height: 35,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      borderRadius: 3,
+                      borderColor: "#000",
+                      borderWidth: 0.5,
+                      background: "#3F3B5A"
+                    }}
+                  >
+                    <Icon name="ios-download-outline" />
+                  </div>
+                </OptionMenu>
+                <MenuDropdown child>
+                  <Option
+                    onClick={() => {
+                      console.log("dropdown clicked");
+                    }}
+                  >
+                    <OptionMenu>
+                      <OptionMenuTitle>App & Variable File</OptionMenuTitle>
+                    </OptionMenu>
+                  </Option>
+                  <Option
+                    onClick={() => {
+                      this.download(
+                        "variables.js",
+                        JSON.stringify(this.props.variables)
+                      );
+                    }}
+                  >
+                    <OptionMenu>
+                      <OptionMenuTitle>Variable File</OptionMenuTitle>
+                    </OptionMenu>
+                  </Option>
+                </MenuDropdown>
+              </Option>
+            </MenuDropdown>
           </Col>
         </Row>
       </Pane>

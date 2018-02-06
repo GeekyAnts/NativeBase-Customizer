@@ -109,14 +109,14 @@ class WorkSpace extends Component {
                 />
               </Button>
             </Col>
-            <ButtonGroup>
+            {/* <ButtonGroup>
               <Button width="53px" active>
                 <Icon name="logo-apple" fontSize="27px" />
               </Button>
               <Button width="53px" style={{ marginLeft: 8 }}>
                 <Icon name="logo-android" fontSize="27px" />
               </Button>
-            </ButtonGroup>
+            </ButtonGroup> */}
           </WrapperDiv>
         ) : (
           <WrapperDiv>

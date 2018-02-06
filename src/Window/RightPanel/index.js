@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import FormGroup from "../../StyledComponents/FormGroup";
 import FormRow from "../../StyledComponents/FormRow";
 import FormCol from "../../StyledComponents/FormCol";
+import Text from "../../StyledComponents/Text";
 import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import Dropdown from "../../StyledComponents/Dropdown";
 import Header from "./Header";
@@ -39,14 +40,19 @@ class RightPanel extends Component {
     return (
       <WrapperDiv uiBackground="500">
         <FormGroup>
-          <FormRow>
-            <FormCol uiSize={2} />
+          <FormRow noPadding center>
+            {/* <FormCol uiSize={2} />
             <FormCol uiSize={3}>
               <Dropdown>
-                {/* <option value="Platform">Platform</option> */}
+                <option value="Platform">Platform</option>
                 <option value="Material">Material</option>
-                {/* <option value="Common">Common</option> */}
+                <option value="Common">Common</option>
               </Dropdown>
+            </FormCol> */}
+            <FormCol>
+              <Text uiSize="m" style={{ textAlign: "center" }}>
+                Material Theme
+              </Text>
             </FormCol>
           </FormRow>
         </FormGroup>

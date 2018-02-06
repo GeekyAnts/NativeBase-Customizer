@@ -7,8 +7,8 @@ RN.DeviceInfo = {};
 
 const dimensions = {
   window: {
-    width: 325,
-    height: 576
+    width: "43vh",
+    height: "70vh"
   }
 };
 
