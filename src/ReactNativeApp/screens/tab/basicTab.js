@@ -21,7 +21,7 @@ class BasicTab extends Component {
       <Container>
         <Header hasTabs>
           <Left>
-            <Button transparent onPress={() => this.props.navigation.goBack()}>
+            <Button transparent>
               <Icon name="arrow-back" />
             </Button>
           </Left>

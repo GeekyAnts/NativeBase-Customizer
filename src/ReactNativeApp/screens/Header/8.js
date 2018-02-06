@@ -23,7 +23,7 @@ class Header8 extends Component {
           iosBarStyle="light-content"
         >
           <Left>
-            <Button transparent onPress={() => this.props.navigation.goBack()}>
+            <Button transparent>
               <Icon name="arrow-back" style={{ color: "#FFF" }} />
             </Button>
           </Left>

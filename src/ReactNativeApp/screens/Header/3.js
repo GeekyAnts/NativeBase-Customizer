@@ -18,7 +18,7 @@ class Header3 extends Component {
       <Container style={styles.container}>
         <Header>
           <Left>
-            <Button transparent onPress={() => this.props.navigation.goBack()}>
+            <Button transparent>
               <Text>Back</Text>
             </Button>
           </Left>
@@ -26,7 +26,7 @@ class Header3 extends Component {
             <Title>Header</Title>
           </Body>
           <Right>
-            <Button transparent onPress={() => this.props.navigation.goBack()}>
+            <Button transparent>
               <Text>Cancel</Text>
             </Button>
           </Right>

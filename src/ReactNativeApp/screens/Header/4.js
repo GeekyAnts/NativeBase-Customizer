@@ -19,7 +19,7 @@ class Header4 extends Component {
       <Container style={styles.container}>
         <Header>
           <Left>
-            <Button transparent onPress={() => this.props.navigation.goBack()}>
+            <Button transparent>
               <Icon name="arrow-back" />
             </Button>
           </Left>
@@ -27,7 +27,7 @@ class Header4 extends Component {
             <Title>Header</Title>
           </Body>
           <Right>
-            <Button transparent onPress={() => this.props.navigation.goBack()}>
+            <Button transparent>
               <Text>Cancel</Text>
             </Button>
           </Right>
