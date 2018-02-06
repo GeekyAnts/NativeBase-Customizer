@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Image, Dimensions } from "react-native";
+export default `import React, { Component } from "react";
+import { StyleSheet, Image, Dimensions } from "react-native";
 import {
   Container,
   Header,
@@ -15,7 +15,6 @@ import {
   Right,
   Body
 } from "native-base";
-import styles from "./styles";
 
 const deviceWidth = Dimensions.get("window").width;
 const logo = require("../../../assets/logo.png");
@@ -85,4 +84,14 @@ class NHCardShowcase extends Component {
   }
 }
 
-export default NHCardShowcase;
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FFF"
+  },
+  mb: {
+    marginBottom: 15
+  }
+});
+
+export default NHCardShowcase;`;

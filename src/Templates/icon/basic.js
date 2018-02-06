@@ -1,6 +1,5 @@
-import React, { Component } from "react";
-import { View } from "react-native";
-
+export default `import React, { Component } from "react";
+import { StyleSheet, View } from "react-native";
 import {
   Container,
   Header,
@@ -12,8 +11,6 @@ import {
   Left,
   Right
 } from "native-base";
-
-import styles from "./styles";
 
 class Basic extends Component {
   render() {
@@ -425,4 +422,19 @@ class Basic extends Component {
   }
 }
 
-export default Basic;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    width: null,
+    height: null,
+    backgroundColor: "#FFF"
+  },
+  iconContainer: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-around",
+    paddingLeft: 15
+  },
+});
+
+export default Basic;`

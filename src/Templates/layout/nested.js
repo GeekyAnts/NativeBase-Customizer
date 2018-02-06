@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
 import {
   Container,
   Header,
@@ -39,4 +39,4 @@ class NestedGrid extends Component {
   }
 }
 
-export default NestedGrid;
+export default NestedGrid;`;

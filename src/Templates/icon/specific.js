@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-
+export default `import React, { Component } from "react";
+import { StyleSheet } from 'react-native'
 import {
   Container,
   Header,
@@ -15,8 +15,6 @@ import {
   Row,
   Text
 } from "native-base";
-
-import styles from "./styles";
 
 class Specific extends Component {
   render() {
@@ -65,4 +63,17 @@ class Specific extends Component {
   }
 }
 
-export default Specific;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    width: null,
+    height: null,
+    backgroundColor: "#FFF"
+  },
+  col: {
+    alignItems: "center",
+    paddingHorizontal: 3
+  },
+});
+
+export default Specific;`;

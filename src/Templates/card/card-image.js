@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Image } from "react-native";
+export default `import React, { Component } from "react";
+import { StyleSheet, Image } from "react-native";
 import {
   Container,
   Header,
@@ -15,7 +15,6 @@ import {
   Body,
   Right
 } from "native-base";
-import styles from "./styles";
 
 const logo = require("../../../assets/logo.png");
 const cardImage = require("../../../assets/drawer-cover.png");
@@ -84,4 +83,13 @@ class NHCardImage extends Component {
   }
 }
 
-export default NHCardImage;
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FFF"
+  },
+  mb: {
+    marginBottom: 15
+  }
+});
+
+export default NHCardImage;`;

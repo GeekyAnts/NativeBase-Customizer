@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
+import { StyleSheet } from "react-native";
 import {
   Container,
   Header,
@@ -13,7 +14,6 @@ import {
   Right,
   Body
 } from "native-base";
-import styles from "./styles";
 
 class NHCardList extends Component {
   render() {
@@ -109,4 +109,13 @@ class NHCardList extends Component {
   }
 }
 
-export default NHCardList;
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FFF"
+  },
+  mb: {
+    marginBottom: 15
+  }
+});
+
+export default NHCardList;`;

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
 import {
   Container,
   Header,
@@ -12,7 +12,6 @@ import {
   ActionSheet,
   Text
 } from "native-base";
-import styles from "./styles";
 var BUTTONS = ["Option 0", "Option 1", "Option 2", "Delete", "Cancel"];
 var DESTRUCTIVE_INDEX = 3;
 var CANCEL_INDEX = 4;
@@ -24,7 +23,7 @@ export default class ActionSheetNB extends Component {
   }
   render() {
     return (
-      <Container style={styles.container}>
+      <Container style={{ backgroundColor: "#fff" }}>
         <Header>
           <Left>
             <Button transparent onPress={() => this.props.navigation.goBack()}>
@@ -57,4 +56,4 @@ export default class ActionSheetNB extends Component {
       </Container>
     );
   }
-}
+}`

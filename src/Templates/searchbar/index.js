@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
+import { StyleSheet } from "react-native";
 import {
   Container,
   Header,
@@ -9,7 +10,6 @@ import {
   Content,
   Text
 } from "native-base";
-import styles from "./styles";
 
 class NHSearchbar extends Component {
   render() {
@@ -39,4 +39,10 @@ class NHSearchbar extends Component {
   }
 }
 
-export default NHSearchbar;
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FFF"
+  },
+});
+
+export default NHSearchbar;`;

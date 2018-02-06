@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
 import {
   Container,
   Header,
@@ -36,4 +36,4 @@ class ColumnNB extends Component {
   }
 }
 
-export default ColumnNB;
+export default ColumnNB;`;

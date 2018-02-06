@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
+import { StyleSheet } from 'react-native'
 import {
   Container,
   Header,
@@ -13,7 +14,6 @@ import {
   Input,
   Form
 } from "native-base";
-import styles from "./styles";
 
 class Underline extends Component {
   render() {
@@ -43,4 +43,10 @@ class Underline extends Component {
   }
 }
 
-export default Underline;
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FFF"
+  }
+});
+
+export default Underline;`;

@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
+import { StyleSheet } from "react-native";
 import {
   Container,
   Header,
@@ -11,7 +12,6 @@ import {
   Body,
   Segment
 } from "native-base";
-import styles from "./styles";
 
 class SegmentNB extends Component {
   constructor(props) {
@@ -63,4 +63,10 @@ class SegmentNB extends Component {
   }
 }
 
-export default SegmentNB;
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FFF"
+  },
+});
+
+export default SegmentNB;`;

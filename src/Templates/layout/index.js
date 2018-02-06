@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
 import {
   Container,
   Header,
@@ -80,4 +80,4 @@ class NHLayout extends Component {
   }
 }
 
-export default NHLayout;
+export default NHLayout;`;

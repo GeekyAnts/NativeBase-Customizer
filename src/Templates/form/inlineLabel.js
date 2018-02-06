@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
+import { StyleSheet } from 'react-native'
 import {
   Container,
   Header,
@@ -15,7 +16,6 @@ import {
   Form,
   Text
 } from "native-base";
-import styles from "./styles";
 
 class InlineLabel extends Component {
   render() {
@@ -54,4 +54,10 @@ class InlineLabel extends Component {
   }
 }
 
-export default InlineLabel;
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FFF"
+  }
+});
+
+export default InlineLabel;`;

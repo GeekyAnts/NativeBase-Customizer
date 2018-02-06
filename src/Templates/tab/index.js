@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
+import { StyleSheet } from "react-native";
 import {
   Container,
   Header,
@@ -13,7 +14,6 @@ import {
   List,
   ListItem
 } from "native-base";
-import styles from "./styles";
 
 const datas = [
   {
@@ -102,4 +102,10 @@ class NHTab extends Component {
   }
 }
 
-export default NHTab;
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FBFAFA"
+  }
+});
+
+export default NHTab;`;

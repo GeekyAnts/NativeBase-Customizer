@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
 import {
   Container,
   Header,
@@ -71,4 +71,4 @@ class SegmentNB extends Component {
   }
 }
 
-export default SegmentNB;
+export default SegmentNB;`;

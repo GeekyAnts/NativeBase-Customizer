@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
+import { StyleSheet } from 'react-native'
 import {
   Container,
   Header,
@@ -14,7 +15,6 @@ import {
   Item,
   Input
 } from "native-base";
-import styles from "./styles";
 
 class Error extends Component {
   render() {
@@ -45,4 +45,10 @@ class Error extends Component {
   }
 }
 
-export default Error;
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FFF"
+  }
+});
+
+export default Error;`;

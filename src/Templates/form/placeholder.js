@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
+import { StyleSheet } from 'react-native'
 import {
   Container,
   Header,
@@ -14,7 +15,6 @@ import {
   Form,
   Text
 } from "native-base";
-import styles from "./styles";
 
 class Placeholder extends Component {
   render() {
@@ -50,4 +50,10 @@ class Placeholder extends Component {
   }
 }
 
-export default Placeholder;
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FFF"
+  }
+});
+
+export default Placeholder;`;

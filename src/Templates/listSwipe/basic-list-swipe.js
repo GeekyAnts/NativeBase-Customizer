@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
+import { StyleSheet } from 'react-native';
 import {
   Container,
   Header,
@@ -13,7 +14,6 @@ import {
   Body,
   View
 } from "native-base";
-import styles from "./styles";
 
 class BasicListSwipe extends Component {
   render() {
@@ -57,4 +57,10 @@ class BasicListSwipe extends Component {
   }
 }
 
-export default BasicListSwipe;
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FFF"
+  },
+});
+
+export default BasicListSwipe;`;

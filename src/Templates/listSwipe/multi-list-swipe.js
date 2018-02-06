@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { ListView } from "react-native";
+export default `import React, { Component } from "react";
+import { StyleSheet, ListView } from "react-native";
 import {
   Container,
   Header,
@@ -14,7 +14,6 @@ import {
   Right,
   Body
 } from "native-base";
-import styles from "./styles";
 
 const datas = [
   "Simon Mignolet",
@@ -101,4 +100,10 @@ class MultiListSwipe extends Component {
   }
 }
 
-export default MultiListSwipe;
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FFF"
+  },
+});
+
+export default MultiListSwipe;`;
