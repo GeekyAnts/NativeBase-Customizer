@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Ionicon from "react-ionicons";
+import Modal from "react-modal";
 import ejs from "ejs";
 import { connect } from "react-redux";
 import Pane from "../../StyledComponents/Pane";
@@ -23,23 +24,8 @@ class Header extends Component {
     super(props);
     this.state = {
       newFile: null,
-      isMenuOpen: false
+      modalOpen: false
     };
-    this.click = this.click.bind(this);
-    this.toggle = this.toggle.bind(this);
-    this.close = this.close.bind(this);
-  }
-
-  toggle() {
-    this.setState({ isMenuOpen: !this.state.isMenuOpen });
-  }
-
-  close() {
-    this.setState({ isMenuOpen: false });
-  }
-
-  click() {
-    console.log("You clicked an item");
   }
 
   download(filename, text) {
@@ -72,8 +58,6 @@ class Header extends Component {
     element.click();
 
     document.body.removeChild(element);
-
-    console.log(test, "raw1");
   }
 
   render() {
@@ -133,11 +117,13 @@ class Header extends Component {
                 <MenuDropdown child>
                   <Option
                     onClick={() => {
-                      console.log("dropdown clicked");
+                      window.location.href =
+                        "https://github.com/GeekyAnts/NativeBase-KitchenSink/archive/CRNA.zip";
+                      this.setState({ modalOpen: !this.state.modalOpen });
                     }}
                   >
                     <OptionMenu>
-                      <OptionMenuTitle>App & Variable File</OptionMenuTitle>
+                      <OptionMenuTitle>App</OptionMenuTitle>
                     </OptionMenu>
                   </Option>
                   <Option
@@ -157,6 +143,37 @@ class Header extends Component {
             </MenuDropdown>
           </Col>
         </Row>
+        <Modal
+          isOpen={this.state.modalOpen}
+          // onAfterOpen={afterOpenFn}
+          // onRequestClose={requestCloseFn}
+          // closeTimeoutMS={n}
+          style={{
+            overlay: {
+              position: "fixed",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: "rgba(0, 0, 0, 0.4)",
+              justifyContent: "center"
+            },
+            content: {
+              width: 600,
+              height: 250,
+              top: 0,
+              bottom: 0,
+              right: 0,
+              left: 0,
+              display: "flex",
+              alignSelf: "center"
+            }
+          }}
+          contentLabel="Modal"
+        >
+          <h1 style={{ color: "#000" }}>Modal Content</h1>
+          <p>Etc.</p>
+        </Modal>
       </Pane>
     );
   }

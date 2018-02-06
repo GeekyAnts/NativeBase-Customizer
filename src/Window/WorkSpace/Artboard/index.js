@@ -5,7 +5,7 @@ import frame from "./iphone.png";
 class Artboard extends Component {
   render() {
     return (
-      <div style={{ width: "43vh", height: "70vh" }}>
+      <div style={{ width: "43vh", height: "70vh", overflow: "hidden" }}>
         <NativeApp screen={this.props} />
       </div>
     );

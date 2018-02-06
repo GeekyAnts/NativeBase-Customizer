@@ -2750,6 +2750,10 @@ execa@^0.9.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
+exenv@^1.2.0:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/exenv/-/exenv-1.2.2.tgz#2ae78e85d9894158670b03d47bec1f03bd91bb9d"
+
 expand-brackets@^0.1.4:
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/expand-brackets/-/expand-brackets-0.1.5.tgz#df07284e342a807cd733ac5af72411e581d1177b"
@@ -5781,6 +5785,14 @@ react-ionicons@^2.1.6:
 react-json-renderer@^0.5.4:
   version "0.5.4"
   resolved "https://registry.yarnpkg.com/react-json-renderer/-/react-json-renderer-0.5.4.tgz#54172ff75a35bb1b6e98f8a715b606f8023e93e7"
+
+react-modal@^3.1.12:
+  version "3.1.12"
+  resolved "https://registry.yarnpkg.com/react-modal/-/react-modal-3.1.12.tgz#e80ab4e553ce946a6c96faf85eb31e0f9bd07470"
+  dependencies:
+    exenv "^1.2.0"
+    prop-types "^15.5.10"
+    warning "^3.0.0"
 
 react-native-dismiss-keyboard@1.0.0:
   version "1.0.0"
