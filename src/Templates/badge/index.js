@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
+import { StyleSheet } from 'react-native';
 import {
   Container,
   Header,
@@ -12,7 +13,6 @@ import {
   Right,
   Body
 } from "native-base";
-import styles from "./styles";
 
 class NHBadge extends Component {
   render() {
@@ -70,4 +70,13 @@ class NHBadge extends Component {
   }
 }
 
-export default NHBadge;
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FFF"
+  },
+  mb: {
+    marginBottom: 10
+  }
+});
+
+export default NHBadge;`;

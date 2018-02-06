@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Image, View } from "react-native";
+export default `import React, { Component } from "react";
+import { StyleSheet, Image, View } from "react-native";
 import {
   Container,
   Header,
@@ -16,7 +16,6 @@ import {
   Right,
   Body
 } from "native-base";
-import styles from "./styles";
 
 const cardOne = require("../../../assets/swiper-1.png");
 const cardTwo = require("../../../assets/swiper-2.png");
@@ -108,4 +107,11 @@ class SimpleDeck extends Component {
   }
 }
 
-export default SimpleDeck;
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FFF"
+  }
+});
+
+export default SimpleDeck;`;

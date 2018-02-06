@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
+import { StyleSheet } from 'react-native'
 import {
   Container,
   Header,
@@ -13,7 +14,6 @@ import {
   Right,
   Icon
 } from "native-base";
-import styles from "./styles";
 
 class IconText extends Component {
   constructor(props) {
@@ -99,4 +99,10 @@ class IconText extends Component {
   }
 }
 
-export default IconText;
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FFF"
+  }
+});
+
+export default IconText;`;

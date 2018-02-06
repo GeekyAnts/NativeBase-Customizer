@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
+import { StyleSheet } from 'react-native'
 import {
   Container,
   Header,
@@ -12,7 +13,6 @@ import {
   Icon,
   View
 } from "native-base";
-import styles from "./styles";
 
 class MultipleFab extends Component {
   constructor(props) {
@@ -122,4 +122,10 @@ class MultipleFab extends Component {
   }
 }
 
-export default MultipleFab;
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FFF"
+  }
+});
+
+export default MultipleFab;`;

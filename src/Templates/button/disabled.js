@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { View } from "react-native";
+export default `import React, { Component } from "react";
+import { StyleSheet, View } from "react-native";
 import {
   Container,
   Header,
@@ -12,7 +12,6 @@ import {
   Body,
   Text
 } from "native-base";
-import styles from "./styles";
 
 class Disabled extends Component {
   render() {
@@ -61,4 +60,13 @@ class Disabled extends Component {
   }
 }
 
-export default Disabled;
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FFF"
+  },
+  mb15: {
+    marginBottom: 20
+  },
+});
+
+export default Disabled;`;

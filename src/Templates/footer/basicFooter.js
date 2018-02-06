@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
+import { StyleSheet } from 'react-native'
 import {
   Container,
   Header,
@@ -13,7 +14,6 @@ import {
   Right,
   Icon
 } from "native-base";
-import styles from "./styles";
 
 class Basic extends Component {
   constructor(props) {
@@ -95,4 +95,10 @@ class Basic extends Component {
   }
 }
 
-export default Basic;
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FFF"
+  }
+});
+
+export default Basic;`;

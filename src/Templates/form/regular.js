@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { StyleSheet } from 'react-native'
 import {
   Container,
   Header,
@@ -13,7 +14,6 @@ import {
   Item,
   Form
 } from "native-base";
-import styles from "./styles";
 
 class Regular extends Component {
   render() {
@@ -42,5 +42,11 @@ class Regular extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FFF"
+  }
+});
 
 export default Regular;

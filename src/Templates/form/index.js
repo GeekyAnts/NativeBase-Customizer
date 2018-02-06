@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
+import { StyleSheet } from 'react-native'
 import {
   Container,
   Header,
@@ -13,7 +14,6 @@ import {
   List,
   ListItem
 } from "native-base";
-import styles from "./styles";
 
 const datas = [
   {
@@ -113,4 +113,10 @@ class NHForm extends Component {
   }
 }
 
-export default NHForm;
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FFF"
+  }
+});
+
+export default NHForm;`;

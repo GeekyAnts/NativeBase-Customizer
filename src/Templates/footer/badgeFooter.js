@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
+import { StyleSheet } from 'react-native'
 import {
   Container,
   Header,
@@ -14,7 +15,6 @@ import {
   Icon,
   Badge
 } from "native-base";
-import styles from "./styles";
 
 class BadgeFooter extends Component {
   constructor(props) {
@@ -116,4 +116,10 @@ class BadgeFooter extends Component {
   }
 }
 
-export default BadgeFooter;
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FFF"
+  }
+});
+
+export default BadgeFooter;`;

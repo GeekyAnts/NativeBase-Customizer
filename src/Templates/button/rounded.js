@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
+import { StyleSheet } from 'react-native'
 import {
   Container,
   Header,
@@ -11,7 +12,6 @@ import {
   Body,
   Text
 } from "native-base";
-import styles from "./styles";
 
 class Rounded extends Component {
   render() {
@@ -57,4 +57,13 @@ class Rounded extends Component {
   }
 }
 
-export default Rounded;
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FFF"
+  },
+  mb15: {
+    marginBottom: 20
+  },
+});
+
+export default Rounded;`;

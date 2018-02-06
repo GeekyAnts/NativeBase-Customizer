@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { StyleSheet } from 'react-native'
 import {
   Container,
   Header,
@@ -11,7 +12,6 @@ import {
   Right,
   IconNB
 } from "native-base";
-import styles from "./styles";
 
 class TextArea extends Component {
   render() {
@@ -36,5 +36,11 @@ class TextArea extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FFF"
+  }
+});
 
 export default TextArea;
