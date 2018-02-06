@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
 import {
   Container,
   Header,
@@ -30,7 +30,7 @@ export default class ActionSheetNB extends Component {
   }
   render() {
     return (
-      <Container style={styles.container}>
+      <Container style={{ backgroundColor: "#fff" }}>
         <Header>
           <Left>
             <Button transparent onPress={() => this.props.navigation.goBack()}>
@@ -63,4 +63,4 @@ export default class ActionSheetNB extends Component {
       </Container>
     );
   }
-}
+}`;

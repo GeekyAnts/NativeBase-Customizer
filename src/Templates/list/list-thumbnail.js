@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
+import { StyleSheet } from 'react-native'
 import {
   Container,
   Header,
@@ -14,7 +15,6 @@ import {
   Body,
   Right
 } from "native-base";
-import styles from "./styles";
 
 const sankhadeep = require("../../../assets/contacts/sankhadeep.png");
 const supriya = require("../../../assets/contacts/supriya.png");
@@ -98,4 +98,10 @@ class NHListThumbnail extends Component {
   }
 }
 
-export default NHListThumbnail;
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FFF"
+  },
+});
+
+export default NHListThumbnail;`;

@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
+import { StyleSheet } from "react-native";
 import {
   Container,
   Header,
@@ -14,7 +15,6 @@ import {
   Right,
   Body
 } from "native-base";
-import styles from "./styles";
 
 class NHTypography extends Component {
   render() {
@@ -46,4 +46,10 @@ class NHTypography extends Component {
   }
 }
 
-export default NHTypography;
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FFF"
+  },
+});
+
+export default NHTypography;`;

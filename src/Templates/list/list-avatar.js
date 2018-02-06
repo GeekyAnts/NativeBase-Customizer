@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
+import { StyleSheet } from 'react-native'
 import {
   Container,
   Header,
@@ -14,7 +15,6 @@ import {
   Right,
   Body
 } from "native-base";
-import styles from "./styles";
 
 const pratik = require("../../../assets/contacts/pratik.png");
 const sanket = require("../../../assets/contacts/sanket.png");
@@ -102,4 +102,10 @@ class NHListAvatar extends Component {
   }
 }
 
-export default NHListAvatar;
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FFF"
+  },
+});
+
+export default NHListAvatar;`;

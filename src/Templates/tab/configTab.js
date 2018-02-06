@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
 import {
   Container,
   Header,
@@ -67,4 +67,4 @@ class ConfigTab extends Component {
   }
 }
 
-export default ConfigTab;
+export default ConfigTab;`;

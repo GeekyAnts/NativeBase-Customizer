@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
 import {
   Container,
   Header,
@@ -37,4 +37,4 @@ class CustomRow extends Component {
   }
 }
 
-export default CustomRow;
+export default CustomRow;`

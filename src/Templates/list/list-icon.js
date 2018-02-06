@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Platform } from "react-native";
+export default `import React, { Component } from "react";
+import { Platform,StyleSheet } from "react-native";
 import {
   Container,
   Header,
@@ -18,7 +18,6 @@ import {
   Picker,
   Separator
 } from "native-base";
-import styles from "./styles";
 
 const Item = Picker.Item;
 
@@ -223,4 +222,10 @@ class NHListIcon extends Component {
   }
 }
 
-export default NHListIcon;
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FFF"
+  },
+});
+
+export default NHListIcon;`;

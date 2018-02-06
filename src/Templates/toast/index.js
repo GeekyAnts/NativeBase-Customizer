@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
+import { StyleSheet } from "react-native";
 import {
   Container,
   Header,
@@ -12,7 +13,6 @@ import {
   Body,
   Toast
 } from "native-base";
-import styles from "./styles";
 
 class ToastNB extends Component {
   constructor(props) {
@@ -55,4 +55,10 @@ class ToastNB extends Component {
   }
 }
 
-export default ToastNB;
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#fff"
+  }
+});
+
+export default ToastNB;`;

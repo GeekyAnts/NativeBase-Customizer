@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-
+export default `import React, { Component } from "react";
+import { StyleSheet } from "react-native";
 import {
   Container,
   Header,
@@ -13,11 +13,7 @@ import {
   Body
 } from "native-base";
 
-import styles from "./styles";
-
 class NHSpinner extends Component {
-  // eslint-disable-line
-
   render() {
     return (
       <Container style={styles.container}>
@@ -47,4 +43,10 @@ class NHSpinner extends Component {
   }
 }
 
-export default NHSpinner;
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FBFAFA"
+  }
+});
+
+export default NHSpinner;`;

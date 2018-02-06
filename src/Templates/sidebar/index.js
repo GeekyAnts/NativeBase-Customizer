@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Image } from "react-native";
+export default `import React, { Component } from "react";
+import { Platform, StyleSheet, Dimensions, Image } from "react-native";
 import {
   Content,
   Text,
@@ -11,8 +11,9 @@ import {
   Right,
   Badge
 } from "native-base";
-import styles from "./style";
 
+const deviceHeight = Dimensions.get("window").height;
+const deviceWidth = Dimensions.get("window").width;
 const drawerCover = require("../../../assets/drawer-cover.png");
 const drawerImage = require("../../../assets/logo-kitchen-sink.png");
 const datas = [
@@ -235,4 +236,33 @@ class SideBar extends Component {
   }
 }
 
-export default SideBar;
+const styles = StyleSheet.create({
+  drawerCover: {
+    alignSelf: "stretch",
+    height: deviceHeight / 3.5,
+    width: null,
+    position: "relative",
+    marginBottom: 10
+  },
+  drawerImage: {
+    position: "absolute",
+    left: Platform.OS === "android" ? deviceWidth / 10 : deviceWidth / 9,
+    top: Platform.OS === "android" ? deviceHeight / 13 : deviceHeight / 12,
+    width: 210,
+    height: 75,
+    resizeMode: "cover"
+  },
+  text: {
+    fontWeight: Platform.OS === "ios" ? "500" : "400",
+    fontSize: 16,
+    marginLeft: 20
+  },
+  badgeText: {
+    fontSize: Platform.OS === "ios" ? 13 : 11,
+    fontWeight: "400",
+    textAlign: "center",
+    marginTop: Platform.OS === "android" ? -3 : undefined
+  }
+});
+
+export default SideBar;`;

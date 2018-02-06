@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
 import { ActivityIndicatorIOS } from "react-native";
 
 export default class SpinnerNB extends Component {
@@ -33,4 +33,4 @@ export default class SpinnerNB extends Component {
       />
     );
   }
-}
+}`;

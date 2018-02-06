@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
 import {
   Container,
   Header,
@@ -56,4 +56,4 @@ class BasicTab extends Component {
   }
 }
 
-export default BasicTab;
+export default BasicTab;`;

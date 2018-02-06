@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
 import { StyleSheet } from 'react-native'
 import {
   Container,
@@ -49,4 +49,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Regular;
+export default Regular;`;

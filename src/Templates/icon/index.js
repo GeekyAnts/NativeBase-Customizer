@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
+import { StyleSheet } from 'react-native'
 import {
   Container,
   Header,
@@ -14,7 +15,6 @@ import {
   Col,
   Row
 } from "native-base";
-import styles from "./styles";
 
 class NHIcon extends Component {
   render() {
@@ -571,4 +571,23 @@ class NHIcon extends Component {
   }
 }
 
-export default NHIcon;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    width: null,
+    height: null,
+    backgroundColor: "#FFF"
+  },
+  col: {
+    alignItems: "center",
+    paddingHorizontal: 3
+  },
+  row: {
+    paddingBottom: 20
+  },
+  iconText: {
+    fontSize: 12
+  },
+});
+
+export default NHIcon;`

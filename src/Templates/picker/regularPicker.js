@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
+import { StyleSheet } from "react-native";
 import {
   Container,
   Header,
@@ -12,7 +13,6 @@ import {
   Picker,
   Form
 } from "native-base";
-import styles from "./styles";
 
 const Item = Picker.Item;
 
@@ -66,4 +66,10 @@ class RegularPicker extends Component {
   }
 }
 
-export default RegularPicker;
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FFF"
+  },
+});
+
+export default RegularPicker;`;

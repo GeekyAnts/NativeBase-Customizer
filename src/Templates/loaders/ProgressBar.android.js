@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
 import ProgressBar from "ProgressBarAndroid";
 
 export default class SpinnerNB extends Component {
@@ -35,4 +35,4 @@ export default class SpinnerNB extends Component {
       />
     );
   }
-}
+}`;

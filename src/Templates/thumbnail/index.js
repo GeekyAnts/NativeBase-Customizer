@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+export default `import React, { Component } from "react";
+import { StyleSheet } from "react-native";
 import {
   Container,
   Header,
@@ -13,7 +14,6 @@ import {
   Right,
   View
 } from "native-base";
-import styles from "./styles";
 
 const logo = require("../../../assets/splashscreen.png");
 const cover = require("../../../assets/web-cover1.jpg");
@@ -55,4 +55,16 @@ class NHThumbnail extends Component {
   }
 }
 
-export default NHThumbnail;
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#FFF"
+  },
+  mb10: {
+    marginBottom: 10
+  },
+  mb35: {
+    marginBottom: 35
+  }
+});
+
+export default NHThumbnail;`;
