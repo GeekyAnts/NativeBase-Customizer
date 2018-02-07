@@ -14,9 +14,9 @@ const Dropdown = ul`
     left: -9999px;
     position: absolute;
     top: 24px;
-    width: ${(props: PropType) => (props.uiSize ? props.uiSize : "170")}px;
+    width: ${(props: PropType) => (props.uiSize ? props.uiSize : "180")}px;
     border: 1px solid ${COLOR[500]};
-    margin-left: -124px;
+    margin-left: -134px;
     margin-top: 15px
   };
   ul {
@@ -71,7 +71,7 @@ const Dropdown = ul`
     props.last ? "none" : "1px solid" + COLOR[300]}
   };
   .dd li a {
-    width: ${(props: PropType) => (props.uiSize ? props.uiSize : "150")}px;
+    width: ${(props: PropType) => (props.uiSize ? props.uiSize : "160")}px;
     margin-top: 0px;
     padding: 10px;
   };
@@ -80,7 +80,7 @@ const Dropdown = ul`
   ul.dd li ul:hover {
     left: 100%;
     top: 0%;
-    width: 152px
+    width: 162px
   }
 `;
 

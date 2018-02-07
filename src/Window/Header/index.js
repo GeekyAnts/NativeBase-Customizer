@@ -8,6 +8,7 @@ import Icon from "../../StyledComponents/Icon";
 import Col from "../../StyledComponents/Col";
 import Row from "../../StyledComponents/Row";
 import Button from "../../StyledComponents/Button";
+import ModalWindow from "../../StyledComponents/ModalWindow";
 import Text from "../../StyledComponents/Text";
 import {
   MenuDropdown,
@@ -123,7 +124,7 @@ class Header extends Component {
                     }}
                   >
                     <OptionMenu>
-                      <OptionMenuTitle>App</OptionMenuTitle>
+                      <OptionMenuTitle>Download App</OptionMenuTitle>
                     </OptionMenu>
                   </Option>
                   <Option
@@ -135,7 +136,7 @@ class Header extends Component {
                     }}
                   >
                     <OptionMenu>
-                      <OptionMenuTitle>Variable File</OptionMenuTitle>
+                      <OptionMenuTitle>Download Variable File</OptionMenuTitle>
                     </OptionMenu>
                   </Option>
                 </MenuDropdown>
@@ -159,20 +160,43 @@ class Header extends Component {
               justifyContent: "center"
             },
             content: {
-              width: 600,
-              height: 250,
-              top: 0,
-              bottom: 0,
-              right: 0,
-              left: 0,
               display: "flex",
-              alignSelf: "center"
+              background: "transparent",
+              border: "none",
+              justifyContent: "center"
             }
           }}
           contentLabel="Modal"
         >
-          <h1 style={{ color: "#000" }}>Modal Content</h1>
-          <p>Etc.</p>
+          <ModalWindow>
+            <div style={{ marginLeft: "10%", marginRight: "10%" }}>
+              <Icon name="md-close" uiSize="30" onClick={() => this.setState({ modalOpen: !this.state.modalOpen })} uiColor="rgba(117, 115, 134, 0.9)" style={{ position: 'absolute', top: 10, right: 10 }} />
+              <h2 style={{ textAlign: "center", color: "#201C3C" }}>
+                Steps to run the App
+              </h2>
+              <ul style={{ fontSize: 18, color: "#3F3B5A" }}>
+                <li>Unzip the downloaded App</li>
+                <li>Download the variable file</li>
+                <li>
+                  Replace file material.js in App/src/theme with the downloaded
+                  variable file
+                </li>
+                <li>
+                  Run{" "}
+                  <code style={{ background: "rgba(117, 115, 134, 0.2)", paddingLeft: 5, paddingRight: 5 }}>
+                    npm install
+                  </code>{" "}
+                  in the App directory
+                </li>
+                <li>
+                  Run{" "}
+                  <code style={{ background: "rgba(117, 115, 134, 0.2)", paddingLeft: 5, paddingRight: 5 }}>
+                    npm start
+                  </code>{" "}
+                </li>
+              </ul>
+            </div>
+          </ModalWindow>
         </Modal>
       </Pane>
     );

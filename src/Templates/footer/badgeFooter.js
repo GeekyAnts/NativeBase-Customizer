@@ -89,7 +89,7 @@ class BadgeFooter extends Component {
               <Icon active={this.state.tab1} name="apps" />
               <Text>Apps</Text>
             </Button>
-            <Button active={this.state.tab2} onPress={() => this.toggleTab2()}>
+            <Button vertical active={this.state.tab2} onPress={() => this.toggleTab2()}>
               <Icon active={this.state.tab2} name="camera" />
               <Text>Camera</Text>
             </Button>
@@ -105,7 +105,7 @@ class BadgeFooter extends Component {
               <Icon active={this.state.tab3} name="compass" />
               <Text>Compass</Text>
             </Button>
-            <Button active={this.state.tab4} onPress={() => this.toggleTab4()}>
+            <Button vertical active={this.state.tab4} onPress={() => this.toggleTab4()}>
               <Icon active={this.state.tab4} name="contact" />
               <Text>Contact</Text>
             </Button>
