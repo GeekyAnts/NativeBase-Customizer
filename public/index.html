@@ -20,10 +20,9 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-  <title>NativeBase-Customizer</title>
+  <title>Run NativeBase-KitchenSink on react-native-web</title>
   <link href="%PUBLIC_URL%/devices.min.css" rel="stylesheet" />
   <script src="%PUBLIC_URL%/mobile-detect.min.js"></script>
-  <script src="js/jszip.min.js" type="text/javascript"></script>
   <style>
     .marvel-device.iphone8.black {
       /* display: block; */
@@ -35,26 +34,13 @@
       z-index: 3;
     }
 
-    html {
-      overflow: hidden;
-      height: 100%;
-    }
-
     body {
-      background-color: #221F3D;
+      background-color: black;
       padding: 40px;
-      color: #FFF;
-      height: 100%;
-      overflow: auto;
     }
 
     div {
       border-width: thin;
-      /* -moz-user-select: none;
-      -webkit-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      -o-user-select: none; */
     }
 
     h1.title {
@@ -68,10 +54,6 @@
       text-align: center;
     }
 
-    li {
-      line-height: 24px;
-    }
-
     a {
       color: #FFF;
     }
@@ -79,7 +61,7 @@
 </head>
 
 <body>
-  <div id='root'>
+  <div id='info'>
     <!-- <h1 class="title">
       <a href="https://github.com/GeekyAnts/NativeBase-KitchenSink">NativeBase-KitchenSink</a> on
       <a href="https://github.com/necolas/react-native-web">react-native-web</a>
@@ -89,7 +71,19 @@
   <noscript>
     You need to enable JavaScript to run this app.
   </noscript>
-
+  <div id="mobile-frame">
+    <div class="top-bar"></div>
+    <div class="sleep"></div>
+    <div class="volume"></div>
+    <div class="camera"></div>
+    <div class="sensor"></div>
+    <div class="speaker"></div>
+    <div class="screen" id="root">
+      <!-- Content goes here -->
+    </div>
+    <div class="home"></div>
+    <div class="bottom-bar"></div>
+  </div>
   <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -110,10 +104,10 @@
       if (checkMobile() !== isMobile) {
         isMobile = checkMobile()
         if (isMobile) {
-          document.getElementById('mobile-frame').className = "test"
+          document.getElementById('mobile-frame').className = ""
           document.getElementById('info').style.display = 'none'
         } else {
-          document.getElementById('mobile-frame').className = "phone-screen black"
+          document.getElementById('mobile-frame').className = "marvel-device iphone8 black"
           document.getElementById('info').style.display = ''
         }
       }

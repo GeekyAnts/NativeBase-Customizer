@@ -4,14 +4,6 @@
   -webkit-box-sizing: content-box !important;
   box-sizing: content-box !important;
 }
-.phone-screen {
-  display: flex;
-  width: 371px;
-  height: 660px;
-  /* margin: 50px; */
-  overflow: hidden;
-  background: #d9dbdc;
-}
 .marvel-device .screen {
   width: 100%;
   position: relative;
