@@ -1,0 +1,56 @@
+.form-style {
+  flex: 1.2;
+  z-index: 29;
+  padding: 2px !important;
+}
+
+.closePicker {
+  position: fixed;
+  height: 200px;
+  width: 300px;
+}
+.align-right {
+  right: -3px;
+  position: absolute;
+  z-index: 99;
+}
+.align-left {
+  left: -3px;
+  position: absolute;
+  z-index: 99;
+}
+.sketch-picker {
+  background-color: #2f2b4a !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+  /* box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5); */
+  z-index: 99 !important;
+  width: 160px;
+}
+span {
+  letter-spacing: -0.27px;
+  font-weight: 100 !important;
+  color: #babdc6 !important;
+}
+.flexbox-fix:last-child {
+  border-top: 0 !important;
+}
+/* .flexbox-fix {
+  input {
+    background: #2e3139;
+    color: #babdc6 !important;
+    border: none !important;
+    border-radius: 2px;
+    height: 22px;
+    font-size: 11px !important;
+    padding: 5px !important;
+    outline: none;
+  }
+}
+.flexbox-fix:first-child,
+.flexbox-fix:not(:nth-child(3)) {
+  div:nth-child(2) {
+    display: none;
+  }
+} */
