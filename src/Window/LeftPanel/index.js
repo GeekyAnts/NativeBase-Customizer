@@ -240,6 +240,7 @@ class LeftPanel extends Component {
         const newSub = data.sub.map(function(subData, idx) {
           return (
             <Bar
+              key={idx}
               sub
               onClick={() => that.props.newPage(data.route, subData)}
               active={subData === that.props.page.navigation.subPage}

@@ -142,13 +142,11 @@ export default {
   iosStatusbar: "light-content",
   get statusBarColor() {
     return color(this.toolbarDefaultBg)
-      .darken(0.2)
-      .hex();
+      .darken(0.2).hex();
   },
   get darkenHeader() {
     return color(this.tabBgColor)
-      .darken(0.03)
-      .hex();
+      .darken(0.03).hex();
   },
 
   // Icon

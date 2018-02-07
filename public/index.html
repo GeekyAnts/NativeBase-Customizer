@@ -99,25 +99,6 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-  <script>
-    function checkMobile() {
-      var md = new MobileDetect(window.navigator.userAgent)
-      return md.os() === 'iOS' || md.os() === 'AndroidOS'
-    }
-    var isMobile = null
-    setInterval(function () {
-      if (checkMobile() !== isMobile) {
-        isMobile = checkMobile()
-        if (isMobile) {
-          document.getElementById('mobile-frame').className = "test"
-          document.getElementById('info').style.display = 'none'
-        } else {
-          document.getElementById('mobile-frame').className = "phone-screen black"
-          document.getElementById('info').style.display = ''
-        }
-      }
-    }, 500)
-  </script>
 </body>
 
 </html>
