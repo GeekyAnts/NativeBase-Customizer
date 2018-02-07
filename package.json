@@ -2,7 +2,7 @@
   "name": "native-base-customizer",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://github.com/GeekyAnts/NativeBase-Customizer",
+  "homepage": "http://nativebase-customizer.geekydev.com",
   "resolutions": {
     "react-native-keyboard-aware-scroll-view": "0.4.1"
   },
