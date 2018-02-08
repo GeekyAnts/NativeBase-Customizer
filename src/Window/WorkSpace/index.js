@@ -3,6 +3,7 @@ import Artboard from "./Artboard";
 import { connect } from "react-redux";
 import Ionicon from "react-ionicons";
 import Code from "./Code";
+import Mousetrap from "mousetrap";
 
 import Screen from "../../StyledComponents/Screen";
 import Col from "../../StyledComponents/Col";
@@ -13,6 +14,7 @@ import Icon from "../../StyledComponents/Icon";
 import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import { nextPage, prevPage } from "../../Actions/navigation";
 import { appliedTheme } from "../../Actions/theme";
+import { historyUndo, historyRedo } from "../../Actions/undo";
 import variables from "../../ReactNativeApp/theme/variables/material";
 
 class WorkSpace extends Component {
@@ -24,6 +26,14 @@ class WorkSpace extends Component {
   }
   componentWillMount() {
     this.props.appliedTheme(variables);
+  }
+  componentDidMount() {
+    Mousetrap.bind(["command+z"], this.props.historyUndo);
+    Mousetrap.bind(["command+shift+x"], this.props.historyRedo);
+  }
+  componentWillUnmount() {
+    Mousetrap.bind(["command+z"], this.props.historyUndo);
+    Mousetrap.bind(["command+shift+x"], this.props.historyRedo);
   }
   selection(value) {
     this.setState({ choice: value });
@@ -132,15 +142,17 @@ function bindAction(dispatch) {
   return {
     nextPage: () => dispatch(nextPage()),
     prevPage: () => dispatch(prevPage()),
+    historyRedo: () => dispatch(historyRedo()),
+    historyUndo: () => dispatch(historyUndo()),
     appliedTheme: variables => dispatch(appliedTheme(variables))
   };
 }
 
 const mapStateToProps = state => ({
-  page: state.navigation,
-  route: state.navigation.page,
+  page: state.present.navigation,
+  route: state.present.navigation.page,
   test: state,
-  variables: state.theme
+  variables: state.present.theme
 });
 
 export default connect(mapStateToProps, bindAction)(WorkSpace);

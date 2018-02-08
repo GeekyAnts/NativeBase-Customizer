@@ -4,6 +4,7 @@ import Bar from "../../StyledComponents/Bar";
 import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import Pane from "../../StyledComponents/Pane";
 import Icon from "../../StyledComponents/Icon";
+import ScrollBar from "../../StyledComponents/ScrollBar";
 import { newPage } from "../../Actions/selectPage";
 
 const datas = [
@@ -274,9 +275,11 @@ class LeftPanel extends Component {
       }
     });
     return (
-      <Pane uiBackground="300" style={{ padding: 0, display: "flex" }}>
-        <WrapperDiv style={{ overflowY: "scroll" }}>{renObjData}</WrapperDiv>
-      </Pane>
+      <ScrollBar autoHide>
+        <Pane uiBackground="300" style={{ padding: 0, display: "flex" }}>
+          <WrapperDiv>{renObjData}</WrapperDiv>
+        </Pane>
+      </ScrollBar>
     );
   }
 }
@@ -288,7 +291,7 @@ function bindAction(dispatch) {
 }
 
 const mapStateToProps = state => ({
-  page: state
+  page: state.present
 });
 
 export default connect(mapStateToProps, bindAction)(LeftPanel);

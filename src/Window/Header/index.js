@@ -170,7 +170,15 @@ class Header extends Component {
         >
           <ModalWindow>
             <div style={{ marginLeft: "10%", marginRight: "10%" }}>
-              <Icon name="md-close" uiSize="30" onClick={() => this.setState({ modalOpen: !this.state.modalOpen })} uiColor="rgba(117, 115, 134, 0.9)" style={{ position: 'absolute', top: 10, right: 10 }} />
+              <Icon
+                name="md-close"
+                uiSize="30"
+                onClick={() =>
+                  this.setState({ modalOpen: !this.state.modalOpen })
+                }
+                uiColor="rgba(117, 115, 134, 0.9)"
+                style={{ position: "absolute", top: 10, right: 10 }}
+              />
               <h2 style={{ textAlign: "center", color: "#201C3C" }}>
                 Steps to run the App
               </h2>
@@ -178,19 +186,31 @@ class Header extends Component {
                 <li>Unzip the downloaded App</li>
                 <li>Download the variable file</li>
                 <li>
-                  Replace file material.js in App/src/theme with the downloaded
-                  variable file
+                  Replace the content of file commonColor.js in App/src/theme
+                  with the downloaded variable file
                 </li>
                 <li>
                   Run{" "}
-                  <code style={{ background: "rgba(117, 115, 134, 0.2)", paddingLeft: 5, paddingRight: 5 }}>
+                  <code
+                    style={{
+                      background: "rgba(117, 115, 134, 0.2)",
+                      paddingLeft: 5,
+                      paddingRight: 5
+                    }}
+                  >
                     npm install
                   </code>{" "}
                   in the App directory
                 </li>
                 <li>
                   Run{" "}
-                  <code style={{ background: "rgba(117, 115, 134, 0.2)", paddingLeft: 5, paddingRight: 5 }}>
+                  <code
+                    style={{
+                      background: "rgba(117, 115, 134, 0.2)",
+                      paddingLeft: 5,
+                      paddingRight: 5
+                    }}
+                  >
                     npm start
                   </code>{" "}
                 </li>
@@ -210,7 +230,8 @@ function bindAction(dispatch) {
 }
 
 const mapStateToProps = state => ({
-  variables: state.theme.variable
+  variables: state.present.theme.variable,
+  test: state
 });
 
 export default connect(mapStateToProps, bindAction)(Header);

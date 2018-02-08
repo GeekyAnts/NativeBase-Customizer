@@ -1,6 +1,6 @@
+import material from "../ReactNativeApp/theme/variables/material";
 const initialState = {
-  variable: "",
-  var: ""
+  variable: material
 };
 
 export default function(state: any = initialState, action: Function) {

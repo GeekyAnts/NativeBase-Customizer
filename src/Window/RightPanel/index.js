@@ -4,6 +4,7 @@ import FormGroup from "../../StyledComponents/FormGroup";
 import FormRow from "../../StyledComponents/FormRow";
 import FormCol from "../../StyledComponents/FormCol";
 import Text from "../../StyledComponents/Text";
+import ScrollBar from "../../StyledComponents/ScrollBar";
 import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import Dropdown from "../../StyledComponents/Dropdown";
 import Header from "./Header";
@@ -38,10 +39,11 @@ import { appliedTheme } from "../../Actions/theme";
 class RightPanel extends Component {
   render() {
     return (
-      <WrapperDiv uiBackground="500">
-        <FormGroup>
-          <FormRow noPadding center>
-            {/* <FormCol uiSize={2} />
+      <ScrollBar autoHide>
+        <WrapperDiv uiBackground="500">
+          <FormGroup>
+            <FormRow noPadding center>
+              {/* <FormCol uiSize={2} />
             <FormCol uiSize={3}>
               <Dropdown>
                 <option value="Platform">Platform</option>
@@ -49,43 +51,44 @@ class RightPanel extends Component {
                 <option value="Common">Common</option>
               </Dropdown>
             </FormCol> */}
-            <FormCol>
-              <Text uiSize="m" style={{ textAlign: "center" }}>
-                Material Theme
-              </Text>
-            </FormCol>
-          </FormRow>
-        </FormGroup>
-        {this.props.page.navigation.page === "Anatomy" && <Anatomy />}
-        {this.props.page.navigation.page === "Actionsheet" && <ActionSheet />}
-        {this.props.page.navigation.page === "Toast" && <Toast />}
-        {this.props.page.navigation.page === "Badge" && <Badge />}
-        {this.props.page.navigation.page === "Button" && <Button />}
-        {this.props.page.navigation.page === "Radio" && <Radio />}
-        {this.props.page.navigation.page === "Card" && <Card />}
-        {this.props.page.navigation.page === "Checkbox" && <CheckBox />}
-        {this.props.page.navigation.page === "DeckSwiper" && <DeckSwiper />}
-        {this.props.page.navigation.page === "Thumbnail" && <Thumbnail />}
-        {this.props.page.navigation.page === "DefaultText" && <DefaultText />}
-        {/* {(this.props.page.navigation.page === "Anatomy" ||
+              <FormCol>
+                <Text uiSize="m" style={{ textAlign: "center" }}>
+                  Material Theme
+                </Text>
+              </FormCol>
+            </FormRow>
+          </FormGroup>
+          {this.props.page.navigation.page === "Anatomy" && <Anatomy />}
+          {this.props.page.navigation.page === "Actionsheet" && <ActionSheet />}
+          {this.props.page.navigation.page === "Toast" && <Toast />}
+          {this.props.page.navigation.page === "Badge" && <Badge />}
+          {this.props.page.navigation.page === "Button" && <Button />}
+          {this.props.page.navigation.page === "Radio" && <Radio />}
+          {this.props.page.navigation.page === "Card" && <Card />}
+          {this.props.page.navigation.page === "Checkbox" && <CheckBox />}
+          {this.props.page.navigation.page === "DeckSwiper" && <DeckSwiper />}
+          {this.props.page.navigation.page === "Thumbnail" && <Thumbnail />}
+          {this.props.page.navigation.page === "DefaultText" && <DefaultText />}
+          {/* {(this.props.page.navigation.page === "Anatomy" ||
           this.props.page.navigation.page === "Header") && <Header />} */}
-        {this.props.page.navigation.page === "Header" && <Header />}
-        {this.props.page.navigation.page === "Typography" && <Typography />}
-        {/* {this.props.page.navigation.page != "Anatomy" && <Title />} */}
-        {this.props.page.navigation.page === "Footer" && <Footer />}
-        {this.props.page.navigation.page === "Form" && <Form />}
-        {this.props.page.navigation.page === "Searchbar" && <SearchBar />}
-        {this.props.page.navigation.page === "Icon" && <Icon />}
-        {this.props.page.navigation.page === "InputGroup" && <InputGroup />}
-        {this.props.page.navigation.page === "List" && <List />}
-        {this.props.page.navigation.page === "RadioButton" && <RadioButton />}
-        {this.props.page.navigation.page === "Segment" && <Segment />}
-        {this.props.page.navigation.page === "Spinner" && <Spinner />}
-        {this.props.page.navigation.page === "Tabs" && <Tabs />}
-        {this.props.page.navigation.page === "Fab" && <Fab />}
-        {this.props.page.navigation.page === "ListSwipe" && <ListSwipe />}
-        {/* {this.props.page.navigation.page != "Anatomy" && <Colors />} */}
-      </WrapperDiv>
+          {this.props.page.navigation.page === "Header" && <Header />}
+          {this.props.page.navigation.page === "Typography" && <Typography />}
+          {/* {this.props.page.navigation.page != "Anatomy" && <Title />} */}
+          {this.props.page.navigation.page === "Footer" && <Footer />}
+          {this.props.page.navigation.page === "Form" && <Form />}
+          {this.props.page.navigation.page === "Searchbar" && <SearchBar />}
+          {this.props.page.navigation.page === "Icon" && <Icon />}
+          {this.props.page.navigation.page === "InputGroup" && <InputGroup />}
+          {this.props.page.navigation.page === "List" && <List />}
+          {this.props.page.navigation.page === "RadioButton" && <RadioButton />}
+          {this.props.page.navigation.page === "Segment" && <Segment />}
+          {this.props.page.navigation.page === "Spinner" && <Spinner />}
+          {this.props.page.navigation.page === "Tabs" && <Tabs />}
+          {this.props.page.navigation.page === "Fab" && <Fab />}
+          {this.props.page.navigation.page === "ListSwipe" && <ListSwipe />}
+          {/* {this.props.page.navigation.page != "Anatomy" && <Colors />} */}
+        </WrapperDiv>
+      </ScrollBar>
     );
   }
 }
@@ -97,8 +100,8 @@ function bindAction(dispatch) {
 }
 
 const mapStateToProps = state => ({
-  variables: state.theme.variable,
-  page: state
+  variables: state.present.theme.variable,
+  page: state.present
 });
 
 export default connect(mapStateToProps, bindAction)(RightPanel);

@@ -280,8 +280,8 @@ function bindAction(dispatch) {
 }
 
 const mapStateToProps = state => ({
-  variables: state.theme.variable,
-  page: state.navigation
+  variables: state.present.theme.variable,
+  page: state.present.navigation
 });
 
 export default connect(mapStateToProps, bindAction)(List);

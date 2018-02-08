@@ -12,10 +12,6 @@ import RightPanel from "./Window/RightPanel";
 import SplitPane from "./StyledComponents/SplitPane";
 
 class App extends React.Component {
-  state: {
-    store: Object,
-    isLoading: boolean
-  };
   constructor() {
     super();
     this.state = {
@@ -53,7 +49,7 @@ class App extends React.Component {
               allowResize={false}
               className="primary"
               primary="second"
-              pane2Style={{ overflow: "scroll" }}
+              // pane2Style={{ overflow: "scroll" }}
             >
               <WorkSpace />
               <RightPanel />

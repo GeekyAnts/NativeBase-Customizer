@@ -323,7 +323,6 @@ class Code extends React.Component {
       mode: "javascript",
       readOnly: true
     };
-    console.log(this.appScreen(), "nav");
     return (
       <CodeMirror {...this.props} value={this.appScreen()} options={options} />
     );
@@ -331,8 +330,8 @@ class Code extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  variables: state.theme.variable,
-  navigation: state.navigation
+  variables: state.present.theme.variable,
+  navigation: state.present.navigation
 });
 
 export default connect(mapStateToProps, null)(Code);
