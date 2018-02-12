@@ -6,6 +6,7 @@ import FormRow from "../../StyledComponents/FormRow";
 import FormCol from "../../StyledComponents/FormCol";
 import Text from "../../StyledComponents/Text";
 import Input from "../../StyledComponents/Input";
+import InputGroup from "../../StyledComponents/InputGroup";
 import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import ColorPicker from "../../StyledComponents/ColorPicker";
 import Slider from "../../StyledComponents/Slider";
@@ -96,13 +97,13 @@ class Button extends Component {
           {this.props.navigation.subPage != "Rounded" &&
             this.props.navigation.subPage != "Transparent" && (
               <FormRow>
-                <FormCol>
+                <FormCol uiSize={3}>
                   <Text>Base Border Radius</Text>
                 </FormCol>
-                <FormCol>
-                  <Slider
-                    min="0"
-                    max="50"
+                <FormCol uiSize={1}>
+                  <Input
+                    type="number"
+                    step="any"
                     value={this.props.variables.borderRadiusBase}
                     onChange={e =>
                       this.props.changeValue(
@@ -111,6 +112,22 @@ class Button extends Component {
                       )
                     }
                   />
+                </FormCol>
+                <FormCol uiSize={2}>
+                  <InputGroup marginLeft>
+                    <Slider
+                      min="0"
+                      max="50"
+                      style={{ Width: "75%" }}
+                      value={this.props.variables.borderRadiusBase}
+                      onChange={e =>
+                        this.props.changeValue(
+                          "borderRadiusBase",
+                          parseInt(e.target.value)
+                        )
+                      }
+                    />
+                  </InputGroup>
                 </FormCol>
               </FormRow>
             )}

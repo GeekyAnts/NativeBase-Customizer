@@ -6,6 +6,7 @@ import FormCol from "../../StyledComponents/FormCol";
 import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import Text from "../../StyledComponents/Text";
 import Input from "../../StyledComponents/Input";
+import InputGroup from "../../StyledComponents/InputGroup";
 import Slider from "../../StyledComponents/Slider";
 import ColorPicker from "../../StyledComponents/ColorPicker";
 import AllHeader from "./AllHeader";
@@ -38,8 +39,16 @@ class Form extends Component {
             </FormCol>
           </FormRow>
           <FormRow>
+            <FormCol uiSize={2}>
+              <Text>Input</Text>
+            </FormCol>
             <FormCol>
-              <Text>Input FontSize</Text>
+              <ColorPicker
+                value={this.props.variables.inputColor}
+                onChangeColor={color =>
+                  this.props.changeValue("inputColor", color)
+                }
+              />
             </FormCol>
             <FormCol>
               <Input
@@ -71,7 +80,7 @@ class Form extends Component {
               </FormCol>
             </FormRow>
           )}
-          <FormRow>
+          {/* <FormRow>
             <FormCol>
               <Text>Input Text Color</Text>
             </FormCol>
@@ -83,7 +92,7 @@ class Form extends Component {
                 }
               />
             </FormCol>
-          </FormRow>
+          </FormRow> */}
 
           {/* <FormRow>
             <FormCol>
@@ -119,6 +128,36 @@ class Form extends Component {
               />
             </FormCol>
           </FormRow>
+          {this.props.page.subPage === "Success" && (
+            <FormRow>
+              <FormCol>
+                <Text>Success Color</Text>
+              </FormCol>
+              <FormCol>
+                <ColorPicker
+                  value={this.props.variables.inputSuccessBorderColor}
+                  onChangeColor={color =>
+                    this.props.changeValue("inputSuccessBorderColor", color)
+                  }
+                />
+              </FormCol>
+            </FormRow>
+          )}
+          {this.props.page.subPage === "Error" && (
+            <FormRow>
+              <FormCol>
+                <Text>Error Color</Text>
+              </FormCol>
+              <FormCol>
+                <ColorPicker
+                  value={this.props.variables.inputErrorBorderColor}
+                  onChangeColor={color =>
+                    this.props.changeValue("inputErrorBorderColor", color)
+                  }
+                />
+              </FormCol>
+            </FormRow>
+          )}
         </FormGroup>
         {(this.props.page.subPage === "Fixed" ||
           this.props.page.subPage === "Inline" ||
@@ -212,13 +251,14 @@ class Form extends Component {
               </FormCol>
             </FormRow>
             <FormRow>
-              <FormCol>
+              <FormCol uiSize={3}>
                 <Text>Base Border Radius</Text>
               </FormCol>
-              <FormCol>
-                <Slider
+              <FormCol uiSize={1}>
+                <Input
                   min="0"
                   max="50"
+                  type="number"
                   value={this.props.variables.borderRadiusBase}
                   onChange={e =>
                     this.props.changeValue(
@@ -227,6 +267,22 @@ class Form extends Component {
                     )
                   }
                 />
+              </FormCol>
+              <FormCol uiSize={2}>
+                <InputGroup marginLeft>
+                  <Slider
+                    min="0"
+                    max="50"
+                    style={{ width: "75%" }}
+                    value={this.props.variables.borderRadiusBase}
+                    onChange={e =>
+                      this.props.changeValue(
+                        "borderRadiusBase",
+                        parseInt(e.target.value)
+                      )
+                    }
+                  />
+                </InputGroup>
               </FormCol>
             </FormRow>
           </FormGroup>

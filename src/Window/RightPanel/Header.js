@@ -9,6 +9,7 @@ import Input from "../../StyledComponents/Input";
 import ColorPicker from "../../StyledComponents/ColorPicker";
 import Slider from "../../StyledComponents/Slider";
 import { appliedTheme, changeValue } from "../../Actions/theme";
+import InputGroup from "../../StyledComponents/InputGroup";
 
 class Header extends Component {
   render() {
@@ -23,11 +24,21 @@ class Header extends Component {
             </FormCol>
           </FormRow>
           <FormRow>
-            <FormCol>
-              <Text>Title FontSize</Text>
+            <FormCol uiSize={2}>
+              <Text>Title</Text>
             </FormCol>
-            <FormCol>
+            <FormCol uiSize={1}>
+              <ColorPicker
+                value={this.props.variables.titleFontColor}
+                onChangeColor={color =>
+                  this.props.changeValue("titleFontColor", color)
+                }
+              />
+            </FormCol>
+            <FormCol uiSize={1}>
               <Input
+                min="0"
+                max="50"
                 type="number"
                 value={this.props.variables.titleFontSize}
                 onChange={e =>
@@ -39,23 +50,18 @@ class Header extends Component {
               />
             </FormCol>
           </FormRow>
-          <FormRow>
-            <FormCol>
-              <Text>Title Color</Text>
-            </FormCol>
-            <FormCol>
-              <ColorPicker
-                value={this.props.variables.titleFontColor}
-                onChangeColor={color =>
-                  this.props.changeValue("titleFontColor", color)
-                }
-              />
-            </FormCol>
-          </FormRow>
           {this.props.page.subPage === "SubTitle" && (
             <FormRow>
+              <FormCol uiSize={2}>
+                <Text>SubTitle</Text>
+              </FormCol>
               <FormCol>
-                <Text>SubTitle FontSize</Text>
+                <ColorPicker
+                  value={this.props.variables.subtitleColor}
+                  onChangeColor={color =>
+                    this.props.changeValue("subtitleColor", color)
+                  }
+                />
               </FormCol>
               <FormCol>
                 <Input
@@ -71,7 +77,7 @@ class Header extends Component {
               </FormCol>
             </FormRow>
           )}
-          {this.props.page.subPage === "SubTitle" && (
+          {/* {this.props.page.subPage === "SubTitle" && (
             <FormRow>
               <FormCol>
                 <Text>SubTitle Color</Text>
@@ -85,7 +91,7 @@ class Header extends Component {
                 />
               </FormCol>
             </FormRow>
-          )}
+          )} */}
 
           <FormRow>
             <FormCol>
@@ -135,10 +141,10 @@ class Header extends Component {
           )}
           {this.props.page.subPage != "Title" && (
             <FormRow>
-              <FormCol>
+              <FormCol uiSize={3}>
                 <Text>Button Padding</Text>
               </FormCol>
-              <FormCol>
+              <FormCol uiSize={1}>
                 <Input
                   type="number"
                   onChange={e =>
@@ -150,12 +156,28 @@ class Header extends Component {
                   value={this.props.variables.buttonPadding}
                 />
               </FormCol>
+              <FormCol uiSize={2}>
+                <InputGroup marginLeft>
+                  <Slider
+                    min="0"
+                    max="100"
+                    style={{ width: "75%" }}
+                    value={this.props.variables.buttonPadding}
+                    onChange={e =>
+                      this.props.changeValue(
+                        "buttonPadding",
+                        parseInt(e.target.value)
+                      )
+                    }
+                  />
+                </InputGroup>
+              </FormCol>
             </FormRow>
           )}
 
           <FormRow>
             <FormCol>
-              <Text>Border</Text>
+              <Text>Border Color</Text>
             </FormCol>
             <FormCol>
               <ColorPicker
@@ -210,10 +232,19 @@ class Header extends Component {
             </FormRow>
 
             <FormRow>
-              <FormCol>
-                <Text>FontSize</Text>
+              <FormCol uiSize={2}>
+                <Text>Text</Text>
               </FormCol>
-              <FormCol>
+              <FormCol uiSize={1}>
+                <ColorPicker
+                  value={this.props.variables.inverseTextColor}
+                  onChangeColor={color =>
+                    this.props.changeValue("inverseTextColor", color)
+                  }
+                />
+              </FormCol>
+
+              <FormCol uiSize={1}>
                 <Input
                   type="number"
                   value={this.props.variables.btnTextSize}
@@ -259,7 +290,7 @@ class Header extends Component {
               </FormCol>
             </FormRow>
 
-            <FormRow>
+            {/* <FormRow>
               <FormCol>
                 <Text>Text Color</Text>
               </FormCol>
@@ -271,16 +302,17 @@ class Header extends Component {
                   }
                 />
               </FormCol>
-            </FormRow>
+            </FormRow> */}
 
             <FormRow>
-              <FormCol>
+              <FormCol uiSize={3}>
                 <Text>Border Radius</Text>
               </FormCol>
-              <FormCol>
-                <Slider
+              <FormCol uiSize={1}>
+                <Input
                   min="0"
                   max="50"
+                  type="number"
                   value={this.props.variables.borderRadiusBase}
                   onChange={e =>
                     this.props.changeValue(
@@ -289,6 +321,22 @@ class Header extends Component {
                     )
                   }
                 />
+              </FormCol>
+              <FormCol uiSize={2}>
+                <InputGroup marginLeft>
+                  <Slider
+                    min="0"
+                    max="50"
+                    style={{ width: "75%" }}
+                    value={this.props.variables.borderRadiusBase}
+                    onChange={e =>
+                      this.props.changeValue(
+                        "borderRadiusBase",
+                        parseInt(e.target.value)
+                      )
+                    }
+                  />
+                </InputGroup>
               </FormCol>
             </FormRow>
           </FormGroup>

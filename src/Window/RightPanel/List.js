@@ -4,7 +4,9 @@ import FormGroup from "../../StyledComponents/FormGroup";
 import FormRow from "../../StyledComponents/FormRow";
 import FormCol from "../../StyledComponents/FormCol";
 import Text from "../../StyledComponents/Text";
+import Slider from "../../StyledComponents/Slider";
 import Input from "../../StyledComponents/Input";
+import InputGroup from "../../StyledComponents/InputGroup";
 import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import ColorPicker from "../../StyledComponents/ColorPicker";
 import AllHeader from "./AllHeader";
@@ -22,10 +24,33 @@ class List extends Component {
               </Text>
             </FormCol>
           </FormRow>
+
+          <FormRow>
+            <FormCol>
+              <Text>FontFamily</Text>
+            </FormCol>
+            <FormCol>
+              <Input
+                type="text"
+                value={this.props.variables.fontFamily}
+                onChange={e =>
+                  this.props.changeValue("fontFamily", parseInt(e.target.value))
+                }
+              />
+            </FormCol>
+          </FormRow>
           {this.props.page.subPage != "List Icon" && (
             <FormRow>
+              <FormCol uiSize={2}>
+                <Text>Text</Text>
+              </FormCol>
               <FormCol>
-                <Text>Font Size</Text>
+                <ColorPicker
+                  value={this.props.variables.textColor}
+                  onChangeColor={color =>
+                    this.props.changeValue("textColor", color)
+                  }
+                />
               </FormCol>
               <FormCol>
                 <Input
@@ -42,22 +67,7 @@ class List extends Component {
             </FormRow>
           )}
 
-          <FormRow>
-            <FormCol>
-              <Text>FontFamily</Text>
-            </FormCol>
-            <FormCol>
-              <Input
-                type="text"
-                value={this.props.variables.fontFamily}
-                onChange={e =>
-                  this.props.changeValue("fontFamily", parseInt(e.target.value))
-                }
-              />
-            </FormCol>
-          </FormRow>
-
-          <FormRow>
+          {/* <FormRow>
             <FormCol>
               <Text>Color</Text>
             </FormCol>
@@ -69,7 +79,7 @@ class List extends Component {
                 }
               />
             </FormCol>
-          </FormRow>
+          </FormRow> */}
           {this.props.page.subPage === "List Separator" && (
             <FormRow>
               <FormCol>
@@ -91,8 +101,16 @@ class List extends Component {
           )}
           {this.props.page.subPage === "List Thumbnail" && (
             <FormRow>
+              <FormCol uiSize={2}>
+                <Text>Note</Text>
+              </FormCol>
               <FormCol>
-                <Text>Note FontSize</Text>
+                <ColorPicker
+                  value={this.props.variables.listNoteColor}
+                  onChangeColor={color =>
+                    this.props.changeValue("listNoteColor", color)
+                  }
+                />
               </FormCol>
               <FormCol>
                 <Input
@@ -110,8 +128,16 @@ class List extends Component {
           )}
           {this.props.page.subPage === "List Avatar" && (
             <FormRow>
+              <FormCol uiSize={2}>
+                <Text>Note</Text>
+              </FormCol>
               <FormCol>
-                <Text>Note FontSize</Text>
+                <ColorPicker
+                  value={this.props.variables.listNoteColor}
+                  onChangeColor={color =>
+                    this.props.changeValue("listNoteColor", color)
+                  }
+                />
               </FormCol>
               <FormCol>
                 <Input
@@ -146,7 +172,7 @@ class List extends Component {
               </FormCol>
             </FormRow>
           )}
-
+          {/* 
           {(this.props.page.subPage === "List Avatar" ||
             this.props.page.subPage === "List Thumbnail") && (
             <FormRow>
@@ -162,9 +188,9 @@ class List extends Component {
                 />
               </FormCol>
             </FormRow>
-          )}
+          )} */}
 
-          <FormRow>
+          {/* <FormRow>
             <FormCol>
               <Text>Padding</Text>
             </FormCol>
@@ -179,6 +205,42 @@ class List extends Component {
                   )
                 }
               />
+            </FormCol>
+          </FormRow> */}
+          <FormRow>
+            <FormCol uiSize={3}>
+              <Text>Padding</Text>
+            </FormCol>
+            <FormCol uiSize={1}>
+              <Input
+                min="0"
+                max="100"
+                type="number"
+                onChange={e =>
+                  this.props.changeValue(
+                    "listItemPadding",
+                    parseInt(e.target.value)
+                  )
+                }
+                value={this.props.variables.listItemPadding}
+              />
+            </FormCol>
+
+            <FormCol uiSize={2}>
+              <InputGroup marginLeft>
+                <Slider
+                  min="0"
+                  max="100"
+                  style={{ width: "75%" }}
+                  value={this.props.variables.listItemPadding}
+                  onChange={e =>
+                    this.props.changeValue(
+                      "listItemPadding",
+                      parseInt(e.target.value)
+                    )
+                  }
+                />
+              </InputGroup>
             </FormCol>
           </FormRow>
 
@@ -218,8 +280,16 @@ class List extends Component {
           </FormRow>
           {this.props.page.subPage === "List Thumbnail" && (
             <FormRow>
-              <FormCol>
+              <FormCol uiSize={2}>
                 <Text>Right Text Size</Text>
+              </FormCol>
+              <FormCol>
+                <ColorPicker
+                  value={this.props.variables.sTabBarActiveTextColor}
+                  onChangeColor={color =>
+                    this.props.changeValue("sTabBarActiveTextColor", color)
+                  }
+                />
               </FormCol>
               <FormCol>
                 <Input
@@ -235,7 +305,7 @@ class List extends Component {
               </FormCol>
             </FormRow>
           )}
-          {this.props.page.subPage === "List Thumbnail" && (
+          {/* {this.props.page.subPage === "List Thumbnail" && (
             <FormRow>
               <FormCol>
                 <Text>Right Text Color</Text>
@@ -249,7 +319,7 @@ class List extends Component {
                 />
               </FormCol>
             </FormRow>
-          )}
+          )} */}
           {this.props.page.subPage === "List Divider" && (
             <FormRow>
               <FormCol>

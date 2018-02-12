@@ -5,6 +5,7 @@ import FormRow from "../../StyledComponents/FormRow";
 import FormCol from "../../StyledComponents/FormCol";
 import Text from "../../StyledComponents/Text";
 import Input from "../../StyledComponents/Input";
+import InputGroup from "../../StyledComponents/InputGroup";
 import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import ColorPicker from "../../StyledComponents/ColorPicker";
 import Slider from "../../StyledComponents/Slider";
@@ -19,7 +20,7 @@ class ActionSheet extends Component {
           <FormRow>
             <FormCol>
               <Text header uiSize="m">
-                ActionSheet
+                ActionSheet Button
               </Text>
             </FormCol>
           </FormRow>
@@ -33,18 +34,23 @@ class ActionSheet extends Component {
                 type="text"
                 value={this.props.variables.btnFontFamily}
                 onChange={e =>
-                  this.props.changeValue(
-                    "btnFontFamily",
-                    parseInt(e.target.value)
-                  )
+                  this.props.changeValue("btnFontFamily", e.target.value)
                 }
               />
             </FormCol>
           </FormRow>
 
           <FormRow>
+            <FormCol uiSize={2}>
+              <Text>Text</Text>
+            </FormCol>
             <FormCol>
-              <Text>FontSize</Text>
+              <ColorPicker
+                value={this.props.variables.inverseTextColor}
+                onChangeColor={color =>
+                  this.props.changeValue("inverseTextColor", color)
+                }
+              />
             </FormCol>
             <FormCol>
               <Input
@@ -92,7 +98,7 @@ class ActionSheet extends Component {
             </FormCol>
           </FormRow>
 
-          <FormRow>
+          {/* <FormRow>
             <FormCol>
               <Text>Text Color</Text>
             </FormCol>
@@ -104,16 +110,17 @@ class ActionSheet extends Component {
                 }
               />
             </FormCol>
-          </FormRow>
+          </FormRow> */}
 
           <FormRow>
-            <FormCol>
+            <FormCol uiSize={3}>
               <Text>Border Radius</Text>
             </FormCol>
-            <FormCol>
-              <Slider
+            <FormCol uiSize={1}>
+              <Input
                 min="0"
                 max="50"
+                type="number"
                 value={this.props.variables.borderRadiusBase}
                 onChange={e =>
                   this.props.changeValue(
@@ -122,6 +129,22 @@ class ActionSheet extends Component {
                   )
                 }
               />
+            </FormCol>
+            <FormCol uiSize={2}>
+              <InputGroup marginLeft>
+                <Slider
+                  min="0"
+                  max="50"
+                  style={{ width: "75%" }}
+                  value={this.props.variables.borderRadiusBase}
+                  onChange={e =>
+                    this.props.changeValue(
+                      "borderRadiusBase",
+                      parseInt(e.target.value)
+                    )
+                  }
+                />
+              </InputGroup>
             </FormCol>
           </FormRow>
         </FormGroup>

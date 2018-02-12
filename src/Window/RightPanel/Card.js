@@ -5,7 +5,9 @@ import FormRow from "../../StyledComponents/FormRow";
 import FormCol from "../../StyledComponents/FormCol";
 import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import Text from "../../StyledComponents/Text";
+import Slider from "../../StyledComponents/Slider";
 import Input from "../../StyledComponents/Input";
+import InputGroup from "../../StyledComponents/InputGroup";
 import ColorPicker from "../../StyledComponents/ColorPicker";
 import AllHeader from "./AllHeader";
 import { appliedTheme, changeValue } from "../../Actions/theme";
@@ -51,7 +53,7 @@ class Card extends Component {
               </FormCol>
             </FormRow>
           )}
-          <FormRow>
+          {/* <FormRow>
             <FormCol>
               <Text>Vertical Padding</Text>
             </FormCol>
@@ -67,8 +69,71 @@ class Card extends Component {
                 }
               />
             </FormCol>
+          </FormRow> */}
+          <FormRow>
+            <FormCol uiSize={3}>
+              <Text>Vertical Padding</Text>
+            </FormCol>
+            <FormCol uiSize={1}>
+              <Input
+                min="0"
+                max="100"
+                type="number"
+                onChange={e =>
+                  this.props.changeValue(
+                    "listItemPadding",
+                    parseInt(e.target.value)
+                  )
+                }
+                value={this.props.variables.listItemPadding}
+              />
+            </FormCol>
+
+            <FormCol uiSize={2}>
+              <InputGroup marginLeft>
+                <Slider
+                  min="0"
+                  max="100"
+                  style={{ width: "75%" }}
+                  value={this.props.variables.listItemPadding}
+                  onChange={e =>
+                    this.props.changeValue(
+                      "listItemPadding",
+                      parseInt(e.target.value)
+                    )
+                  }
+                />
+              </InputGroup>
+            </FormCol>
           </FormRow>
           <FormRow>
+            <FormCol uiSize={2}>
+              <Text>Text</Text>
+            </FormCol>
+            <FormCol uiSize={1}>
+              <ColorPicker
+                value={this.props.variables.textColor}
+                onChangeColor={color =>
+                  this.props.changeValue("textColor", color)
+                }
+              />
+            </FormCol>
+            <FormCol uiSize={1}>
+              <Input
+                min="0"
+                max="50"
+                type="number"
+                value={this.props.variables.DefaultFontSize}
+                onChange={e =>
+                  this.props.changeValue(
+                    "DefaultFontSize",
+                    parseInt(e.target.value)
+                  )
+                }
+              />
+            </FormCol>
+          </FormRow>
+          {/* <FormRow>
             <FormCol>
               <Text>FontSize</Text>
             </FormCol>
@@ -97,7 +162,7 @@ class Card extends Component {
                 }
               />
             </FormCol>
-          </FormRow>
+          </FormRow> */}
           {this.props.navigation.subPage === "Card Image" &&
             this.props.navigation.subPage === "Card Showcase" && (
               <FormRow>

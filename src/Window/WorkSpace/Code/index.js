@@ -321,7 +321,8 @@ class Code extends React.Component {
     var options = {
       lineNumbers: true,
       mode: "javascript",
-      readOnly: true
+      readOnly: true,
+      lineWrapping: true
     };
     return (
       <CodeMirror {...this.props} value={this.appScreen()} options={options} />

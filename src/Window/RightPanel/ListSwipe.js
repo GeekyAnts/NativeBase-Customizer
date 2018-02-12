@@ -4,7 +4,9 @@ import FormGroup from "../../StyledComponents/FormGroup";
 import FormRow from "../../StyledComponents/FormRow";
 import FormCol from "../../StyledComponents/FormCol";
 import Text from "../../StyledComponents/Text";
+import Slider from "../../StyledComponents/Slider";
 import Input from "../../StyledComponents/Input";
+import InputGroup from "../../StyledComponents/InputGroup";
 import ColorPicker from "../../StyledComponents/ColorPicker";
 import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import AllHeader from "./AllHeader";
@@ -24,7 +26,29 @@ class ListSwipe extends Component {
           </FormRow>
           <FormRow>
             <FormCol>
-              <Text>Font Size</Text>
+              <Text>FontFamily</Text>
+            </FormCol>
+            <FormCol>
+              <Input
+                type="text"
+                value={this.props.variables.fontFamily}
+                onChange={e =>
+                  this.props.changeValue("fontFamily", parseInt(e.target.value))
+                }
+              />
+            </FormCol>
+          </FormRow>
+          <FormRow>
+            <FormCol uiSize={2}>
+              <Text>Text</Text>
+            </FormCol>
+            <FormCol>
+              <ColorPicker
+                value={this.props.variables.textColor}
+                onChangeColor={color =>
+                  this.props.changeValue("textColor", color)
+                }
+              />
             </FormCol>
             <FormCol>
               <Input
@@ -40,22 +64,7 @@ class ListSwipe extends Component {
             </FormCol>
           </FormRow>
 
-          <FormRow>
-            <FormCol>
-              <Text>FontFamily</Text>
-            </FormCol>
-            <FormCol>
-              <Input
-                type="text"
-                value={this.props.variables.fontFamily}
-                onChange={e =>
-                  this.props.changeValue("fontFamily", parseInt(e.target.value))
-                }
-              />
-            </FormCol>
-          </FormRow>
-
-          <FormRow>
+          {/* <FormRow>
             <FormCol>
               <Text>Color</Text>
             </FormCol>
@@ -67,7 +76,7 @@ class ListSwipe extends Component {
                 }
               />
             </FormCol>
-          </FormRow>
+          </FormRow> */}
           <FormRow>
             <FormCol>
               <Text>Success Background</Text>
@@ -108,7 +117,7 @@ class ListSwipe extends Component {
               />
             </FormCol>
           </FormRow>
-          <FormRow>
+          {/* <FormRow>
             <FormCol>
               <Text>Padding</Text>
             </FormCol>
@@ -123,6 +132,42 @@ class ListSwipe extends Component {
                   )
                 }
               />
+            </FormCol>
+          </FormRow> */}
+          <FormRow>
+            <FormCol uiSize={3}>
+              <Text>Padding</Text>
+            </FormCol>
+            <FormCol uiSize={1}>
+              <Input
+                min="0"
+                max="100"
+                type="number"
+                onChange={e =>
+                  this.props.changeValue(
+                    "listItemPadding",
+                    parseInt(e.target.value)
+                  )
+                }
+                value={this.props.variables.listItemPadding}
+              />
+            </FormCol>
+
+            <FormCol uiSize={2}>
+              <InputGroup marginLeft>
+                <Slider
+                  min="0"
+                  max="100"
+                  style={{ width: "75%" }}
+                  value={this.props.variables.listItemPadding}
+                  onChange={e =>
+                    this.props.changeValue(
+                      "listItemPadding",
+                      parseInt(e.target.value)
+                    )
+                  }
+                />
+              </InputGroup>
             </FormCol>
           </FormRow>
           <FormRow>

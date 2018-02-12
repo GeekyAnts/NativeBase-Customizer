@@ -6,6 +6,7 @@ import FormCol from "../../StyledComponents/FormCol";
 import Text from "../../StyledComponents/Text";
 import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import Input from "../../StyledComponents/Input";
+import InputGroup from "../../StyledComponents/InputGroup";
 import ColorPicker from "../../StyledComponents/ColorPicker";
 import Slider from "../../StyledComponents/Slider";
 import AllHeader from "./AllHeader";
@@ -59,8 +60,16 @@ class Footer extends Component {
 
           {this.props.navigation.subPage != "Icon Buttons" && (
             <FormRow>
+              <FormCol uiSize={2}>
+                <Text>Text</Text>
+              </FormCol>
               <FormCol>
-                <Text>FontSize</Text>
+                <ColorPicker
+                  value={this.props.variables.tabBarTextColor}
+                  onChangeColor={color =>
+                    this.props.changeValue("tabBarTextColor", color)
+                  }
+                />
               </FormCol>
               <FormCol>
                 <Input
@@ -77,7 +86,7 @@ class Footer extends Component {
             </FormRow>
           )}
 
-          <FormRow>
+          {/* <FormRow>
             <FormCol>
               <Text>Color</Text>
             </FormCol>
@@ -89,7 +98,7 @@ class Footer extends Component {
                 }
               />
             </FormCol>
-          </FormRow>
+          </FormRow> */}
 
           <FormRow>
             <FormCol>
@@ -121,11 +130,11 @@ class Footer extends Component {
             </FormRow>
           )}
 
-          <FormRow>
-            <FormCol>
+          {/* <FormRow>
+            <FormCol uiSize={3}>
               <Text>Icon Size</Text>
             </FormCol>
-            <FormCol>
+            <FormCol uiSize={1}>
               <Input
                 type="number"
                 value={this.props.variables.iconFontSize}
@@ -137,7 +146,23 @@ class Footer extends Component {
                 }
               />
             </FormCol>
-          </FormRow>
+            <FormCol uiSize={2}>
+              <InputGroup marginLeft>
+                <Slider
+                  min="0"
+                  max="100"
+                  style={{ width: "75%" }}
+                  value={this.props.variables.iconFontSize}
+                  onChange={e =>
+                    this.props.changeValue(
+                      "iconFontSize",
+                      parseInt(e.target.value)
+                    )
+                  }
+                />
+              </InputGroup>
+            </FormCol>
+          </FormRow> */}
           {this.props.navigation.subPage === "Badge" && (
             <FormRow>
               <FormCol>

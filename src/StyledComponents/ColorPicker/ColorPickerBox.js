@@ -7,7 +7,7 @@ const div: StyledFunction<PropType & React.HTMLProps<HTMLDivElement>> =
 const ColorPickerBox = div`
   background: ${(props: PropType) =>
     props.uiBackground ? COLOR[props.uiBackground] : COLOR[300]};
-  height: 23px;
+  height: 26px;
   border: 3px solid ${COLOR[300]};
   border-radius: 2px;
   width: 40px;

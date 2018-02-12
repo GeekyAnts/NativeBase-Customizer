@@ -1,5 +1,7 @@
+import * as React from "react";
 import styled, { StyledFunction } from "styled-components";
 import COLOR from "./COLOR";
+import InputGroup from "./InputGroup";
 
 const uiSize = {
   l: 35,
@@ -8,7 +10,7 @@ const uiSize = {
 const input: StyledFunction<PropType & React.HTMLProps<HTMLInputElement>> =
   styled.input;
 
-export default input`
+const InputChild = input`
 
   background: ${(props: PropType) =>
     props.uiBackground ? COLOR[props.uiBackground] : COLOR[300]};
@@ -32,3 +34,13 @@ export default input`
     font-size: ${(props: any) => (props.uiSize === "s" ? 11 : 14)}px;
   }
 `;
+
+export default class Input extends React.Component {
+  render() {
+    return (
+      <InputGroup>
+        <InputChild {...this.props} />
+      </InputGroup>
+    );
+  }
+}

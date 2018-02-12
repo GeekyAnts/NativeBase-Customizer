@@ -25,6 +25,20 @@ class Typography extends Component {
 
           <FormRow>
             <FormCol>
+              <Text>FontFamily</Text>
+            </FormCol>
+            <FormCol>
+              <Input
+                type="text"
+                value={this.props.variables.fontFamily}
+                onChange={e =>
+                  this.props.changeValue("fontFamily", parseInt(e.target.value))
+                }
+              />
+            </FormCol>
+          </FormRow>
+          <FormRow>
+            <FormCol>
               <Text>Text Color</Text>
             </FormCol>
             <FormCol>
@@ -142,35 +156,6 @@ class Typography extends Component {
                     "DefaultFontSize",
                     parseInt(e.target.value)
                   )
-                }
-              />
-            </FormCol>
-          </FormRow>
-
-          <FormRow>
-            <FormCol>
-              <Text>FontFamily</Text>
-            </FormCol>
-            <FormCol>
-              <Input
-                type="text"
-                value={this.props.variables.fontFamily}
-                onChange={e =>
-                  this.props.changeValue("fontFamily", parseInt(e.target.value))
-                }
-              />
-            </FormCol>
-          </FormRow>
-
-          <FormRow>
-            <FormCol>
-              <Text>Color</Text>
-            </FormCol>
-            <FormCol>
-              <ColorPicker
-                value={this.props.variables.textColor}
-                onChangeColor={color =>
-                  this.props.changeValue("textColor", color)
                 }
               />
             </FormCol>

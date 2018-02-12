@@ -5,6 +5,7 @@ import FormRow from "../../StyledComponents/FormRow";
 import FormCol from "../../StyledComponents/FormCol";
 import Text from "../../StyledComponents/Text";
 import Input from "../../StyledComponents/Input";
+import InputGroup from "../../StyledComponents/InputGroup";
 import ColorPicker from "../../StyledComponents/ColorPicker";
 import Slider from "../../StyledComponents/Slider";
 import { appliedTheme, changeValue } from "../../Actions/theme";
@@ -41,6 +42,8 @@ class AllHeader extends Component {
           </FormCol>
           <FormCol>
             <Input
+              min="0"
+              max="200"
               type="number"
               onChange={e =>
                 this.props.changeValue(
@@ -72,11 +75,21 @@ class AllHeader extends Component {
         </FormRow>
 
         <FormRow>
-          <FormCol>
-            <Text>Title FontSize</Text>
+          <FormCol uiSize={2}>
+            <Text>Title</Text>
           </FormCol>
-          <FormCol>
+          <FormCol uiSize={1}>
+            <ColorPicker
+              value={this.props.variables.titleFontColor}
+              onChangeColor={color =>
+                this.props.changeValue("titleFontColor", color)
+              }
+            />
+          </FormCol>
+          <FormCol uiSize={1}>
             <Input
+              min="0"
+              max="50"
               type="number"
               value={this.props.variables.titleFontSize}
               onChange={e =>
@@ -89,7 +102,7 @@ class AllHeader extends Component {
           </FormCol>
         </FormRow>
 
-        <FormRow>
+        {/* <FormRow>
           <FormCol>
             <Text>Title Color</Text>
           </FormCol>
@@ -101,14 +114,16 @@ class AllHeader extends Component {
               }
             />
           </FormCol>
-        </FormRow>
+        </FormRow> */}
 
         <FormRow>
-          <FormCol>
+          <FormCol uiSize={3}>
             <Text>Button Padding</Text>
           </FormCol>
-          <FormCol>
+          <FormCol uiSize={1}>
             <Input
+              min="0"
+              max="100"
               type="number"
               onChange={e =>
                 this.props.changeValue(
@@ -118,6 +133,23 @@ class AllHeader extends Component {
               }
               value={this.props.variables.buttonPadding}
             />
+          </FormCol>
+
+          <FormCol uiSize={2}>
+            <InputGroup marginLeft>
+              <Slider
+                min="0"
+                max="100"
+                style={{ width: "75%" }}
+                value={this.props.variables.buttonPadding}
+                onChange={e =>
+                  this.props.changeValue(
+                    "buttonPadding",
+                    parseInt(e.target.value)
+                  )
+                }
+              />
+            </InputGroup>
           </FormCol>
         </FormRow>
 

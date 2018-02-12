@@ -12,6 +12,7 @@ import {
   Body,
   Segment
 } from "native-base";
+import styles from "./styles";
 
 class SegmentNB extends Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class SegmentNB extends Component {
   }
   render() {
     return (
-      <Container>
+      <Container style={styles.container}>
         <Header hasTabs>
           <Left>
             <Button transparent>

@@ -5,6 +5,7 @@ import FormRow from "../../StyledComponents/FormRow";
 import FormCol from "../../StyledComponents/FormCol";
 import Text from "../../StyledComponents/Text";
 import Input from "../../StyledComponents/Input";
+import InputGroup from "../../StyledComponents/InputGroup";
 import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import ColorPicker from "../../StyledComponents/ColorPicker";
 import Slider from "../../StyledComponents/Slider";
@@ -59,8 +60,43 @@ class CheckBox extends Component {
               />
             </FormCol>
           </FormRow>
-
           <FormRow>
+            <FormCol uiSize={3}>
+              <Text>Padding Left</Text>
+            </FormCol>
+            <FormCol uiSize={1}>
+              <Input
+                min="0"
+                max="100"
+                type="number"
+                onChange={e =>
+                  this.props.changeValue(
+                    "CheckboxPaddingLeft",
+                    parseInt(e.target.value)
+                  )
+                }
+                value={this.props.variables.CheckboxPaddingLeft}
+              />
+            </FormCol>
+
+            <FormCol uiSize={2}>
+              <InputGroup marginLeft>
+                <Slider
+                  min="0"
+                  max="100"
+                  style={{ width: "75%" }}
+                  value={this.props.variables.CheckboxPaddingLeft}
+                  onChange={e =>
+                    this.props.changeValue(
+                      "CheckboxPaddingLeft",
+                      parseInt(e.target.value)
+                    )
+                  }
+                />
+              </InputGroup>
+            </FormCol>
+          </FormRow>
+          {/* <FormRow>
             <FormCol>
               <Text>Padding Left</Text>
             </FormCol>
@@ -76,9 +112,9 @@ class CheckBox extends Component {
                 }
               />
             </FormCol>
-          </FormRow>
+          </FormRow> */}
 
-          <FormRow>
+          {/* <FormRow>
             <FormCol>
               <Text>Padding Bottom</Text>
             </FormCol>
@@ -94,11 +130,55 @@ class CheckBox extends Component {
                 }
               />
             </FormCol>
+          </FormRow> */}
+          <FormRow>
+            <FormCol uiSize={3}>
+              <Text>Padding Bottom</Text>
+            </FormCol>
+            <FormCol uiSize={1}>
+              <Input
+                min="0"
+                max="100"
+                type="number"
+                onChange={e =>
+                  this.props.changeValue(
+                    "CheckboxPaddingBottom",
+                    parseInt(e.target.value)
+                  )
+                }
+                value={this.props.variables.CheckboxPaddingBottom}
+              />
+            </FormCol>
+
+            <FormCol uiSize={2}>
+              <InputGroup marginLeft>
+                <Slider
+                  min="0"
+                  max="100"
+                  style={{ width: "75%" }}
+                  value={this.props.variables.CheckboxPaddingBottom}
+                  onChange={e =>
+                    this.props.changeValue(
+                      "CheckboxPaddingBottom",
+                      parseInt(e.target.value)
+                    )
+                  }
+                />
+              </InputGroup>
+            </FormCol>
           </FormRow>
 
           <FormRow>
+            <FormCol uiSize={2}>
+              <Text>Icon</Text>
+            </FormCol>
             <FormCol>
-              <Text>Icon Size</Text>
+              <ColorPicker
+                value={this.props.variables.checkboxTickColor}
+                onChangeColor={color =>
+                  this.props.changeValue("checkboxTickColor", color)
+                }
+              />
             </FormCol>
             <FormCol>
               <Input
@@ -181,7 +261,7 @@ class CheckBox extends Component {
               />
             </FormCol>
           </FormRow>
-          <FormRow>
+          {/* <FormRow>
             <FormCol>
               <Text>Icon Color</Text>
             </FormCol>
@@ -193,7 +273,7 @@ class CheckBox extends Component {
                 }
               />
             </FormCol>
-          </FormRow>
+          </FormRow> */}
         </FormGroup>
         <AllHeader />
       </WrapperDiv>

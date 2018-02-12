@@ -78,7 +78,7 @@ class Header extends Component {
           <Col>
             <img src={logo} alt="Smiley face" height="57" width="49" />
             <Text uiSize="xl" style={{ paddingLeft: 15 }}>
-              NativeBase
+              NativeBase Customizer
             </Text>
           </Col>
           <Col contentRight>

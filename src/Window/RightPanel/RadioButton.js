@@ -25,8 +25,16 @@ class RadioButton extends Component {
             </FormCol>
           </FormRow>
           <FormRow>
+            <FormCol uiSize={2}>
+              <Text>Text</Text>
+            </FormCol>
             <FormCol>
-              <Text>Size</Text>
+              <ColorPicker
+                value={this.props.variables.textColor}
+                onChangeColor={color =>
+                  this.props.changeValue("textColor", color)
+                }
+              />
             </FormCol>
             <FormCol>
               <Input
@@ -55,6 +63,19 @@ class RadioButton extends Component {
                     "radioBtnLineHeight",
                     parseInt(e.target.value)
                   )
+                }
+              />
+            </FormCol>
+          </FormRow>
+          <FormRow>
+            <FormCol>
+              <Text>Active Text Color</Text>
+            </FormCol>
+            <FormCol>
+              <ColorPicker
+                value={this.props.variables.brandPrimary}
+                onChangeColor={color =>
+                  this.props.changeValue("brandPrimary", color)
                 }
               />
             </FormCol>

@@ -6,6 +6,7 @@ import FormCol from "../../StyledComponents/FormCol";
 import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import Text from "../../StyledComponents/Text";
 import Input from "../../StyledComponents/Input";
+import InputGroup from "../../StyledComponents/InputGroup";
 import ColorPicker from "../../StyledComponents/ColorPicker";
 import Slider from "../../StyledComponents/Slider";
 import AllHeader from "./AllHeader";
@@ -24,10 +25,18 @@ class Badge extends Component {
             </FormCol>
           </FormRow>
           <FormRow>
-            <FormCol>
-              <Text>FontSize</Text>
+            <FormCol uiSize={2}>
+              <Text>Text</Text>
             </FormCol>
-            <FormCol>
+            <FormCol uiSize={1}>
+              <ColorPicker
+                value={this.props.variables.badgeColor}
+                onChangeColor={color =>
+                  this.props.changeValue("badgeColor", color)
+                }
+              />
+            </FormCol>
+            <FormCol uiSize={1}>
               <Input
                 type="number"
                 value={this.props.variables.fontSizeBase}
@@ -69,7 +78,7 @@ class Badge extends Component {
             </FormCol>
           </FormRow>
 
-          <FormRow>
+          {/* <FormRow>
             <FormCol>
               <Text>Text Color</Text>
             </FormCol>
@@ -81,13 +90,13 @@ class Badge extends Component {
                 }
               />
             </FormCol>
-          </FormRow>
+          </FormRow> */}
 
           <FormRow>
-            <FormCol>
+            <FormCol uiSize={3}>
               <Text>Padding</Text>
             </FormCol>
-            <FormCol>
+            <FormCol uiSize={1}>
               <Input
                 type="number"
                 value={this.props.variables.badgePadding}
@@ -98,6 +107,22 @@ class Badge extends Component {
                   )
                 }
               />
+            </FormCol>
+            <FormCol uiSize={2}>
+              <InputGroup marginLeft>
+                <Slider
+                  min="0"
+                  max="100"
+                  style={{ width: "75%" }}
+                  value={this.props.variables.badgePadding}
+                  onChange={e =>
+                    this.props.changeValue(
+                      "badgePadding",
+                      parseInt(e.target.value)
+                    )
+                  }
+                />
+              </InputGroup>
             </FormCol>
           </FormRow>
           <FormRow>

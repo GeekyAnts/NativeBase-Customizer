@@ -5,6 +5,7 @@ import FormRow from "../../StyledComponents/FormRow";
 import FormCol from "../../StyledComponents/FormCol";
 import Text from "../../StyledComponents/Text";
 import Input from "../../StyledComponents/Input";
+import InputGroup from "../../StyledComponents/InputGroup";
 import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import ColorPicker from "../../StyledComponents/ColorPicker";
 import Slider from "../../StyledComponents/Slider";
@@ -19,7 +20,7 @@ class Toast extends Component {
           <FormRow>
             <FormCol>
               <Text header uiSize="m">
-                Toast
+                Toast Button
               </Text>
             </FormCol>
           </FormRow>
@@ -41,8 +42,32 @@ class Toast extends Component {
               />
             </FormCol>
           </FormRow>
-
           <FormRow>
+            <FormCol uiSize={2}>
+              <Text>Text</Text>
+            </FormCol>
+            <FormCol>
+              <ColorPicker
+                value={this.props.variables.inverseTextColor}
+                onChangeColor={color =>
+                  this.props.changeValue("inverseTextColor", color)
+                }
+              />
+            </FormCol>
+            <FormCol>
+              <Input
+                type="number"
+                value={this.props.variables.btnTextSize}
+                onChange={e =>
+                  this.props.changeValue(
+                    "btnTextSize",
+                    parseInt(e.target.value)
+                  )
+                }
+              />
+            </FormCol>
+          </FormRow>
+          {/* <FormRow>
             <FormCol>
               <Text>FontSize</Text>
             </FormCol>
@@ -58,7 +83,7 @@ class Toast extends Component {
                 }
               />
             </FormCol>
-          </FormRow>
+          </FormRow> */}
 
           <FormRow>
             <FormCol>
@@ -92,7 +117,7 @@ class Toast extends Component {
             </FormCol>
           </FormRow>
 
-          <FormRow>
+          {/* <FormRow>
             <FormCol>
               <Text>Text Color</Text>
             </FormCol>
@@ -104,9 +129,9 @@ class Toast extends Component {
                 }
               />
             </FormCol>
-          </FormRow>
+          </FormRow> */}
 
-          <FormRow>
+          {/* <FormRow>
             <FormCol>
               <Text>Border Radius</Text>
             </FormCol>
@@ -122,6 +147,41 @@ class Toast extends Component {
                   )
                 }
               />
+            </FormCol>
+          </FormRow> */}
+          <FormRow>
+            <FormCol uiSize={3}>
+              <Text>Border Radius</Text>
+            </FormCol>
+            <FormCol uiSize={1}>
+              <Input
+                min="0"
+                max="50"
+                type="number"
+                value={this.props.variables.borderRadiusBase}
+                onChange={e =>
+                  this.props.changeValue(
+                    "borderRadiusBase",
+                    parseInt(e.target.value)
+                  )
+                }
+              />
+            </FormCol>
+            <FormCol uiSize={2}>
+              <InputGroup marginLeft>
+                <Slider
+                  min="0"
+                  max="50"
+                  style={{ width: "75%" }}
+                  value={this.props.variables.borderRadiusBase}
+                  onChange={e =>
+                    this.props.changeValue(
+                      "borderRadiusBase",
+                      parseInt(e.target.value)
+                    )
+                  }
+                />
+              </InputGroup>
             </FormCol>
           </FormRow>
         </FormGroup>

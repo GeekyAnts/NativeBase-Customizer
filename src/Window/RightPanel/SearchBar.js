@@ -54,8 +54,16 @@ class SearchBar extends Component {
             </FormCol>
           </FormRow>
           <FormRow>
-            <FormCol>
+            <FormCol uiSize={2}>
               <Text>Icon Size</Text>
+            </FormCol>
+            <FormCol>
+              <ColorPicker
+                value={this.props.variables.dropdownLinkColor}
+                onChangeColor={colorValue => {
+                  this.props.changeValue("dropdownLinkColor", colorValue);
+                }}
+              />
             </FormCol>
             <FormCol>
               <Input
@@ -70,7 +78,7 @@ class SearchBar extends Component {
               />
             </FormCol>
           </FormRow>
-          <FormRow>
+          {/* <FormRow>
             <FormCol>
               <Text>Icon Color</Text>
             </FormCol>
@@ -82,10 +90,18 @@ class SearchBar extends Component {
                 }}
               />
             </FormCol>
-          </FormRow>
+          </FormRow> */}
           <FormRow>
-            <FormCol>
+            <FormCol uiSize={2}>
               <Text>FontSize</Text>
+            </FormCol>
+            <FormCol>
+              <ColorPicker
+                value={this.props.variables.toolbarBtnTextColor}
+                onChangeColor={colorValue => {
+                  this.props.changeValue("toolbarBtnTextColor", colorValue);
+                }}
+              />
             </FormCol>
             <FormCol>
               <Input
@@ -100,7 +116,7 @@ class SearchBar extends Component {
               />
             </FormCol>
           </FormRow>
-          <FormRow>
+          {/* <FormRow>
             <FormCol>
               <Text>Text Color</Text>
             </FormCol>
@@ -112,7 +128,7 @@ class SearchBar extends Component {
                 }}
               />
             </FormCol>
-          </FormRow>
+          </FormRow> */}
           {/* <FormRow>
           <FormCol>
             <Text>SearchBar Input Height</Text>

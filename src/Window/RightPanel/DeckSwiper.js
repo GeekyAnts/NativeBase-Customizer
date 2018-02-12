@@ -6,6 +6,7 @@ import FormCol from "../../StyledComponents/FormCol";
 import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import Text from "../../StyledComponents/Text";
 import Input from "../../StyledComponents/Input";
+import InputGroup from "../../StyledComponents/InputGroup";
 import Slider from "../../StyledComponents/Slider";
 import ColorPicker from "../../StyledComponents/ColorPicker";
 import AllHeader from "./AllHeader";
@@ -38,25 +39,52 @@ class DeckSwiper extends Component {
             </FormCol>
           </FormRow>
           <FormRow>
-            <FormCol>
+            <FormCol uiSize={3}>
               <Text>Vertical Padding</Text>
             </FormCol>
-            <FormCol>
+            <FormCol uiSize={1}>
               <Input
+                min="0"
+                max="100"
                 type="number"
-                value={this.props.variables.listItemPadding}
                 onChange={e =>
                   this.props.changeValue(
                     "listItemPadding",
                     parseInt(e.target.value)
                   )
                 }
+                value={this.props.variables.listItemPadding}
               />
+            </FormCol>
+
+            <FormCol uiSize={2}>
+              <InputGroup marginLeft>
+                <Slider
+                  min="0"
+                  max="100"
+                  style={{ width: "75%" }}
+                  value={this.props.variables.listItemPadding}
+                  onChange={e =>
+                    this.props.changeValue(
+                      "listItemPadding",
+                      parseInt(e.target.value)
+                    )
+                  }
+                />
+              </InputGroup>
             </FormCol>
           </FormRow>
           <FormRow>
-            <FormCol>
+            <FormCol uiSize={2}>
               <Text>FontSize</Text>
+            </FormCol>
+            <FormCol>
+              <ColorPicker
+                value={this.props.variables.textColor}
+                onChangeColor={color =>
+                  this.props.changeValue("textColor", color)
+                }
+              />
             </FormCol>
             <FormCol>
               <Input
@@ -71,7 +99,7 @@ class DeckSwiper extends Component {
               />
             </FormCol>
           </FormRow>
-          <FormRow>
+          {/* <FormRow>
             <FormCol>
               <Text>Text Color</Text>
             </FormCol>
@@ -83,7 +111,7 @@ class DeckSwiper extends Component {
                 }
               />
             </FormCol>
-          </FormRow>
+          </FormRow> */}
           <FormRow>
             <FormCol>
               <Text>Note Color</Text>
@@ -204,13 +232,14 @@ class DeckSwiper extends Component {
               </FormCol>
             </FormRow>
             <FormRow>
-              <FormCol>
-                <Text>Base Border Radius</Text>
+              <FormCol uiSize={3}>
+                <Text>Border Radius</Text>
               </FormCol>
-              <FormCol>
-                <Slider
+              <FormCol uiSize={1}>
+                <Input
                   min="0"
                   max="50"
+                  type="number"
                   value={this.props.variables.borderRadiusBase}
                   onChange={e =>
                     this.props.changeValue(
@@ -219,6 +248,22 @@ class DeckSwiper extends Component {
                     )
                   }
                 />
+              </FormCol>
+              <FormCol uiSize={2}>
+                <InputGroup marginLeft>
+                  <Slider
+                    min="0"
+                    max="50"
+                    style={{ width: "75%" }}
+                    value={this.props.variables.borderRadiusBase}
+                    onChange={e =>
+                      this.props.changeValue(
+                        "borderRadiusBase",
+                        parseInt(e.target.value)
+                      )
+                    }
+                  />
+                </InputGroup>
               </FormCol>
             </FormRow>
           </FormGroup>

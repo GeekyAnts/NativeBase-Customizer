@@ -70,7 +70,7 @@ class ColorPicker extends Component {
               height: "93%",
               backgroundColor: this.props.value
                 ? this.props.value
-                : this.props.defaultColor ? this.props.defaultColor : "#6db098",
+                : this.props.defaultColor ? this.props.defaultColor : "#FFF",
               pointerEvents: this.props.disabled ? "none" : "auto"
             }}
           />
