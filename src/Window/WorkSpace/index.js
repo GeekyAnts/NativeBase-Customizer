@@ -18,12 +18,6 @@ import { historyUndo, historyRedo } from "../../Actions/undo";
 import variables from "../../ReactNativeApp/theme/variables/material";
 
 class WorkSpace extends Component {
-  constructor(props: any) {
-    super(props);
-    this.state = {
-      choice: "design"
-    };
-  }
   componentWillMount() {
     this.props.appliedTheme(variables);
   }
@@ -35,14 +29,11 @@ class WorkSpace extends Component {
     Mousetrap.bind(["command+z"], this.props.historyUndo);
     Mousetrap.bind(["command+shift+x"], this.props.historyRedo);
   }
-  selection(value) {
-    this.setState({ choice: value });
-  }
   render() {
     const totalPages = this.props.page.pageList.length;
     const currentPageNum = this.props.page.selected + 1;
     return (
-      <Screen uiBackground="400">
+      <Screen uiBackground="400" style={{ height: "100%" }}>
         <ButtonGroup contentLeft style={{ opacity: 0.6, alignItems: "center" }}>
           <Icon
             name="ios-arrow-back"
@@ -60,33 +51,14 @@ class WorkSpace extends Component {
             onClick={() => this.props.nextPage()}
           />
         </ButtonGroup>
-        <ButtonGroup>
-          <Button
-            leftRadius
-            active={this.state.choice === "design"}
-            height="40px"
-            width="117px"
-            onClick={() => this.selection("design")}
-          >
-            Design
-          </Button>
-          <Button
-            rightRadius
-            active={this.state.choice === "code"}
-            height="40px"
-            width="117px"
-            onClick={() => this.selection("code")}
-          >
-            Code
-          </Button>
-        </ButtonGroup>
-        {this.state.choice === "design" ? (
-          <WrapperDiv style={{ paddingBottom: 25 }}>
+        {this.props.choice === "design" ? (
+          <WrapperDiv style={{ paddingBottom: 25, height: "100%" }}>
             <Col
               contentCenter
               style={{
-                marginTop: 40,
-                marginBottom: 40
+                marginTop: -25,
+                marginBottom: 40,
+                height: "100%"
               }}
             >
               <Button
@@ -151,7 +123,7 @@ function bindAction(dispatch) {
 const mapStateToProps = state => ({
   page: state.present.navigation,
   route: state.present.navigation.page,
-  test: state,
+  choice: state.present.choice.option,
   variables: state.present.theme
 });
 

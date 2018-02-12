@@ -9,6 +9,7 @@ const Dropdown = ul`
   position: relative;
   z-index: 9;
   list-style: none;
+  padding-left: 0px;
 
   .dd {
     left: -9999px;

@@ -8,6 +8,7 @@ import Icon from "../../StyledComponents/Icon";
 import Col from "../../StyledComponents/Col";
 import Row from "../../StyledComponents/Row";
 import Button from "../../StyledComponents/Button";
+import ButtonGroup from "../../StyledComponents/ButtonGroup";
 import ModalWindow from "../../StyledComponents/ModalWindow";
 import Text from "../../StyledComponents/Text";
 import {
@@ -19,6 +20,7 @@ import {
 import logo from "../../assets/logo.png";
 // import template from "../../ReactNativeApp/theme/variables/template";
 import { appliedTheme } from "../../Actions/theme";
+import { choose, choosePlatform } from "../../Actions/choice";
 
 class Header extends Component {
   constructor(props) {
@@ -82,6 +84,44 @@ class Header extends Component {
             </Text>
           </Col>
           <Col contentRight>
+            {/* <ButtonGroup> */}
+            <Button
+              leftRadius
+              active={this.props.choice.option === "design"}
+              height="35px"
+              width="100px"
+              onClick={() => this.props.choose("design")}
+            >
+              Design
+            </Button>
+            <Button
+              rightRadius
+              active={this.props.choice.option === "code"}
+              height="35px"
+              width="100px"
+              onClick={() => this.props.choose("code")}
+            >
+              Code
+            </Button>
+            <Button
+              width="53px"
+              onClick={() => this.props.choosePlatform("ios")}
+              leftRadius
+              active={this.props.choice.platform === "ios"}
+              style={{ marginLeft: 15 }}
+            >
+              <Icon name="logo-apple" fontSize="27px" />
+            </Button>
+            <Button
+              width="53px"
+              onClick={() => this.props.choosePlatform("android")}
+              active={this.props.choice.platform === "android"}
+              rightRadius
+              style={{ marginRight: 40 }}
+            >
+              <Icon name="logo-android" fontSize="27px" />
+            </Button>
+            {/* </ButtonGroup> */}
             {/* <Button
               active
               onClick={() =>
@@ -225,13 +265,15 @@ class Header extends Component {
 
 function bindAction(dispatch) {
   return {
-    appliedTheme: variable => dispatch(appliedTheme(variable))
+    appliedTheme: variable => dispatch(appliedTheme(variable)),
+    choose: option => dispatch(choose(option)),
+    choosePlatform: platform => dispatch(choosePlatform(platform))
   };
 }
 
 const mapStateToProps = state => ({
   variables: state.present.theme.variable,
-  test: state
+  choice: state.present.choice
 });
 
 export default connect(mapStateToProps, bindAction)(Header);

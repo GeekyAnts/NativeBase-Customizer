@@ -31,6 +31,7 @@ import Spinner from "./Spinner";
 import ListSwipe from "./ListSwipe";
 import Tabs from "./Tabs";
 import Title from "./Title";
+import StatusBar from "./StatusBar";
 import Fab from "./Fab";
 import Colors from "./Colors";
 import DefaultText from "./Text";
@@ -58,6 +59,7 @@ class RightPanel extends Component {
               </FormCol>
             </FormRow>
           </FormGroup>
+          <StatusBar />
           {this.props.page.navigation.page === "Anatomy" && <Anatomy />}
           {this.props.page.navigation.page === "Actionsheet" && <ActionSheet />}
           {this.props.page.navigation.page === "Toast" && <Toast />}

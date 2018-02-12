@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="360px" height="24px" viewBox="0 0 360 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>Android-statusbarBlack</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Material/Android/Status-bar-360dp-black">
+            <rect id="status-bar-bg" fill="#000000" x="0" y="0" width="360" height="24"></rect>
+            <g id="Material/Android/Status-bar-content-light" transform="translate(242.000000, 0.000000)" stroke-width="1">
+                <g id="time" opacity="0.9" transform="translate(74.000000, 4.000000)" fill="#FFFFFF" font-family="Roboto-Medium, Roboto" font-size="14" font-weight="400">
+                    <text id="12:30">
+                        <tspan x="0.459960938" y="13">12:30</tspan>
+                    </text>
+                </g>
+                <g id="battery" transform="translate(55.000000, 4.000000)">
+                    <polygon id="bounds" points="0 0 16 0 16 16 0 16"></polygon>
+                    <polygon id="Shape" fill="#FFFFFF" points="9 1.875 9 1 6 1 6 1.875 3 1.875 3 15 12 15 12 1.875"></polygon>
+                </g>
+                <g id="cellular" transform="translate(35.000000, 4.000000)">
+                    <polygon id="bounds" points="0 0 16 0 16 16 0 16"></polygon>
+                    <polygon id="Shape" fill="#FFFFFF" points="0 15 14 15 14 1"></polygon>
+                </g>
+                <g id="wifi" transform="translate(14.000000, 4.000000)">
+                    <polygon id="bounds" points="2 0 18 0 18 16 2 16"></polygon>
+                    <path d="M0.977372085,4.01593123 C3.48821908,2.12256382 6.61301513,1 10,1 C13.3869849,1 16.5117809,2.12256382 19.0226279,4.01593123 L10,15 L0.977372085,4.01593123 Z" id="Shape" fill="#FFFFFF"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

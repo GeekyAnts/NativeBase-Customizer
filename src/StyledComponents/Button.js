@@ -21,7 +21,7 @@ export default button`
     if (props.active) {
       return COLOR[100];
     } else {
-      return props.uiBackground ? COLOR[props.uiBackground] : COLOR[300];
+      return props.uiBackground ? COLOR[props.uiBackground] : COLOR[400];
     }
   }};
   color: #FFF;

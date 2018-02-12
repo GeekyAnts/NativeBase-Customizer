@@ -5,46 +5,46 @@ import { Linking } from "react-navigation/lib/PlatformHelpers";
 
 RN.DeviceInfo = {};
 
-const dimensions = {
-  window: {
-    width: "43vh",
-    height: "70vh"
-  }
-};
+// const dimensions = {
+//   window: {
+//     width: "414px",
+//     height: "736px"
+//   }
+// };
 
 const listeners = {};
 
-Object.assign(Dimensions, {
-  get(dimension) {
-    return dimensions[dimension];
-  },
+// Object.assign(Dimensions, {
+//   get(dimension) {
+//     return dimensions[dimension];
+//   },
 
-  set(newDimensions) {
-    Object.assign(dimensions, newDimensions);
-  },
+//   set(newDimensions) {
+//     Object.assign(dimensions, newDimensions);
+//   },
 
-  emit(type, ...args) {
-    if (Array.isArray(listeners[type])) {
-      listeners[type].forEach(handler => handler(...args));
-    }
-  },
+//   emit(type, ...args) {
+//     if (Array.isArray(listeners[type])) {
+//       listeners[type].forEach(handler => handler(...args));
+//     }
+//   },
 
-  addEventListener(type, handler) {
-    listeners[type] = listeners[type] || [];
-    listeners[type].push(handler);
-  },
+//   addEventListener(type, handler) {
+//     listeners[type] = listeners[type] || [];
+//     listeners[type].push(handler);
+//   },
 
-  removeEventListener(type, handler) {
-    if (Array.isArray(listeners[type])) {
-      listeners[type] = listeners[type].filter(
-        _handler => _handler !== handler
-      );
-    }
-  },
+//   removeEventListener(type, handler) {
+//     if (Array.isArray(listeners[type])) {
+//       listeners[type] = listeners[type].filter(
+//         _handler => _handler !== handler
+//       );
+//     }
+//   },
 
-  // TODO: update dimensions when orientation or size changed
-  _update() {}
-});
+//   // TODO: update dimensions when orientation or size changed
+//   _update() {}
+// });
 
 Linking.getInitialURL = () => {
   return new Promise(resolve => {
