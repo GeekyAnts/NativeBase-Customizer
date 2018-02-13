@@ -16,7 +16,7 @@ class Fab extends Component {
         <FormGroup noBorder>
           <FormRow>
             <FormCol>
-              <Text header uiSize="m">
+              <Text header uiSize="s">
                 No Variables Related to Fab
               </Text>
             </FormCol>

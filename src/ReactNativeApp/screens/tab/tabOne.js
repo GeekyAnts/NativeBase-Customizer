@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { Content, Card, CardItem, Text, Body } from "native-base";
+import styles from "./styles";
 
 export default class TabOne extends Component {
   render() {
     return (
       <Content padder>
-        <Card>
+        <Card style={[styles.mb, { flex: 0 }]}>
           <CardItem>
             <Body>
               <Text>NativeBase is open source and free.</Text>

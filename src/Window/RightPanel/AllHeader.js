@@ -65,10 +65,7 @@ class AllHeader extends Component {
               type="text"
               value={this.props.variables.titleFontfamily}
               onChange={e =>
-                this.props.changeValue(
-                  "titleFontfamily",
-                  parseInt(e.target.value)
-                )
+                this.props.changeValue("titleFontfamily", e.target.value)
               }
             />
           </FormCol>
@@ -167,15 +164,27 @@ class AllHeader extends Component {
           </FormCol>
         </FormRow>
         <FormRow>
-          <FormCol>
-            <Text>Button Icon Color</Text>
+          <FormCol uiSize={2}>
+            <Text>Button Icon</Text>
           </FormCol>
-          <FormCol>
+          <FormCol uiSize={1}>
             <ColorPicker
               value={this.props.variables.toolbarBtnColor}
               onChangeColor={colorValue => {
                 this.props.changeValue("toolbarBtnColor", colorValue);
               }}
+            />
+          </FormCol>
+          <FormCol uiSize={1}>
+            <Input
+              type="number"
+              value={this.props.variables.iconHeaderSize}
+              onChange={e =>
+                this.props.changeValue(
+                  "iconHeaderSize",
+                  parseInt(e.target.value)
+                )
+              }
             />
           </FormCol>
         </FormRow>

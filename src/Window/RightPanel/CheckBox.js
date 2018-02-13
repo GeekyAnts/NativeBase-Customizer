@@ -10,6 +10,7 @@ import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import ColorPicker from "../../StyledComponents/ColorPicker";
 import Slider from "../../StyledComponents/Slider";
 import AllHeader from "./AllHeader";
+import List from "./List";
 import { appliedTheme, changeValue } from "../../Actions/theme";
 
 class CheckBox extends Component {
@@ -275,6 +276,7 @@ class CheckBox extends Component {
             </FormCol>
           </FormRow> */}
         </FormGroup>
+        <List />
         <AllHeader />
       </WrapperDiv>
     );

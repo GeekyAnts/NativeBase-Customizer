@@ -163,22 +163,34 @@ class Card extends Component {
               />
             </FormCol>
           </FormRow> */}
-          {this.props.navigation.subPage === "Card Image" &&
-            this.props.navigation.subPage === "Card Showcase" && (
-              <FormRow>
-                <FormCol>
-                  <Text>Note Color</Text>
-                </FormCol>
-                <FormCol>
-                  <ColorPicker
-                    value={this.props.variables.listNoteColor}
-                    onChangeColor={color =>
-                      this.props.changeValue("listNoteColor", color)
-                    }
-                  />
-                </FormCol>
-              </FormRow>
-            )}
+          {(this.props.navigation.subPage === "Card Image" ||
+            this.props.navigation.subPage === "Card Showcase") && (
+            <FormRow>
+              <FormCol uiSize={2}>
+                <Text>Note</Text>
+              </FormCol>
+              <FormCol>
+                <ColorPicker
+                  value={this.props.variables.listNoteColor}
+                  onChangeColor={color =>
+                    this.props.changeValue("listNoteColor", color)
+                  }
+                />
+              </FormCol>
+              <FormCol>
+                <Input
+                  type="number"
+                  value={this.props.variables.noteFontSize}
+                  onChange={e =>
+                    this.props.changeValue(
+                      "noteFontSize",
+                      parseInt(e.target.value)
+                    )
+                  }
+                />
+              </FormCol>
+            </FormRow>
+          )}
           {this.props.navigation.subPage != "Basic" &&
             this.props.navigation.subPage != "Header & Footer" && (
               <FormRow>

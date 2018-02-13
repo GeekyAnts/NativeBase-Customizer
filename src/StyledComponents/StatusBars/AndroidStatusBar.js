@@ -55,6 +55,14 @@ export class BatterySection extends React.Component<any, any> {
 export class NetworkSection extends React.Component<any, any> {
   render() {
     // console.log("NetworkSection", this.props.left, this.props.width);
+
+    var d = new Date();
+    var h = d.getHours();
+    var m = d.getMinutes();
+    var s = d.getSeconds();
+    var tt = h > 12 ? "PM" : "AM";
+    var mm = m < 10 ? "0" + m : m;
+    var hh = h > 12 ? h - 12 : h;
     return (
       <div
         style={{
@@ -83,7 +91,7 @@ export class NetworkSection extends React.Component<any, any> {
               fontWeight={400}
             >
               <tspan x="0.459960938" y={13}>
-                12:30
+                {h}:{mm}
               </tspan>
             </text>
             <g transform="translate(55.000000, 4.000000)" fill="transparent">

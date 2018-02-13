@@ -56,7 +56,7 @@ class NHCardShowcase extends Component {
                     alignSelf: "center",
                     height: 150,
                     resizeMode: "cover",
-                    width: deviceWidth / 1.18,
+                    width: "100%",
                     marginVertical: 5
                   }}
                   source={cardImage}

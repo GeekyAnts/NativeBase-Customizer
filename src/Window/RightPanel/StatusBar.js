@@ -6,6 +6,7 @@ import FormCol from "../../StyledComponents/FormCol";
 import Text from "../../StyledComponents/Text";
 import ColorPicker from "../../StyledComponents/ColorPicker";
 import WrapperDiv from "../../StyledComponents/WrapperDiv";
+import Dropdown from "../../StyledComponents/Dropdown";
 import AllHeader from "./AllHeader";
 import { appliedTheme, changeValue } from "../../Actions/theme";
 
@@ -21,35 +22,51 @@ class StatusBar extends Component {
               </Text>
             </FormCol>
           </FormRow>
-
+          {this.props.choice.platform === "android" && (
+            <FormRow>
+              <FormCol>
+                <Text>Background</Text>
+              </FormCol>
+              <FormCol>
+                <ColorPicker
+                  value={this.props.variables.statusBarColor}
+                  onChangeColor={color =>
+                    this.props.changeValue("statusBarColor", color)
+                  }
+                />
+              </FormCol>
+            </FormRow>
+          )}
           <FormRow>
             <FormCol>
-              <Text>Background</Text>
+              <Text>BarStyle</Text>
             </FormCol>
             <FormCol>
-              <ColorPicker
-                value={this.props.variables.statusBarColor}
-                onChangeColor={color =>
-                  this.props.changeValue("statusBarColor", color)
+              <Dropdown
+                onChange={e =>
+                  this.props.changeValue("iosStatusbar", e.target.value)
                 }
-              />
-            </FormCol>
-          </FormRow>
-          <FormRow>
-            <FormCol>
-              <Text>Inverse Color</Text>
-            </FormCol>
-            <FormCol>
-              <ColorPicker
-                value={this.props.variables.inverseStatusBarColor}
-                onChangeColor={color =>
-                  this.props.changeValue("inverseStatusBarColor", color)
-                }
-              />
+              >
+                <option
+                  value="dark-content"
+                  selected={
+                    this.props.variables.iosStatusbar === "dark-content"
+                  }
+                >
+                  dark-content
+                </option>
+                <option
+                  value="light-content"
+                  selected={
+                    this.props.variables.iosStatusbar === "light-content"
+                  }
+                >
+                  light-content
+                </option>
+              </Dropdown>
             </FormCol>
           </FormRow>
         </FormGroup>
-        <AllHeader />
       </WrapperDiv>
     );
   }
@@ -63,7 +80,8 @@ function bindAction(dispatch) {
 }
 
 const mapStateToProps = state => ({
-  variables: state.present.theme.variable
+  variables: state.present.theme.variable,
+  choice: state.present.choice
 });
 
 export default connect(mapStateToProps, bindAction)(StatusBar);

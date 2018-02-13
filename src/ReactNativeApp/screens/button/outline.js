@@ -51,14 +51,6 @@ class Outline extends Component {
           <Button bordered dark style={styles.mb15}>
             <Text>Dark</Text>
           </Button>
-
-          <Button bordered success block rounded style={styles.mb15}>
-            <Text>Test</Text>
-          </Button>
-
-          <Button bordered block rounded style={styles.mb15}>
-            <Text>Test</Text>
-          </Button>
         </Content>
       </Container>
     );

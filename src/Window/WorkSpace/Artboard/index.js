@@ -19,12 +19,23 @@ class Artboard extends Component {
       >
         <div>
           {this.props.choice.platform === "ios" ? (
-            <IOSStatusBar width={414} color="#FFF" />
+            <IOSStatusBar
+              width={414}
+              color={
+                this.props.variables.iosStatusbar === "light-content"
+                  ? "#FFF"
+                  : "#000"
+              }
+            />
           ) : (
             <AndroidStatusBar
               width={412}
               backgroundColor={this.props.variables.statusBarColor}
-              color={this.props.variables.iosStatusbar}
+              color={
+                this.props.variables.iosStatusbar === "light-content"
+                  ? "#FFF"
+                  : "#000"
+              }
             />
           )}
           <div

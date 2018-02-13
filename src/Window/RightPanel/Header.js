@@ -190,15 +190,27 @@ class Header extends Component {
           </FormRow>
           {this.props.page.subPage != "Title" && (
             <FormRow>
-              <FormCol>
-                <Text>Button Icon Color</Text>
+              <FormCol uiSize={2}>
+                <Text>Button Icon</Text>
               </FormCol>
-              <FormCol>
+              <FormCol uiSize={1}>
                 <ColorPicker
                   value={this.props.variables.toolbarBtnColor}
                   onChangeColor={colorValue => {
                     this.props.changeValue("toolbarBtnColor", colorValue);
                   }}
+                />
+              </FormCol>
+              <FormCol uiSize={1}>
+                <Input
+                  type="number"
+                  value={this.props.variables.iconHeaderSize}
+                  onChange={e =>
+                    this.props.changeValue(
+                      "iconHeaderSize",
+                      parseInt(e.target.value)
+                    )
+                  }
                 />
               </FormCol>
             </FormRow>

@@ -153,7 +153,8 @@ class List extends Component {
               </FormCol>
             </FormRow>
           )}
-          {this.props.page.subPage === "List Icon" && (
+          {(this.props.page.subPage === "List Icon" ||
+            this.props.page.subPage === "Basic List") && (
             <FormRow>
               <FormCol>
                 <Text>Icon Size</Text>
@@ -281,7 +282,7 @@ class List extends Component {
           {this.props.page.subPage === "List Thumbnail" && (
             <FormRow>
               <FormCol uiSize={2}>
-                <Text>Right Text Size</Text>
+                <Text>Right Button Text</Text>
               </FormCol>
               <FormCol>
                 <ColorPicker

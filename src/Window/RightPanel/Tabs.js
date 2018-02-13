@@ -58,7 +58,7 @@ class Tabs extends Component {
 
           <FormRow>
             <FormCol>
-              <Text>Default Color</Text>
+              <Text>Default Text Color</Text>
             </FormCol>
             <FormCol>
               <ColorPicker
@@ -72,7 +72,7 @@ class Tabs extends Component {
 
           <FormRow>
             <FormCol>
-              <Text>Active Color</Text>
+              <Text>Active Text Color</Text>
             </FormCol>
             <FormCol>
               <ColorPicker

@@ -93,7 +93,32 @@ class SearchBar extends Component {
           </FormRow> */}
           <FormRow>
             <FormCol uiSize={2}>
-              <Text>FontSize</Text>
+              <Text>Input</Text>
+            </FormCol>
+            <FormCol>
+              <ColorPicker
+                value={this.props.variables.inputColor}
+                onChangeColor={color =>
+                  this.props.changeValue("inputColor", color)
+                }
+              />
+            </FormCol>
+            <FormCol>
+              <Input
+                type="number"
+                value={this.props.variables.inputFontSize}
+                onChange={e =>
+                  this.props.changeValue(
+                    "inputFontSize",
+                    parseInt(e.target.value)
+                  )
+                }
+              />
+            </FormCol>
+          </FormRow>
+          <FormRow>
+            <FormCol uiSize={2}>
+              <Text>Button Text</Text>
             </FormCol>
             <FormCol>
               <ColorPicker
@@ -174,8 +199,17 @@ class SearchBar extends Component {
           </FormRow>
 
           <FormRow>
+            <FormCol uiSize={2}>
+              <Text>Text</Text>
+            </FormCol>
+
             <FormCol>
-              <Text>FontSize</Text>
+              <ColorPicker
+                value={this.props.variables.inverseTextColor}
+                onChangeColor={color =>
+                  this.props.changeValue("inverseTextColor", color)
+                }
+              />
             </FormCol>
             <FormCol>
               <Input
@@ -221,7 +255,7 @@ class SearchBar extends Component {
               />
             </FormCol>
           </FormRow>
-          <FormRow>
+          {/* <FormRow>
             <FormCol>
               <Text>Text Color</Text>
             </FormCol>
@@ -233,7 +267,7 @@ class SearchBar extends Component {
                 }
               />
             </FormCol>
-          </FormRow>
+          </FormRow> */}
         </FormGroup>
         <AllHeader />
       </WrapperDiv>

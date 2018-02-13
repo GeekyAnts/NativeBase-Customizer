@@ -71,11 +71,8 @@ class RightPanel extends Component {
           {this.props.page.navigation.page === "DeckSwiper" && <DeckSwiper />}
           {this.props.page.navigation.page === "Thumbnail" && <Thumbnail />}
           {this.props.page.navigation.page === "DefaultText" && <DefaultText />}
-          {/* {(this.props.page.navigation.page === "Anatomy" ||
-          this.props.page.navigation.page === "Header") && <Header />} */}
           {this.props.page.navigation.page === "Header" && <Header />}
           {this.props.page.navigation.page === "Typography" && <Typography />}
-          {/* {this.props.page.navigation.page != "Anatomy" && <Title />} */}
           {this.props.page.navigation.page === "Footer" && <Footer />}
           {this.props.page.navigation.page === "Form" && <Form />}
           {this.props.page.navigation.page === "Searchbar" && <SearchBar />}
@@ -88,7 +85,6 @@ class RightPanel extends Component {
           {this.props.page.navigation.page === "Tabs" && <Tabs />}
           {this.props.page.navigation.page === "Fab" && <Fab />}
           {this.props.page.navigation.page === "ListSwipe" && <ListSwipe />}
-          {/* {this.props.page.navigation.page != "Anatomy" && <Colors />} */}
         </WrapperDiv>
       </ScrollBar>
     );

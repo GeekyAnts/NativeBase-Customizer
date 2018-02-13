@@ -113,14 +113,26 @@ class DeckSwiper extends Component {
             </FormCol>
           </FormRow> */}
           <FormRow>
-            <FormCol>
-              <Text>Note Color</Text>
+            <FormCol uiSize={2}>
+              <Text>Note</Text>
             </FormCol>
             <FormCol>
               <ColorPicker
                 value={this.props.variables.listNoteColor}
                 onChangeColor={color =>
                   this.props.changeValue("listNoteColor", color)
+                }
+              />
+            </FormCol>
+            <FormCol>
+              <Input
+                type="number"
+                value={this.props.variables.noteFontSize}
+                onChange={e =>
+                  this.props.changeValue(
+                    "noteFontSize",
+                    parseInt(e.target.value)
+                  )
                 }
               />
             </FormCol>

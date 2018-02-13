@@ -80,7 +80,7 @@ class RadioButton extends Component {
               />
             </FormCol>
           </FormRow>
-          {Platform.OS === "android" ? (
+          {this.props.choice.platform === "android" ? (
             <FormRow>
               <FormCol>
                 <Text>Active Radio Color</Text>
@@ -124,7 +124,8 @@ function bindAction(dispatch) {
 }
 
 const mapStateToProps = state => ({
-  variables: state.present.theme.variable
+  variables: state.present.theme.variable,
+  choice: state.present.choice
 });
 
 export default connect(mapStateToProps, bindAction)(RadioButton);

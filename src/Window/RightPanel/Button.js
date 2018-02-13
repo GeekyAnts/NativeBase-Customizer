@@ -79,23 +79,42 @@ class Button extends Component {
             </FormCol>
           </FormRow>
 
-          {this.props.navigation.subPage != "Transparent" && (
-            <FormRow>
-              <FormCol>
-                <Text>Icon & Text Color</Text>
-              </FormCol>
-              <FormCol>
-                <ColorPicker
-                  value={this.props.variables.inverseTextColor}
-                  onChangeColor={color =>
-                    this.props.changeValue("inverseTextColor", color)
-                  }
-                />
-              </FormCol>
-            </FormRow>
-          )}
+          {this.props.navigation.subPage != "Transparent" &&
+            this.props.navigation.subPage != "Outline" &&
+            this.props.navigation.subPage != "Disabled" && (
+              <FormRow>
+                <FormCol>
+                  <Text>Icon & Text Color</Text>
+                </FormCol>
+                <FormCol>
+                  <ColorPicker
+                    value={this.props.variables.inverseTextColor}
+                    onChangeColor={color =>
+                      this.props.changeValue("inverseTextColor", color)
+                    }
+                  />
+                </FormCol>
+              </FormRow>
+            )}
+          {this.props.navigation.subPage != "Transparent" &&
+            this.props.navigation.subPage != "Outline" && (
+              <FormRow>
+                <FormCol>
+                  <Text>Inverse Text Color</Text>
+                </FormCol>
+                <FormCol>
+                  <ColorPicker
+                    value={this.props.variables.brandDark}
+                    onChangeColor={color =>
+                      this.props.changeValue("brandDark", color)
+                    }
+                  />
+                </FormCol>
+              </FormRow>
+            )}
           {this.props.navigation.subPage != "Rounded" &&
-            this.props.navigation.subPage != "Transparent" && (
+            this.props.navigation.subPage != "Transparent" &&
+            this.props.navigation.subPage != "Full" && (
               <FormRow>
                 <FormCol uiSize={3}>
                   <Text>Base Border Radius</Text>
@@ -177,7 +196,7 @@ class Button extends Component {
           {this.props.navigation.subPage != "Outline" &&
             this.props.navigation.subPage != "Transparent" && (
               <WrapperDiv>
-                {this.props.navigation.subPage === "Custom Size" && (
+                {/* {this.props.navigation.subPage === "Custom Size" && (
                   <FormRow>
                     <FormCol>
                       <Text>Small FontSize</Text>
@@ -253,7 +272,28 @@ class Button extends Component {
                       />
                     </FormCol>
                   </FormRow>
+                )} */}
+
+                {this.props.navigation.subPage === "Disabled" && (
+                  <FormRow>
+                    <FormCol>
+                      <Text>Disabled Button Background</Text>
+                    </FormCol>
+                    <FormCol>
+                      <ColorPicker
+                        value={this.props.variables.btnDisabledBg}
+                        onChangeColor={color =>
+                          this.props.changeValue("btnDisabledBg", color)
+                        }
+                      />
+                    </FormCol>
+                  </FormRow>
                 )}
+              </WrapperDiv>
+            )}
+          {this.props.navigation.subPage != "Transparent" &&
+            this.props.navigation.subPage != "Disabled" && (
+              <WrapperDiv>
                 <FormRow>
                   <FormCol>
                     <Text>Primary Background</Text>
@@ -323,22 +363,32 @@ class Button extends Component {
                     />
                   </FormCol>
                 </FormRow>
-
-                {this.props.navigation.subPage === "Disabled" && (
-                  <FormRow>
-                    <FormCol>
-                      <Text>Disabled Button Background</Text>
-                    </FormCol>
-                    <FormCol>
-                      <ColorPicker
-                        value={this.props.variables.btnDisabledBg}
-                        onChangeColor={color =>
-                          this.props.changeValue("btnDisabledBg", color)
-                        }
-                      />
-                    </FormCol>
-                  </FormRow>
-                )}
+                <FormRow>
+                  <FormCol>
+                    <Text>Light Background</Text>
+                  </FormCol>
+                  <FormCol>
+                    <ColorPicker
+                      value={this.props.variables.brandLight}
+                      onChangeColor={color =>
+                        this.props.changeValue("brandLight", color)
+                      }
+                    />
+                  </FormCol>
+                </FormRow>
+                <FormRow>
+                  <FormCol>
+                    <Text>Dark Background</Text>
+                  </FormCol>
+                  <FormCol>
+                    <ColorPicker
+                      value={this.props.variables.brandDark}
+                      onChangeColor={color =>
+                        this.props.changeValue("brandDark", color)
+                      }
+                    />
+                  </FormCol>
+                </FormRow>
               </WrapperDiv>
             )}
           {this.props.navigation.subPage === "Transparent" && (

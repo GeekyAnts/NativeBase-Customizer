@@ -139,16 +139,16 @@ export default {
   searchBarInputHeight: platform === "ios" ? 30 : 50,
   toolbarBtnTextColor: "#fff",
   toolbarDefaultBorder: "#3F51B5",
-  iosStatusbar: "dark-content",
+  iosStatusbar: "light-content",
   get statusBarColor() {
     return color(this.toolbarDefaultBg)
       .darken(0.2)
-      .hex();
+      .hexString();
   },
   get darkenHeader() {
     return color(this.tabBgColor)
       .darken(0.03)
-      .hex();
+      .hexString();
   },
 
   // Icon

@@ -68,7 +68,7 @@ class Form extends Component {
             this.props.page.subPage === "Stacked") && (
             <FormRow>
               <FormCol>
-                <Text>Lebel Text Color</Text>
+                <Text>Label Text Color</Text>
               </FormCol>
               <FormCol>
                 <ColorPicker
@@ -122,6 +122,23 @@ class Form extends Component {
                 onChange={e =>
                   this.props.changeValue(
                     "inputHeightBase",
+                    parseInt(e.target.value)
+                  )
+                }
+              />
+            </FormCol>
+          </FormRow>
+          <FormRow>
+            <FormCol>
+              <Text>LineHeight</Text>
+            </FormCol>
+            <FormCol>
+              <Input
+                type="number"
+                value={this.props.variables.inputLineHeight}
+                onChange={e =>
+                  this.props.changeValue(
+                    "inputLineHeight",
                     parseInt(e.target.value)
                   )
                 }

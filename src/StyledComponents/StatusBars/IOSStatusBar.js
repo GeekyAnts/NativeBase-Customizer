@@ -21,7 +21,11 @@ export class BatterySection extends React.Component<any, any> {
           left: this.props.left
         }}
       >
-        <svg version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink">
+        <svg
+          version="1.1"
+          height="20px"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
+        >
           <g
             fill={this.props.color}
             stroke="none"
@@ -56,7 +60,12 @@ export class NetworkSection extends React.Component<any, any> {
           left: this.props.left
         }}
       >
-        <svg version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" fill="red">
+        <svg
+          version="1.1"
+          height="20px"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
+          fill="red"
+        >
           <g
             fill={this.props.color}
             stroke="none"
@@ -85,6 +94,13 @@ export class NetworkSection extends React.Component<any, any> {
 
 export class TimeSection extends React.Component<any, any> {
   render() {
+    var d = new Date();
+    var h = d.getHours();
+    var m = d.getMinutes();
+    var s = d.getSeconds();
+    var tt = h > 12 ? "PM" : "AM";
+    var mm = m < 10 ? "0" + m : m;
+    var hh = h > 12 ? h - 12 : h;
     return (
       <div
         style={{
@@ -93,7 +109,11 @@ export class TimeSection extends React.Component<any, any> {
           left: this.props.left
         }}
       >
-        <svg version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink">
+        <svg
+          version="1.1"
+          height="20px"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
+        >
           <g
             fill={this.props.color}
             stroke="none"
@@ -106,7 +126,7 @@ export class TimeSection extends React.Component<any, any> {
               fontWeight="normal"
             >
               <tspan x="0" y="11.5">
-                9:41 AM
+                {hh}:{mm} {tt}
               </tspan>
             </text>
           </g>
