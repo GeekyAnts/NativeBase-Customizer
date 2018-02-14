@@ -4,6 +4,7 @@ import FormGroup from "../../StyledComponents/FormGroup";
 import FormRow from "../../StyledComponents/FormRow";
 import FormCol from "../../StyledComponents/FormCol";
 import Text from "../../StyledComponents/Text";
+import Dropdown from "../../StyledComponents/Dropdown";
 import Slider from "../../StyledComponents/Slider";
 import Input from "../../StyledComponents/Input";
 import InputGroup from "../../StyledComponents/InputGroup";
@@ -29,13 +30,16 @@ class ListSwipe extends Component {
               <Text>FontFamily</Text>
             </FormCol>
             <FormCol>
-              <Input
-                type="text"
-                value={this.props.variables.fontFamily}
+              <Dropdown
                 onChange={e =>
-                  this.props.changeValue("fontFamily", parseInt(e.target.value))
+                  this.props.changeValue("fontFamily", e.target.value)
                 }
-              />
+              >
+                <option value={this.props.variables.fontFamily}>
+                  {this.props.variables.fontFamily}
+                </option>
+                <option value="Roboto">Roboto</option>
+              </Dropdown>
             </FormCol>
           </FormRow>
           <FormRow>

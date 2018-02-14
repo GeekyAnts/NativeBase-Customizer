@@ -64,16 +64,6 @@ class Header extends Component {
   }
 
   render() {
-    const menuOptions = {
-      isOpen: this.state.isMenuOpen,
-      close: this.close,
-      toggle: (
-        <button type="button" onClick={this.toggle}>
-          Click me!
-        </button>
-      ),
-      align: "right"
-    };
     return (
       <Pane uiBackground="300">
         <Row>

@@ -4,6 +4,7 @@ import FormGroup from "../../StyledComponents/FormGroup";
 import FormRow from "../../StyledComponents/FormRow";
 import FormCol from "../../StyledComponents/FormCol";
 import Text from "../../StyledComponents/Text";
+import Dropdown from "../../StyledComponents/Dropdown";
 import Input from "../../StyledComponents/Input";
 import ColorPicker from "../../StyledComponents/ColorPicker";
 import WrapperDiv from "../../StyledComponents/WrapperDiv";
@@ -131,7 +132,7 @@ class SearchBar extends Component {
             <FormCol>
               <Input
                 type="number"
-                value={this.props.variables.btnTextSize}
+                value={Math.round(this.props.variables.btnTextSize)}
                 onChange={e =>
                   this.props.changeValue(
                     "btnTextSize",
@@ -185,16 +186,16 @@ class SearchBar extends Component {
               <Text>FontFamily</Text>
             </FormCol>
             <FormCol>
-              <Input
-                type="text"
-                value={this.props.variables.btnFontFamily}
+              <Dropdown
                 onChange={e =>
-                  this.props.changeValue(
-                    "btnFontFamily",
-                    parseInt(e.target.value)
-                  )
+                  this.props.changeValue("btnFontFamily", e.target.value)
                 }
-              />
+              >
+                <option value={this.props.variables.btnFontFamily}>
+                  {this.props.variables.btnFontFamily}
+                </option>
+                <option value="Roboto">Roboto</option>
+              </Dropdown>
             </FormCol>
           </FormRow>
 
@@ -214,7 +215,7 @@ class SearchBar extends Component {
             <FormCol>
               <Input
                 type="number"
-                value={this.props.variables.btnTextSize}
+                value={Math.round(this.props.variables.btnTextSize)}
                 onChange={e =>
                   this.props.changeValue(
                     "btnTextSize",

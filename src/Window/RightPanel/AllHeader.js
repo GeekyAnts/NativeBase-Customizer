@@ -5,6 +5,7 @@ import FormRow from "../../StyledComponents/FormRow";
 import FormCol from "../../StyledComponents/FormCol";
 import Text from "../../StyledComponents/Text";
 import Input from "../../StyledComponents/Input";
+import Dropdown from "../../StyledComponents/Dropdown";
 import InputGroup from "../../StyledComponents/InputGroup";
 import ColorPicker from "../../StyledComponents/ColorPicker";
 import Slider from "../../StyledComponents/Slider";
@@ -37,7 +38,7 @@ class AllHeader extends Component {
         </FormRow>
 
         <FormRow>
-          <FormCol>
+          <FormCol uiSize={3}>
             <Text>Height</Text>
           </FormCol>
           <FormCol>
@@ -54,6 +55,22 @@ class AllHeader extends Component {
               value={this.props.variables.toolbarHeight}
             />
           </FormCol>
+          <FormCol uiSize={2}>
+            <InputGroup marginLeft>
+              <Slider
+                min="0"
+                max="200"
+                style={{ width: "75%" }}
+                value={this.props.variables.toolbarHeight}
+                onChange={e =>
+                  this.props.changeValue(
+                    "toolbarHeight",
+                    parseInt(e.target.value)
+                  )
+                }
+              />
+            </InputGroup>
+          </FormCol>
         </FormRow>
 
         <FormRow>
@@ -61,13 +78,16 @@ class AllHeader extends Component {
             <Text>Title Font Family</Text>
           </FormCol>
           <FormCol>
-            <Input
-              type="text"
-              value={this.props.variables.titleFontfamily}
+            <Dropdown
               onChange={e =>
                 this.props.changeValue("titleFontfamily", e.target.value)
               }
-            />
+            >
+              <option value={this.props.variables.titleFontfamily}>
+                {this.props.variables.titleFontfamily}
+              </option>
+              <option value="Roboto">Roboto</option>
+            </Dropdown>
           </FormCol>
         </FormRow>
 

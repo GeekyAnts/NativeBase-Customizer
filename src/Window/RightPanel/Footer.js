@@ -27,7 +27,7 @@ class Footer extends Component {
             </FormCol>
           </FormRow>
           <FormRow>
-            <FormCol>
+            <FormCol uiSize={3}>
               <Text>Height</Text>
             </FormCol>
             <FormCol>
@@ -41,6 +41,23 @@ class Footer extends Component {
                   )
                 }
               />
+            </FormCol>
+
+            <FormCol uiSize={2}>
+              <InputGroup marginLeft>
+                <Slider
+                  min="0"
+                  max="200"
+                  style={{ width: "75%" }}
+                  value={this.props.variables.footerHeight}
+                  onChange={e =>
+                    this.props.changeValue(
+                      "footerHeight",
+                      parseInt(e.target.value)
+                    )
+                  }
+                />
+              </InputGroup>
             </FormCol>
           </FormRow>
 

@@ -6,6 +6,7 @@ import FormCol from "../../StyledComponents/FormCol";
 import Text from "../../StyledComponents/Text";
 import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import Input from "../../StyledComponents/Input";
+import Dropdown from "../../StyledComponents/Dropdown";
 import ColorPicker from "../../StyledComponents/ColorPicker";
 import Slider from "../../StyledComponents/Slider";
 import { appliedTheme, changeValue } from "../../Actions/theme";
@@ -108,11 +109,13 @@ class Header extends Component {
           </FormRow>
 
           <FormRow>
-            <FormCol>
+            <FormCol uiSize={3}>
               <Text>Height</Text>
             </FormCol>
             <FormCol>
               <Input
+                min="0"
+                max="200"
                 type="number"
                 onChange={e =>
                   this.props.changeValue(
@@ -122,6 +125,22 @@ class Header extends Component {
                 }
                 value={this.props.variables.toolbarHeight}
               />
+            </FormCol>
+            <FormCol uiSize={2}>
+              <InputGroup marginLeft>
+                <Slider
+                  min="0"
+                  max="200"
+                  style={{ width: "75%" }}
+                  value={this.props.variables.toolbarHeight}
+                  onChange={e =>
+                    this.props.changeValue(
+                      "toolbarHeight",
+                      parseInt(e.target.value)
+                    )
+                  }
+                />
+              </InputGroup>
             </FormCol>
           </FormRow>
           {this.props.page.subPage === "Text Button" && (
@@ -230,16 +249,16 @@ class Header extends Component {
                 <Text>FontFamily</Text>
               </FormCol>
               <FormCol>
-                <Input
-                  type="text"
-                  value={this.props.variables.btnFontFamily}
+                <Dropdown
                   onChange={e =>
-                    this.props.changeValue(
-                      "btnFontFamily",
-                      parseInt(e.target.value)
-                    )
+                    this.props.changeValue("btnFontFamily", e.target.value)
                   }
-                />
+                >
+                  <option value={this.props.variables.btnFontFamily}>
+                    {this.props.variables.btnFontFamily}
+                  </option>
+                  <option value="Roboto">Roboto</option>
+                </Dropdown>
               </FormCol>
             </FormRow>
 
@@ -259,7 +278,7 @@ class Header extends Component {
               <FormCol uiSize={1}>
                 <Input
                   type="number"
-                  value={this.props.variables.btnTextSize}
+                  value={Math.round(this.props.variables.btnTextSize)}
                   onChange={e =>
                     this.props.changeValue(
                       "btnTextSize",
@@ -368,16 +387,16 @@ class Header extends Component {
                 <Text>FontFamily</Text>
               </FormCol>
               <FormCol>
-                <Input
-                  type="text"
-                  value={this.props.variables.fontFamily}
+                <Dropdown
                   onChange={e =>
-                    this.props.changeValue(
-                      "fontFamily",
-                      parseInt(e.target.value)
-                    )
+                    this.props.changeValue("fontFamily", e.target.value)
                   }
-                />
+                >
+                  <option value={this.props.variables.fontFamily}>
+                    {this.props.variables.fontFamily}
+                  </option>
+                  <option value="Roboto">Roboto</option>
+                </Dropdown>
               </FormCol>
             </FormRow>
 

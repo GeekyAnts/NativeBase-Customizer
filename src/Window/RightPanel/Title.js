@@ -5,6 +5,7 @@ import FormRow from "../../StyledComponents/FormRow";
 import FormCol from "../../StyledComponents/FormCol";
 import Text from "../../StyledComponents/Text";
 import Input from "../../StyledComponents/Input";
+import Dropdown from "../../StyledComponents/Dropdown";
 import ColorPicker from "../../StyledComponents/ColorPicker";
 import { appliedTheme, changeValue } from "../../Actions/theme";
 
@@ -17,16 +18,16 @@ class Title extends Component {
             <Text>Title Font Family</Text>
           </FormCol>
           <FormCol>
-            <Input
-              type="text"
-              value={this.props.variables.titleFontfamily}
+            <Dropdown
               onChange={e =>
-                this.props.changeValue(
-                  "titleFontfamily",
-                  parseInt(e.target.value)
-                )
+                this.props.changeValue("titleFontfamily", e.target.value)
               }
-            />
+            >
+              <option value={this.props.variables.titleFontfamily}>
+                {this.props.variables.titleFontfamily}
+              </option>
+              <option value="Roboto">Roboto</option>
+            </Dropdown>
           </FormCol>
         </FormRow>
 

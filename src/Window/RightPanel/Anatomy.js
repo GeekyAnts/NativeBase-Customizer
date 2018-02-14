@@ -5,6 +5,8 @@ import FormRow from "../../StyledComponents/FormRow";
 import FormCol from "../../StyledComponents/FormCol";
 import Text from "../../StyledComponents/Text";
 import Input from "../../StyledComponents/Input";
+import Dropdown from "../../StyledComponents/Dropdown";
+import InputGroup from "../../StyledComponents/InputGroup";
 import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import ColorPicker from "../../StyledComponents/ColorPicker";
 import Slider from "../../StyledComponents/Slider";
@@ -30,13 +32,16 @@ class Anatomy extends Component {
               <Text>FontFamily</Text>
             </FormCol>
             <FormCol>
-              <Input
-                type="text"
-                value={this.props.variables.fontFamily}
+              <Dropdown
                 onChange={e =>
-                  this.props.changeValue("fontFamily", parseInt(e.target.value))
+                  this.props.changeValue("fontFamily", e.target.value)
                 }
-              />
+              >
+                <option value={this.props.variables.fontFamily}>
+                  {this.props.variables.fontFamily}
+                </option>
+                <option value="Roboto">Roboto</option>
+              </Dropdown>
             </FormCol>
           </FormRow>
 
@@ -63,7 +68,7 @@ class Anatomy extends Component {
             </FormCol>
           </FormRow>
           <FormRow>
-            <FormCol>
+            <FormCol uiSize={3}>
               <Text>Height</Text>
             </FormCol>
             <FormCol>
@@ -77,6 +82,22 @@ class Anatomy extends Component {
                   )
                 }
               />
+            </FormCol>
+            <FormCol uiSize={2}>
+              <InputGroup marginLeft>
+                <Slider
+                  min="0"
+                  max="200"
+                  style={{ width: "75%" }}
+                  value={this.props.variables.footerHeight}
+                  onChange={e =>
+                    this.props.changeValue(
+                      "footerHeight",
+                      parseInt(e.target.value)
+                    )
+                  }
+                />
+              </InputGroup>
             </FormCol>
           </FormRow>
           <FormRow>

@@ -4,6 +4,7 @@ import FormGroup from "../../StyledComponents/FormGroup";
 import FormRow from "../../StyledComponents/FormRow";
 import FormCol from "../../StyledComponents/FormCol";
 import Text from "../../StyledComponents/Text";
+import Dropdown from "../../StyledComponents/Dropdown";
 import Input from "../../StyledComponents/Input";
 import ColorPicker from "../../StyledComponents/ColorPicker";
 import { appliedTheme, changeValue } from "../../Actions/theme";
@@ -39,13 +40,16 @@ class DefaultText extends Component {
             <Text>FontFamily</Text>
           </FormCol>
           <FormCol>
-            <Input
-              type="text"
-              value={this.props.variables.fontFamily}
+            <Dropdown
               onChange={e =>
-                this.props.changeValue("fontFamily", parseInt(e.target.value))
+                this.props.changeValue("fontFamily", e.target.value)
               }
-            />
+            >
+              <option value={this.props.variables.fontFamily}>
+                {this.props.variables.fontFamily}
+              </option>
+              <option value="Roboto">Roboto</option>
+            </Dropdown>
           </FormCol>
         </FormRow>
 
