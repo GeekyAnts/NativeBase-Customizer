@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { StyleProvider, getTheme, Root } from "native-base";
+import { StyleProvider, Root } from "native-base";
 import { connect } from "react-redux";
 import { appliedTheme } from "../../Actions/theme";
 
@@ -97,6 +97,7 @@ import Actionsheet from "../screens/actionsheet";
 import AppNavigator from "../AppNavigator";
 // import getTheme from "../theme/components";
 import variables from "../theme/variables/material";
+import getTheme from "../theme/components";
 
 class Setup extends Component {
   appScreen() {

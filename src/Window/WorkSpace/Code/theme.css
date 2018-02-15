@@ -297,6 +297,24 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   overflow-x: hidden;
   overflow-y: scroll;
 }
+::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  width: 4px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 0.5px solid rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-track {
+  width: 8px;
+  border-radius: 4px;
+  background-color: transparent;
+}
 .CodeMirror-hscrollbar {
   bottom: 0;
   left: 0;

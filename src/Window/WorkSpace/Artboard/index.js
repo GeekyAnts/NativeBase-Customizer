@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Platform } from "react-native";
 import { connect } from "react-redux";
+import "./index.css";
 import NativeApp from "../../../ReactNativeApp/boot/setup";
 import IOSStatusBar from "../../../StyledComponents/StatusBars/IOSStatusBar";
 import AndroidStatusBar from "../../../StyledComponents/StatusBars/AndroidStatusBar";

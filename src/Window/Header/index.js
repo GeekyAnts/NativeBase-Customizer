@@ -27,7 +27,8 @@ class Header extends Component {
     super(props);
     this.state = {
       newFile: null,
-      modalOpen: false
+      modalOpen: false,
+      modal2Open: false
     };
   }
 
@@ -69,7 +70,7 @@ class Header extends Component {
         <Row>
           <Col>
             <img src={logo} alt="Smiley face" height="57" width="49" />
-            <Text uiSize="xl" style={{ paddingLeft: 15 }}>
+            <Text uiSize="l" style={{ paddingLeft: 15, marginTop: 3 }}>
               NativeBase Customizer
             </Text>
           </Col>
@@ -110,6 +111,18 @@ class Header extends Component {
               style={{ marginRight: 40 }}
             >
               <Icon name="logo-android" fontSize="27px" />
+            </Button>
+            <Button
+              leftRadius
+              active={this.props.choice.option === "design"}
+              height="35px"
+              width="130px"
+              style={{ marginRight: 10 }}
+              onClick={() =>
+                this.setState({ modal2Open: !this.state.modal2Open })
+              }
+            >
+              Known Issues
             </Button>
             {/* </ButtonGroup> */}
             {/* <Button
@@ -243,6 +256,77 @@ class Header extends Component {
                   >
                     npm start
                   </code>{" "}
+                </li>
+              </ul>
+            </div>
+          </ModalWindow>
+        </Modal>
+
+        <Modal
+          isOpen={this.state.modal2Open}
+          // onAfterOpen={afterOpenFn}
+          // onRequestClose={requestCloseFn}
+          // closeTimeoutMS={n}
+          style={{
+            overlay: {
+              position: "fixed",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: "rgba(0, 0, 0, 0.4)",
+              justifyContent: "center"
+            },
+            content: {
+              display: "flex",
+              background: "transparent",
+              border: "none",
+              justifyContent: "center"
+            }
+          }}
+          contentLabel="Modal"
+        >
+          <ModalWindow uiSize="l">
+            <div style={{ marginLeft: "10%", marginRight: "10%" }}>
+              <Icon
+                name="md-close"
+                uiSize="30"
+                onClick={() =>
+                  this.setState({ modal2Open: !this.state.modal2Open })
+                }
+                uiColor="rgba(117, 115, 134, 0.9)"
+                style={{ position: "absolute", top: 10, right: 10 }}
+              />
+              <h2 style={{ textAlign: "center", color: "#201C3C" }}>
+                Known Issues
+              </h2>
+              <ul style={{ fontSize: 18, color: "#3F3B5A" }}>
+                <li>
+                  Header height is same here for iPhone, iPhoneX and Android
+                  i.e,{" "}
+                  <code
+                    style={{
+                      background: "rgba(117, 115, 134, 0.2)",
+                      paddingLeft: 5,
+                      paddingRight: 5
+                    }}
+                  >
+                    64px
+                  </code>, which is for Android as per their guidelines. So you
+                  will have to manually add the conditional heights for iPhone,
+                  iPhoneX for now.
+                </li>
+                <li>
+                  Scrollable Tabs preview has some issue, but will work
+                  perfectly fine in a React Native.
+                </li>
+                <li>
+                  ActionSheet doesn't work, as React Native Web doesn't have
+                  Modal support yet.
+                </li>
+                <li>
+                  FAB animation has some issue in the preview, but will work
+                  perfectly fine in a React Native.
                 </li>
               </ul>
             </div>
