@@ -114,7 +114,7 @@ class Header extends Component {
             </Button>
             <Button
               leftRadius
-              active={this.props.choice.option === "design"}
+              active={true}
               height="35px"
               width="130px"
               style={{ marginRight: 10 }}
