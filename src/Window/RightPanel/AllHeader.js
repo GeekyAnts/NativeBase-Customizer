@@ -83,9 +83,7 @@ class AllHeader extends Component {
                 this.props.changeValue("titleFontfamily", e.target.value)
               }
             >
-              <option value={this.props.variables.titleFontfamily}>
-                {this.props.variables.titleFontfamily}
-              </option>
+              <option value="System">System</option>
               <option value="Roboto">Roboto</option>
             </Dropdown>
           </FormCol>

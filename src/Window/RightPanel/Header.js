@@ -254,9 +254,7 @@ class Header extends Component {
                     this.props.changeValue("btnFontFamily", e.target.value)
                   }
                 >
-                  <option value={this.props.variables.btnFontFamily}>
-                    {this.props.variables.btnFontFamily}
-                  </option>
+                  <option value="System">System</option>
                   <option value="Roboto">Roboto</option>
                 </Dropdown>
               </FormCol>
@@ -392,9 +390,7 @@ class Header extends Component {
                     this.props.changeValue("fontFamily", e.target.value)
                   }
                 >
-                  <option value={this.props.variables.fontFamily}>
-                    {this.props.variables.fontFamily}
-                  </option>
+                  <option value="System">System</option>
                   <option value="Roboto">Roboto</option>
                 </Dropdown>
               </FormCol>

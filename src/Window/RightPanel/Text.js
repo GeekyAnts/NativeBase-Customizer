@@ -45,9 +45,7 @@ class DefaultText extends Component {
                 this.props.changeValue("fontFamily", e.target.value)
               }
             >
-              <option value={this.props.variables.fontFamily}>
-                {this.props.variables.fontFamily}
-              </option>
+              <option value="System">System</option>
               <option value="Roboto">Roboto</option>
             </Dropdown>
           </FormCol>

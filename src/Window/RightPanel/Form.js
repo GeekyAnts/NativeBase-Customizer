@@ -200,8 +200,8 @@ class Form extends Component {
                     this.props.changeValue("btnFontFamily", e.target.value)
                   }
                 >
-                  <option value={this.props.variables.btnFontFamily}>
-                    {this.props.variables.btnFontFamily}
+                  <option value="System">
+                    System
                   </option>
                   <option value="Roboto">Roboto</option>
                 </Dropdown>
