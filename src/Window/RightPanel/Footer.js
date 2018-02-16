@@ -6,6 +6,7 @@ import FormCol from "../../StyledComponents/FormCol";
 import Text from "../../StyledComponents/Text";
 import WrapperDiv from "../../StyledComponents/WrapperDiv";
 import Input from "../../StyledComponents/Input";
+import Dropdown from "../../StyledComponents/Dropdown";
 import InputGroup from "../../StyledComponents/InputGroup";
 import ColorPicker from "../../StyledComponents/ColorPicker";
 import Slider from "../../StyledComponents/Slider";
@@ -102,6 +103,22 @@ class Footer extends Component {
               </FormCol>
             </FormRow>
           )}
+
+          <FormRow>
+            <FormCol>
+              <Text>FontFamily</Text>
+            </FormCol>
+            <FormCol>
+              <Dropdown
+                onChange={e =>
+                  this.props.changeValue("btnFontFamily", e.target.value)
+                }
+              >
+                <option value="System">System</option>
+                <option value="Roboto">Roboto</option>
+              </Dropdown>
+            </FormCol>
+          </FormRow>
 
           {/* <FormRow>
             <FormCol>

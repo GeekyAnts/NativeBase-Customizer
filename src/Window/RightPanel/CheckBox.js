@@ -277,7 +277,6 @@ class CheckBox extends Component {
           </FormRow> */}
         </FormGroup>
         <List />
-        <AllHeader />
       </WrapperDiv>
     );
   }

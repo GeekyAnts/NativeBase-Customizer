@@ -133,7 +133,7 @@ class AllHeader extends Component {
 
         <FormRow>
           <FormCol uiSize={3}>
-            <Text>Button Padding</Text>
+            <Text>Menu Button Padding</Text>
           </FormCol>
           <FormCol uiSize={1}>
             <Input
@@ -183,7 +183,7 @@ class AllHeader extends Component {
         </FormRow>
         <FormRow>
           <FormCol uiSize={2}>
-            <Text>Button Icon</Text>
+            <Text>Menu Button Icon</Text>
           </FormCol>
           <FormCol uiSize={1}>
             <ColorPicker

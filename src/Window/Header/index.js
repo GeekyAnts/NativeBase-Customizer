@@ -318,7 +318,7 @@ class Header extends Component {
                 </li>
                 <li>
                   Scrollable Tabs preview has some issue, but will work
-                  perfectly fine in a React Native.
+                  perfectly fine in a React Native app.
                 </li>
                 <li>
                   ActionSheet doesn't work, as React Native Web doesn't have
@@ -326,7 +326,7 @@ class Header extends Component {
                 </li>
                 <li>
                   FAB animation has some issue in the preview, but will work
-                  perfectly fine in a React Native.
+                  perfectly fine in a React Native app.
                 </li>
               </ul>
             </div>
