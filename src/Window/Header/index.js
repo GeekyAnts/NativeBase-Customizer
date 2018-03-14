@@ -28,7 +28,8 @@ class Header extends Component {
     this.state = {
       newFile: null,
       modalOpen: false,
-      modal2Open: false
+      modal2Open: false,
+      downloadFile: ""
     };
   }
 
@@ -163,7 +164,10 @@ class Header extends Component {
                     onClick={() => {
                       window.location.href =
                         "https://github.com/GeekyAnts/NativeBase-KitchenSink/archive/CRNA.zip";
-                      this.setState({ modalOpen: !this.state.modalOpen });
+                      this.setState({
+                        modalOpen: !this.state.modalOpen,
+                        downloadFile: "app"
+                      });
                     }}
                   >
                     <OptionMenu>
@@ -172,6 +176,10 @@ class Header extends Component {
                   </Option>
                   <Option
                     onClick={() => {
+                      this.setState({
+                        modalOpen: !this.state.modalOpen,
+                        downloadFile: "variable"
+                      });
                       this.download(
                         "variables.js",
                         JSON.stringify(this.props.variables)
@@ -226,37 +234,64 @@ class Header extends Component {
                 Steps to run the App
               </h2>
               <ul style={{ fontSize: 18, color: "#3F3B5A" }}>
-                <li>Unzip the downloaded App</li>
+                {this.state.downloadFile === "app" && (
+                  <li>Unzip the downloaded App</li>
+                )}
                 <li>Download the variable file</li>
-                <li>
-                  Replace the content of file commonColor.js in App/src/theme
-                  with the downloaded variable file
-                </li>
-                <li>
-                  Run{" "}
-                  <code
-                    style={{
-                      background: "rgba(117, 115, 134, 0.2)",
-                      paddingLeft: 5,
-                      paddingRight: 5
-                    }}
-                  >
-                    npm install
-                  </code>{" "}
-                  in the App directory
-                </li>
-                <li>
-                  Run{" "}
-                  <code
-                    style={{
-                      background: "rgba(117, 115, 134, 0.2)",
-                      paddingLeft: 5,
-                      paddingRight: 5
-                    }}
-                  >
-                    npm start
-                  </code>{" "}
-                </li>
+                {this.state.downloadFile === "variable" && (
+                  <li>
+                    Follow the customization instructions from the{" "}
+                    <a
+                      style={{ color: "#3F3B5A" }}
+                      href="http://docs.nativebase.io/Customize.html#Customize"
+                      target="_blank"
+                    >
+                      docs
+                    </a>
+                  </li>
+                )}
+                {this.state.downloadFile === "variable" && (
+                  <li>
+                    Replace the content of the ejected/used theme variable file
+                    in your App with the downloaded variable file and run your
+                    App
+                  </li>
+                )}
+                {this.state.downloadFile === "app" && (
+                  <li>
+                    Replace the content of file commonColor.js in App/src/theme
+                    with the downloaded variable file
+                  </li>
+                )}
+                {this.state.downloadFile === "app" && (
+                  <li>
+                    Run{" "}
+                    <code
+                      style={{
+                        background: "rgba(117, 115, 134, 0.2)",
+                        paddingLeft: 5,
+                        paddingRight: 5
+                      }}
+                    >
+                      npm install
+                    </code>{" "}
+                    in the App directory
+                  </li>
+                )}
+                {this.state.downloadFile === "app" && (
+                  <li>
+                    Run{" "}
+                    <code
+                      style={{
+                        background: "rgba(117, 115, 134, 0.2)",
+                        paddingLeft: 5,
+                        paddingRight: 5
+                      }}
+                    >
+                      npm start
+                    </code>{" "}
+                  </li>
+                )}
               </ul>
             </div>
           </ModalWindow>
